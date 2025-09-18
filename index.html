@@ -1,1 +1,3861 @@
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css">
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+            <style>
+                #map_abce5b104d796443670d63a4163d9919 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
 
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map leaflet-container leaflet-touch leaflet-retina leaflet-fade-anim leaflet-grab leaflet-touch-drag leaflet-touch-zoom" id="map_abce5b104d796443670d63a4163d9919" tabindex="0" style="outline: none;"><div class="leaflet-pane leaflet-map-pane" style="transform: translate3d(-637px, -44px, 0px);"><div class="leaflet-pane leaflet-tile-pane"><div class="leaflet-layer " style="z-index: 1; opacity: 1;"><div class="leaflet-tile-container leaflet-zoom-animated" style="z-index: 19; transform: translate3d(0px, 0px, 0px) scale(1);"><img alt="" src="https://tile.openstreetmap.org/6/33/22.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(715px, 199px, 0px); opacity: 1;"><img alt="" src="https://tile.openstreetmap.org/6/34/22.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(971px, 199px, 0px); opacity: 1;"><img alt="" src="https://tile.openstreetmap.org/6/33/23.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(715px, 455px, 0px); opacity: 1;"><img alt="" src="https://tile.openstreetmap.org/6/34/23.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(971px, 455px, 0px); opacity: 1;"><img alt="" src="https://tile.openstreetmap.org/6/33/21.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(715px, -57px, 0px); opacity: 1;"><img alt="" src="https://tile.openstreetmap.org/6/34/21.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(971px, -57px, 0px); opacity: 1;"><img alt="" src="https://tile.openstreetmap.org/6/32/22.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(459px, 199px, 0px); opacity: 1;"><img alt="" src="https://tile.openstreetmap.org/6/35/22.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(1227px, 199px, 0px); opacity: 1;"><img alt="" src="https://tile.openstreetmap.org/6/32/23.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(459px, 455px, 0px); opacity: 1;"><img alt="" src="https://tile.openstreetmap.org/6/35/23.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(1227px, 455px, 0px); opacity: 1;"><img alt="" src="https://tile.openstreetmap.org/6/33/24.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(715px, 711px, 0px); opacity: 1;"><img alt="" src="https://tile.openstreetmap.org/6/34/24.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(971px, 711px, 0px); opacity: 1;"><img alt="" src="https://tile.openstreetmap.org/6/32/21.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(459px, -57px, 0px); opacity: 1;"><img alt="" src="https://tile.openstreetmap.org/6/35/21.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(1227px, -57px, 0px); opacity: 1;"><img alt="" src="https://tile.openstreetmap.org/6/32/24.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(459px, 711px, 0px); opacity: 1;"><img alt="" src="https://tile.openstreetmap.org/6/35/24.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(1227px, 711px, 0px); opacity: 1;"><img alt="" src="https://tile.openstreetmap.org/6/31/22.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(203px, 199px, 0px); opacity: 1;"><img alt="" src="https://tile.openstreetmap.org/6/36/22.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(1483px, 199px, 0px); opacity: 1;"><img alt="" src="https://tile.openstreetmap.org/6/31/23.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(203px, 455px, 0px); opacity: 1;"><img alt="" src="https://tile.openstreetmap.org/6/36/23.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(1483px, 455px, 0px); opacity: 1;"><img alt="" src="https://tile.openstreetmap.org/6/31/21.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(203px, -57px, 0px); opacity: 1;"><img alt="" src="https://tile.openstreetmap.org/6/36/21.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(1483px, -57px, 0px); opacity: 1;"><img alt="" src="https://tile.openstreetmap.org/6/31/24.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(203px, 711px, 0px); opacity: 1;"><img alt="" src="https://tile.openstreetmap.org/6/36/24.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(1483px, 711px, 0px); opacity: 1;"><img alt="" src="https://tile.openstreetmap.org/6/30/22.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(-53px, 199px, 0px); opacity: 1;"><img alt="" src="https://tile.openstreetmap.org/6/37/22.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(1739px, 199px, 0px); opacity: 1;"><img alt="" src="https://tile.openstreetmap.org/6/30/23.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(-53px, 455px, 0px); opacity: 1;"><img alt="" src="https://tile.openstreetmap.org/6/37/23.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(1739px, 455px, 0px); opacity: 1;"><img alt="" src="https://tile.openstreetmap.org/6/30/21.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(-53px, -57px, 0px); opacity: 1;"><img alt="" src="https://tile.openstreetmap.org/6/37/21.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(1739px, -57px, 0px); opacity: 1;"><img alt="" src="https://tile.openstreetmap.org/6/30/24.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(-53px, 711px, 0px); opacity: 1;"><img alt="" src="https://tile.openstreetmap.org/6/37/24.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(1739px, 711px, 0px); opacity: 1;"></div></div></div><div class="leaflet-pane leaflet-overlay-pane"></div><div class="leaflet-pane leaflet-shadow-pane"><div class="awesome-marker-shadow awesome-marker leaflet-zoom-animated" style="margin-left: -10px; margin-top: -12px; width: 36px; height: 16px; transform: translate3d(1000px, 434px, 0px);"></div><div class="awesome-marker-shadow awesome-marker leaflet-zoom-animated" style="margin-left: -10px; margin-top: -12px; width: 36px; height: 16px; transform: translate3d(1020px, 433px, 0px);"></div><div class="awesome-marker-shadow awesome-marker leaflet-zoom-animated" style="margin-left: -10px; margin-top: -12px; width: 36px; height: 16px; transform: translate3d(1020px, 433px, 0px);"></div><div class="awesome-marker-shadow awesome-marker leaflet-zoom-animated" style="margin-left: -10px; margin-top: -12px; width: 36px; height: 16px; transform: translate3d(1020px, 433px, 0px);"></div><div class="awesome-marker-shadow awesome-marker leaflet-zoom-animated" style="margin-left: -10px; margin-top: -12px; width: 36px; height: 16px; transform: translate3d(1020px, 433px, 0px);"></div><div class="awesome-marker-shadow awesome-marker leaflet-zoom-animated" style="margin-left: -10px; margin-top: -12px; width: 36px; height: 16px; transform: translate3d(1020px, 433px, 0px);"></div><div class="awesome-marker-shadow awesome-marker leaflet-zoom-animated" style="margin-left: -10px; margin-top: -12px; width: 36px; height: 16px; transform: translate3d(1020px, 433px, 0px);"></div><div class="awesome-marker-shadow awesome-marker leaflet-zoom-animated" style="margin-left: -10px; margin-top: -12px; width: 36px; height: 16px; transform: translate3d(1020px, 433px, 0px);"></div><div class="awesome-marker-shadow awesome-marker leaflet-zoom-animated" style="margin-left: -10px; margin-top: -12px; width: 36px; height: 16px; transform: translate3d(1020px, 433px, 0px);"></div><div class="awesome-marker-shadow awesome-marker leaflet-zoom-animated" style="margin-left: -10px; margin-top: -12px; width: 36px; height: 16px; transform: translate3d(1020px, 433px, 0px);"></div><div class="awesome-marker-shadow awesome-marker leaflet-zoom-animated" style="margin-left: -10px; margin-top: -12px; width: 36px; height: 16px; transform: translate3d(1020px, 433px, 0px);"></div><div class="awesome-marker-shadow awesome-marker leaflet-zoom-animated" style="margin-left: -10px; margin-top: -12px; width: 36px; height: 16px; transform: translate3d(277px, 770px, 0px);"></div><div class="awesome-marker-shadow awesome-marker leaflet-zoom-animated" style="margin-left: -10px; margin-top: -12px; width: 36px; height: 16px; transform: translate3d(877px, 431px, 0px);"></div><div class="awesome-marker-shadow awesome-marker leaflet-zoom-animated" style="margin-left: -10px; margin-top: -12px; width: 36px; height: 16px; transform: translate3d(877px, 431px, 0px);"></div><div class="awesome-marker-shadow awesome-marker leaflet-zoom-animated" style="margin-left: -10px; margin-top: -12px; width: 36px; height: 16px; transform: translate3d(877px, 431px, 0px);"></div><div class="awesome-marker-shadow awesome-marker leaflet-zoom-animated" style="margin-left: -10px; margin-top: -12px; width: 36px; height: 16px; transform: translate3d(877px, 431px, 0px);"></div><div class="awesome-marker-shadow awesome-marker leaflet-zoom-animated" style="margin-left: -10px; margin-top: -12px; width: 36px; height: 16px; transform: translate3d(877px, 431px, 0px);"></div><div class="awesome-marker-shadow awesome-marker leaflet-zoom-animated" style="margin-left: -10px; margin-top: -12px; width: 36px; height: 16px; transform: translate3d(877px, 431px, 0px);"></div><div class="awesome-marker-shadow awesome-marker leaflet-zoom-animated" style="margin-left: -10px; margin-top: -12px; width: 36px; height: 16px; transform: translate3d(877px, 431px, 0px);"></div><div class="awesome-marker-shadow awesome-marker leaflet-zoom-animated" style="margin-left: -10px; margin-top: -12px; width: 36px; height: 16px; transform: translate3d(877px, 431px, 0px);"></div><div class="awesome-marker-shadow awesome-marker leaflet-zoom-animated" style="margin-left: -10px; margin-top: -12px; width: 36px; height: 16px; transform: translate3d(877px, 431px, 0px);"></div><div class="awesome-marker-shadow awesome-marker leaflet-zoom-animated" style="margin-left: -10px; margin-top: -12px; width: 36px; height: 16px; transform: translate3d(877px, 431px, 0px);"></div><div class="awesome-marker-shadow awesome-marker leaflet-zoom-animated" style="margin-left: -10px; margin-top: -12px; width: 36px; height: 16px; transform: translate3d(877px, 431px, 0px);"></div><div class="awesome-marker-shadow awesome-marker leaflet-zoom-animated" style="margin-left: -10px; margin-top: -12px; width: 36px; height: 16px; transform: translate3d(877px, 431px, 0px);"></div><div class="awesome-marker-shadow awesome-marker leaflet-zoom-animated" style="margin-left: -10px; margin-top: -12px; width: 36px; height: 16px; transform: translate3d(877px, 431px, 0px);"></div><div class="awesome-marker-shadow awesome-marker leaflet-zoom-animated" style="margin-left: -10px; margin-top: -12px; width: 36px; height: 16px; transform: translate3d(877px, 431px, 0px);"></div><div class="awesome-marker-shadow awesome-marker leaflet-zoom-animated" style="margin-left: -10px; margin-top: -12px; width: 36px; height: 16px; transform: translate3d(877px, 431px, 0px);"></div><div class="awesome-marker-shadow awesome-marker leaflet-zoom-animated" style="margin-left: -10px; margin-top: -12px; width: 36px; height: 16px; transform: translate3d(877px, 431px, 0px);"></div><div class="awesome-marker-shadow awesome-marker leaflet-zoom-animated" style="margin-left: -10px; margin-top: -12px; width: 36px; height: 16px; transform: translate3d(971px, 538px, 0px);"></div><div class="awesome-marker-shadow awesome-marker leaflet-zoom-animated" style="margin-left: -10px; margin-top: -12px; width: 36px; height: 16px; transform: translate3d(975px, 493px, 0px);"></div><div class="awesome-marker-shadow awesome-marker leaflet-zoom-animated" style="margin-left: -10px; margin-top: -12px; width: 36px; height: 16px; transform: translate3d(1020px, 433px, 0px);"></div><div class="awesome-marker-shadow awesome-marker leaflet-zoom-animated" style="margin-left: -10px; margin-top: -12px; width: 36px; height: 16px; transform: translate3d(971px, 538px, 0px);"></div><div class="awesome-marker-shadow awesome-marker leaflet-zoom-animated" style="margin-left: -10px; margin-top: -12px; width: 36px; height: 16px; transform: translate3d(1187px, 587px, 0px);"></div><div class="awesome-marker-shadow awesome-marker leaflet-zoom-animated" style="margin-left: -10px; margin-top: -12px; width: 36px; height: 16px; transform: translate3d(1450px, 949px, 0px);"></div><div class="awesome-marker-shadow awesome-marker leaflet-zoom-animated" style="margin-left: -10px; margin-top: -12px; width: 36px; height: 16px; transform: translate3d(1450px, 949px, 0px);"></div><div class="awesome-marker-shadow awesome-marker leaflet-zoom-animated" style="margin-left: -10px; margin-top: -12px; width: 36px; height: 16px; transform: translate3d(1450px, 949px, 0px);"></div><div class="awesome-marker-shadow awesome-marker leaflet-zoom-animated" style="margin-left: -10px; margin-top: -12px; width: 36px; height: 16px; transform: translate3d(1020px, 433px, 0px);"></div><div class="awesome-marker-shadow awesome-marker leaflet-zoom-animated" style="margin-left: -10px; margin-top: -12px; width: 36px; height: 16px; transform: translate3d(971px, 538px, 0px);"></div><div class="awesome-marker-shadow awesome-marker leaflet-zoom-animated" style="margin-left: -10px; margin-top: -12px; width: 36px; height: 16px; transform: translate3d(1020px, 433px, 0px);"></div><div class="awesome-marker-shadow awesome-marker leaflet-zoom-animated" style="margin-left: -10px; margin-top: -12px; width: 36px; height: 16px; transform: translate3d(1020px, 433px, 0px);"></div><div class="awesome-marker-shadow awesome-marker leaflet-zoom-animated" style="margin-left: -10px; margin-top: -12px; width: 36px; height: 16px; transform: translate3d(971px, 538px, 0px);"></div><div class="awesome-marker-shadow awesome-marker leaflet-zoom-animated" style="margin-left: -10px; margin-top: -12px; width: 36px; height: 16px; transform: translate3d(971px, 538px, 0px);"></div><div class="awesome-marker-shadow awesome-marker leaflet-zoom-animated" style="margin-left: -10px; margin-top: -12px; width: 36px; height: 16px; transform: translate3d(963px, 468px, 0px);"></div><div class="awesome-marker-shadow awesome-marker leaflet-zoom-animated" style="margin-left: -10px; margin-top: -12px; width: 36px; height: 16px; transform: translate3d(963px, 468px, 0px);"></div><div class="awesome-marker-shadow awesome-marker leaflet-zoom-animated" style="margin-left: -10px; margin-top: -12px; width: 36px; height: 16px; transform: translate3d(1020px, 433px, 0px);"></div><div class="awesome-marker-shadow awesome-marker leaflet-zoom-animated" style="margin-left: -10px; margin-top: -12px; width: 36px; height: 16px; transform: translate3d(1020px, 433px, 0px);"></div><div class="awesome-marker-shadow awesome-marker leaflet-zoom-animated" style="margin-left: -10px; margin-top: -12px; width: 36px; height: 16px; transform: translate3d(1020px, 433px, 0px);"></div><div class="awesome-marker-shadow awesome-marker leaflet-zoom-animated" style="margin-left: -10px; margin-top: -12px; width: 36px; height: 16px; transform: translate3d(1020px, 433px, 0px);"></div><div class="awesome-marker-shadow awesome-marker leaflet-zoom-animated" style="margin-left: -10px; margin-top: -12px; width: 36px; height: 16px; transform: translate3d(1020px, 433px, 0px);"></div><div class="awesome-marker-shadow awesome-marker leaflet-zoom-animated" style="margin-left: -10px; margin-top: -12px; width: 36px; height: 16px; transform: translate3d(1020px, 433px, 0px);"></div><div class="awesome-marker-shadow awesome-marker leaflet-zoom-animated" style="margin-left: -10px; margin-top: -12px; width: 36px; height: 16px; transform: translate3d(1020px, 433px, 0px);"></div><div class="awesome-marker-shadow awesome-marker leaflet-zoom-animated" style="margin-left: -10px; margin-top: -12px; width: 36px; height: 16px; transform: translate3d(1020px, 433px, 0px);"></div><div class="awesome-marker-shadow awesome-marker leaflet-zoom-animated" style="margin-left: -10px; margin-top: -12px; width: 36px; height: 16px; transform: translate3d(971px, 538px, 0px);"></div><div class="awesome-marker-shadow awesome-marker leaflet-zoom-animated" style="margin-left: -10px; margin-top: -12px; width: 36px; height: 16px; transform: translate3d(971px, 538px, 0px);"></div><div class="awesome-marker-shadow awesome-marker leaflet-zoom-animated" style="margin-left: -10px; margin-top: -12px; width: 36px; height: 16px; transform: translate3d(877px, 431px, 0px);"></div><div class="awesome-marker-shadow awesome-marker leaflet-zoom-animated" style="margin-left: -10px; margin-top: -12px; width: 36px; height: 16px; transform: translate3d(877px, 431px, 0px);"></div><div class="awesome-marker-shadow awesome-marker leaflet-zoom-animated" style="margin-left: -10px; margin-top: -12px; width: 36px; height: 16px; transform: translate3d(877px, 431px, 0px);"></div><div class="awesome-marker-shadow awesome-marker leaflet-zoom-animated" style="margin-left: -10px; margin-top: -12px; width: 36px; height: 16px; transform: translate3d(877px, 431px, 0px);"></div><div class="awesome-marker-shadow awesome-marker leaflet-zoom-animated" style="margin-left: -10px; margin-top: -12px; width: 36px; height: 16px; transform: translate3d(877px, 431px, 0px);"></div><div class="awesome-marker-shadow awesome-marker leaflet-zoom-animated" style="margin-left: -10px; margin-top: -12px; width: 36px; height: 16px; transform: translate3d(877px, 431px, 0px);"></div><div class="awesome-marker-shadow awesome-marker leaflet-zoom-animated" style="margin-left: -10px; margin-top: -12px; width: 36px; height: 16px; transform: translate3d(877px, 431px, 0px);"></div><div class="awesome-marker-shadow awesome-marker leaflet-zoom-animated" style="margin-left: -10px; margin-top: -12px; width: 36px; height: 16px; transform: translate3d(877px, 431px, 0px);"></div><div class="awesome-marker-shadow awesome-marker leaflet-zoom-animated" style="margin-left: -10px; margin-top: -12px; width: 36px; height: 16px; transform: translate3d(877px, 431px, 0px);"></div><div class="awesome-marker-shadow awesome-marker leaflet-zoom-animated" style="margin-left: -10px; margin-top: -12px; width: 36px; height: 16px; transform: translate3d(877px, 431px, 0px);"></div><div class="awesome-marker-shadow awesome-marker leaflet-zoom-animated" style="margin-left: -10px; margin-top: -12px; width: 36px; height: 16px; transform: translate3d(877px, 431px, 0px);"></div><div class="awesome-marker-shadow awesome-marker leaflet-zoom-animated" style="margin-left: -10px; margin-top: -12px; width: 36px; height: 16px; transform: translate3d(877px, 431px, 0px);"></div><div class="awesome-marker-shadow awesome-marker leaflet-zoom-animated" style="margin-left: -10px; margin-top: -12px; width: 36px; height: 16px; transform: translate3d(877px, 431px, 0px);"></div><div class="awesome-marker-shadow awesome-marker leaflet-zoom-animated" style="margin-left: -10px; margin-top: -12px; width: 36px; height: 16px; transform: translate3d(877px, 431px, 0px);"></div><div class="awesome-marker-shadow awesome-marker leaflet-zoom-animated" style="margin-left: -10px; margin-top: -12px; width: 36px; height: 16px; transform: translate3d(877px, 431px, 0px);"></div><div class="awesome-marker-shadow awesome-marker leaflet-zoom-animated" style="margin-left: -10px; margin-top: -12px; width: 36px; height: 16px; transform: translate3d(877px, 431px, 0px);"></div><div class="awesome-marker-shadow awesome-marker leaflet-zoom-animated" style="margin-left: -10px; margin-top: -12px; width: 36px; height: 16px; transform: translate3d(877px, 431px, 0px);"></div><div class="awesome-marker-shadow awesome-marker leaflet-zoom-animated" style="margin-left: -10px; margin-top: -12px; width: 36px; height: 16px; transform: translate3d(842px, 440px, 0px);"></div><div class="awesome-marker-shadow awesome-marker leaflet-zoom-animated" style="margin-left: -10px; margin-top: -12px; width: 36px; height: 16px; transform: translate3d(1020px, 433px, 0px);"></div><div class="awesome-marker-shadow awesome-marker leaflet-zoom-animated" style="margin-left: -10px; margin-top: -12px; width: 36px; height: 16px; transform: translate3d(971px, 538px, 0px);"></div><div class="awesome-marker-shadow awesome-marker leaflet-zoom-animated" style="margin-left: -10px; margin-top: -12px; width: 36px; height: 16px; transform: translate3d(937px, 16px, 0px);"></div><div class="awesome-marker-shadow awesome-marker leaflet-zoom-animated" style="margin-left: -10px; margin-top: -12px; width: 36px; height: 16px; transform: translate3d(937px, 16px, 0px);"></div><div class="awesome-marker-shadow awesome-marker leaflet-zoom-animated" style="margin-left: -10px; margin-top: -12px; width: 36px; height: 16px; transform: translate3d(937px, 16px, 0px);"></div><div class="awesome-marker-shadow awesome-marker leaflet-zoom-animated" style="margin-left: -10px; margin-top: -12px; width: 36px; height: 16px; transform: translate3d(937px, 16px, 0px);"></div><div class="awesome-marker-shadow awesome-marker leaflet-zoom-animated" style="margin-left: -10px; margin-top: -12px; width: 36px; height: 16px; transform: translate3d(937px, 16px, 0px);"></div><div class="awesome-marker-shadow awesome-marker leaflet-zoom-animated" style="margin-left: -10px; margin-top: -12px; width: 36px; height: 16px; transform: translate3d(937px, 16px, 0px);"></div><div class="awesome-marker-shadow awesome-marker leaflet-zoom-animated" style="margin-left: -10px; margin-top: -12px; width: 36px; height: 16px; transform: translate3d(937px, 16px, 0px);"></div><div class="awesome-marker-shadow awesome-marker leaflet-zoom-animated" style="margin-left: -10px; margin-top: -12px; width: 36px; height: 16px; transform: translate3d(937px, 16px, 0px);"></div><div class="awesome-marker-shadow awesome-marker leaflet-zoom-animated" style="margin-left: -10px; margin-top: -12px; width: 36px; height: 16px; transform: translate3d(937px, 16px, 0px);"></div><div class="awesome-marker-shadow awesome-marker leaflet-zoom-animated" style="margin-left: -10px; margin-top: -12px; width: 36px; height: 16px; transform: translate3d(842px, 440px, 0px);"></div><div class="awesome-marker-shadow awesome-marker leaflet-zoom-animated" style="margin-left: -10px; margin-top: -12px; width: 36px; height: 16px; transform: translate3d(988px, 471px, 0px);"></div><div class="awesome-marker-shadow awesome-marker leaflet-zoom-animated" style="margin-left: -10px; margin-top: -12px; width: 36px; height: 16px; transform: translate3d(1020px, 433px, 0px);"></div><div class="awesome-marker-shadow awesome-marker leaflet-zoom-animated" style="margin-left: -10px; margin-top: -12px; width: 36px; height: 16px; transform: translate3d(1020px, 433px, 0px);"></div><div class="awesome-marker-shadow awesome-marker leaflet-zoom-animated" style="margin-left: -10px; margin-top: -12px; width: 36px; height: 16px; transform: translate3d(1000px, 434px, 0px);"></div><div class="awesome-marker-shadow awesome-marker leaflet-zoom-animated" style="margin-left: -10px; margin-top: -12px; width: 36px; height: 16px; transform: translate3d(971px, 538px, 0px);"></div><div class="awesome-marker-shadow awesome-marker leaflet-zoom-animated" style="margin-left: -10px; margin-top: -12px; width: 36px; height: 16px; transform: translate3d(971px, 538px, 0px);"></div><div class="awesome-marker-shadow awesome-marker leaflet-zoom-animated" style="margin-left: -10px; margin-top: -12px; width: 36px; height: 16px; transform: translate3d(971px, 538px, 0px);"></div><div class="awesome-marker-shadow awesome-marker leaflet-zoom-animated" style="margin-left: -10px; margin-top: -12px; width: 36px; height: 16px; transform: translate3d(971px, 538px, 0px);"></div><div class="awesome-marker-shadow awesome-marker leaflet-zoom-animated" style="margin-left: -10px; margin-top: -12px; width: 36px; height: 16px; transform: translate3d(971px, 538px, 0px);"></div><div class="awesome-marker-shadow awesome-marker leaflet-zoom-animated" style="margin-left: -10px; margin-top: -12px; width: 36px; height: 16px; transform: translate3d(971px, 538px, 0px);"></div><div class="awesome-marker-shadow awesome-marker leaflet-zoom-animated" style="margin-left: -10px; margin-top: -12px; width: 36px; height: 16px; transform: translate3d(1020px, 433px, 0px);"></div><div class="awesome-marker-shadow awesome-marker leaflet-zoom-animated" style="margin-left: -10px; margin-top: -12px; width: 36px; height: 16px; transform: translate3d(1020px, 433px, 0px);"></div><div class="awesome-marker-shadow awesome-marker leaflet-zoom-animated" style="margin-left: -10px; margin-top: -12px; width: 36px; height: 16px; transform: translate3d(1020px, 433px, 0px);"></div><div class="awesome-marker-shadow awesome-marker leaflet-zoom-animated" style="margin-left: -10px; margin-top: -12px; width: 36px; height: 16px; transform: translate3d(173px, 971px, 0px);"></div><div class="awesome-marker-shadow awesome-marker leaflet-zoom-animated" style="margin-left: -10px; margin-top: -12px; width: 36px; height: 16px; transform: translate3d(971px, 538px, 0px);"></div></div><div class="leaflet-pane leaflet-marker-pane"><div class="awesome-marker-icon-red awesome-marker leaflet-zoom-animated leaflet-interactive" tabindex="0" role="button" style="margin-left: -17px; margin-top: -42px; width: 35px; height: 45px; transform: translate3d(1000px, 434px, 0px); z-index: 434;"><i class="fa-rotate-0 glyphicon glyphicon-info-sign  icon-white"></i></div><div class="awesome-marker-icon-red awesome-marker leaflet-zoom-animated leaflet-interactive" tabindex="0" role="button" style="margin-left: -17px; margin-top: -42px; width: 35px; height: 45px; transform: translate3d(1020px, 433px, 0px); z-index: 433;"><i class="fa-rotate-0 glyphicon glyphicon-info-sign  icon-white"></i></div><div class="awesome-marker-icon-red awesome-marker leaflet-zoom-animated leaflet-interactive" tabindex="0" role="button" style="margin-left: -17px; margin-top: -42px; width: 35px; height: 45px; transform: translate3d(1020px, 433px, 0px); z-index: 433;"><i class="fa-rotate-0 glyphicon glyphicon-info-sign  icon-white"></i></div><div class="awesome-marker-icon-red awesome-marker leaflet-zoom-animated leaflet-interactive" tabindex="0" role="button" style="margin-left: -17px; margin-top: -42px; width: 35px; height: 45px; transform: translate3d(1020px, 433px, 0px); z-index: 433;"><i class="fa-rotate-0 glyphicon glyphicon-info-sign  icon-white"></i></div><div class="awesome-marker-icon-red awesome-marker leaflet-zoom-animated leaflet-interactive" tabindex="0" role="button" style="margin-left: -17px; margin-top: -42px; width: 35px; height: 45px; transform: translate3d(1020px, 433px, 0px); z-index: 433;"><i class="fa-rotate-0 glyphicon glyphicon-info-sign  icon-white"></i></div><div class="awesome-marker-icon-red awesome-marker leaflet-zoom-animated leaflet-interactive" tabindex="0" role="button" style="margin-left: -17px; margin-top: -42px; width: 35px; height: 45px; transform: translate3d(1020px, 433px, 0px); z-index: 433;"><i class="fa-rotate-0 glyphicon glyphicon-info-sign  icon-white"></i></div><div class="awesome-marker-icon-red awesome-marker leaflet-zoom-animated leaflet-interactive" tabindex="0" role="button" style="margin-left: -17px; margin-top: -42px; width: 35px; height: 45px; transform: translate3d(1020px, 433px, 0px); z-index: 433;"><i class="fa-rotate-0 glyphicon glyphicon-info-sign  icon-white"></i></div><div class="awesome-marker-icon-red awesome-marker leaflet-zoom-animated leaflet-interactive" tabindex="0" role="button" style="margin-left: -17px; margin-top: -42px; width: 35px; height: 45px; transform: translate3d(1020px, 433px, 0px); z-index: 433;"><i class="fa-rotate-0 glyphicon glyphicon-info-sign  icon-white"></i></div><div class="awesome-marker-icon-red awesome-marker leaflet-zoom-animated leaflet-interactive" tabindex="0" role="button" style="margin-left: -17px; margin-top: -42px; width: 35px; height: 45px; transform: translate3d(1020px, 433px, 0px); z-index: 433;"><i class="fa-rotate-0 glyphicon glyphicon-info-sign  icon-white"></i></div><div class="awesome-marker-icon-red awesome-marker leaflet-zoom-animated leaflet-interactive" tabindex="0" role="button" style="margin-left: -17px; margin-top: -42px; width: 35px; height: 45px; transform: translate3d(1020px, 433px, 0px); z-index: 433;"><i class="fa-rotate-0 glyphicon glyphicon-info-sign  icon-white"></i></div><div class="awesome-marker-icon-red awesome-marker leaflet-zoom-animated leaflet-interactive" tabindex="0" role="button" style="margin-left: -17px; margin-top: -42px; width: 35px; height: 45px; transform: translate3d(1020px, 433px, 0px); z-index: 433;"><i class="fa-rotate-0 glyphicon glyphicon-info-sign  icon-white"></i></div><div class="awesome-marker-icon-blue awesome-marker leaflet-zoom-animated leaflet-interactive" tabindex="0" role="button" style="margin-left: -17px; margin-top: -42px; width: 35px; height: 45px; transform: translate3d(277px, 770px, 0px); z-index: 770;"><i class="fa-rotate-0 glyphicon glyphicon-info-sign  icon-white"></i></div><div class="awesome-marker-icon-red awesome-marker leaflet-zoom-animated leaflet-interactive" tabindex="0" role="button" style="margin-left: -17px; margin-top: -42px; width: 35px; height: 45px; transform: translate3d(877px, 431px, 0px); z-index: 431;"><i class="fa-rotate-0 glyphicon glyphicon-info-sign  icon-white"></i></div><div class="awesome-marker-icon-red awesome-marker leaflet-zoom-animated leaflet-interactive" tabindex="0" role="button" style="margin-left: -17px; margin-top: -42px; width: 35px; height: 45px; transform: translate3d(877px, 431px, 0px); z-index: 431;"><i class="fa-rotate-0 glyphicon glyphicon-info-sign  icon-white"></i></div><div class="awesome-marker-icon-red awesome-marker leaflet-zoom-animated leaflet-interactive" tabindex="0" role="button" style="margin-left: -17px; margin-top: -42px; width: 35px; height: 45px; transform: translate3d(877px, 431px, 0px); z-index: 431;"><i class="fa-rotate-0 glyphicon glyphicon-info-sign  icon-white"></i></div><div class="awesome-marker-icon-red awesome-marker leaflet-zoom-animated leaflet-interactive" tabindex="0" role="button" style="margin-left: -17px; margin-top: -42px; width: 35px; height: 45px; transform: translate3d(877px, 431px, 0px); z-index: 431;"><i class="fa-rotate-0 glyphicon glyphicon-info-sign  icon-white"></i></div><div class="awesome-marker-icon-red awesome-marker leaflet-zoom-animated leaflet-interactive" tabindex="0" role="button" style="margin-left: -17px; margin-top: -42px; width: 35px; height: 45px; transform: translate3d(877px, 431px, 0px); z-index: 431;"><i class="fa-rotate-0 glyphicon glyphicon-info-sign  icon-white"></i></div><div class="awesome-marker-icon-red awesome-marker leaflet-zoom-animated leaflet-interactive" tabindex="0" role="button" style="margin-left: -17px; margin-top: -42px; width: 35px; height: 45px; transform: translate3d(877px, 431px, 0px); z-index: 431;"><i class="fa-rotate-0 glyphicon glyphicon-info-sign  icon-white"></i></div><div class="awesome-marker-icon-red awesome-marker leaflet-zoom-animated leaflet-interactive" tabindex="0" role="button" style="margin-left: -17px; margin-top: -42px; width: 35px; height: 45px; transform: translate3d(877px, 431px, 0px); z-index: 431;"><i class="fa-rotate-0 glyphicon glyphicon-info-sign  icon-white"></i></div><div class="awesome-marker-icon-red awesome-marker leaflet-zoom-animated leaflet-interactive" tabindex="0" role="button" style="margin-left: -17px; margin-top: -42px; width: 35px; height: 45px; transform: translate3d(877px, 431px, 0px); z-index: 431;"><i class="fa-rotate-0 glyphicon glyphicon-info-sign  icon-white"></i></div><div class="awesome-marker-icon-red awesome-marker leaflet-zoom-animated leaflet-interactive" tabindex="0" role="button" style="margin-left: -17px; margin-top: -42px; width: 35px; height: 45px; transform: translate3d(877px, 431px, 0px); z-index: 431;"><i class="fa-rotate-0 glyphicon glyphicon-info-sign  icon-white"></i></div><div class="awesome-marker-icon-red awesome-marker leaflet-zoom-animated leaflet-interactive" tabindex="0" role="button" style="margin-left: -17px; margin-top: -42px; width: 35px; height: 45px; transform: translate3d(877px, 431px, 0px); z-index: 431;"><i class="fa-rotate-0 glyphicon glyphicon-info-sign  icon-white"></i></div><div class="awesome-marker-icon-red awesome-marker leaflet-zoom-animated leaflet-interactive" tabindex="0" role="button" style="margin-left: -17px; margin-top: -42px; width: 35px; height: 45px; transform: translate3d(877px, 431px, 0px); z-index: 431;"><i class="fa-rotate-0 glyphicon glyphicon-info-sign  icon-white"></i></div><div class="awesome-marker-icon-red awesome-marker leaflet-zoom-animated leaflet-interactive" tabindex="0" role="button" style="margin-left: -17px; margin-top: -42px; width: 35px; height: 45px; transform: translate3d(877px, 431px, 0px); z-index: 431;"><i class="fa-rotate-0 glyphicon glyphicon-info-sign  icon-white"></i></div><div class="awesome-marker-icon-red awesome-marker leaflet-zoom-animated leaflet-interactive" tabindex="0" role="button" style="margin-left: -17px; margin-top: -42px; width: 35px; height: 45px; transform: translate3d(877px, 431px, 0px); z-index: 431;"><i class="fa-rotate-0 glyphicon glyphicon-info-sign  icon-white"></i></div><div class="awesome-marker-icon-red awesome-marker leaflet-zoom-animated leaflet-interactive" tabindex="0" role="button" style="margin-left: -17px; margin-top: -42px; width: 35px; height: 45px; transform: translate3d(877px, 431px, 0px); z-index: 431;"><i class="fa-rotate-0 glyphicon glyphicon-info-sign  icon-white"></i></div><div class="awesome-marker-icon-red awesome-marker leaflet-zoom-animated leaflet-interactive" tabindex="0" role="button" style="margin-left: -17px; margin-top: -42px; width: 35px; height: 45px; transform: translate3d(877px, 431px, 0px); z-index: 431;"><i class="fa-rotate-0 glyphicon glyphicon-info-sign  icon-white"></i></div><div class="awesome-marker-icon-red awesome-marker leaflet-zoom-animated leaflet-interactive" tabindex="0" role="button" style="margin-left: -17px; margin-top: -42px; width: 35px; height: 45px; transform: translate3d(877px, 431px, 0px); z-index: 431;"><i class="fa-rotate-0 glyphicon glyphicon-info-sign  icon-white"></i></div><div class="awesome-marker-icon-red awesome-marker leaflet-zoom-animated leaflet-interactive" tabindex="0" role="button" style="margin-left: -17px; margin-top: -42px; width: 35px; height: 45px; transform: translate3d(971px, 538px, 0px); z-index: 538;"><i class="fa-rotate-0 glyphicon glyphicon-info-sign  icon-white"></i></div><div class="awesome-marker-icon-red awesome-marker leaflet-zoom-animated leaflet-interactive" tabindex="0" role="button" style="margin-left: -17px; margin-top: -42px; width: 35px; height: 45px; transform: translate3d(975px, 493px, 0px); z-index: 493;"><i class="fa-rotate-0 glyphicon glyphicon-info-sign  icon-white"></i></div><div class="awesome-marker-icon-red awesome-marker leaflet-zoom-animated leaflet-interactive" tabindex="0" role="button" style="margin-left: -17px; margin-top: -42px; width: 35px; height: 45px; transform: translate3d(1020px, 433px, 0px); z-index: 433;"><i class="fa-rotate-0 glyphicon glyphicon-info-sign  icon-white"></i></div><div class="awesome-marker-icon-red awesome-marker leaflet-zoom-animated leaflet-interactive" tabindex="0" role="button" style="margin-left: -17px; margin-top: -42px; width: 35px; height: 45px; transform: translate3d(971px, 538px, 0px); z-index: 538;"><i class="fa-rotate-0 glyphicon glyphicon-info-sign  icon-white"></i></div><div class="awesome-marker-icon-blue awesome-marker leaflet-zoom-animated leaflet-interactive" tabindex="0" role="button" style="margin-left: -17px; margin-top: -42px; width: 35px; height: 45px; transform: translate3d(1187px, 587px, 0px); z-index: 587;"><i class="fa-rotate-0 glyphicon glyphicon-info-sign  icon-white"></i></div><div class="awesome-marker-icon-blue awesome-marker leaflet-zoom-animated leaflet-interactive" tabindex="0" role="button" style="margin-left: -17px; margin-top: -42px; width: 35px; height: 45px; transform: translate3d(1450px, 949px, 0px); z-index: 949;"><i class="fa-rotate-0 glyphicon glyphicon-info-sign  icon-white"></i></div><div class="awesome-marker-icon-blue awesome-marker leaflet-zoom-animated leaflet-interactive" tabindex="0" role="button" style="margin-left: -17px; margin-top: -42px; width: 35px; height: 45px; transform: translate3d(1450px, 949px, 0px); z-index: 949;"><i class="fa-rotate-0 glyphicon glyphicon-info-sign  icon-white"></i></div><div class="awesome-marker-icon-blue awesome-marker leaflet-zoom-animated leaflet-interactive" tabindex="0" role="button" style="margin-left: -17px; margin-top: -42px; width: 35px; height: 45px; transform: translate3d(1450px, 949px, 0px); z-index: 949;"><i class="fa-rotate-0 glyphicon glyphicon-info-sign  icon-white"></i></div><div class="awesome-marker-icon-red awesome-marker leaflet-zoom-animated leaflet-interactive" tabindex="0" role="button" style="margin-left: -17px; margin-top: -42px; width: 35px; height: 45px; transform: translate3d(1020px, 433px, 0px); z-index: 433;"><i class="fa-rotate-0 glyphicon glyphicon-info-sign  icon-white"></i></div><div class="awesome-marker-icon-red awesome-marker leaflet-zoom-animated leaflet-interactive" tabindex="0" role="button" style="margin-left: -17px; margin-top: -42px; width: 35px; height: 45px; transform: translate3d(971px, 538px, 0px); z-index: 538;"><i class="fa-rotate-0 glyphicon glyphicon-info-sign  icon-white"></i></div><div class="awesome-marker-icon-red awesome-marker leaflet-zoom-animated leaflet-interactive" tabindex="0" role="button" style="margin-left: -17px; margin-top: -42px; width: 35px; height: 45px; transform: translate3d(1020px, 433px, 0px); z-index: 433;"><i class="fa-rotate-0 glyphicon glyphicon-info-sign  icon-white"></i></div><div class="awesome-marker-icon-red awesome-marker leaflet-zoom-animated leaflet-interactive" tabindex="0" role="button" style="margin-left: -17px; margin-top: -42px; width: 35px; height: 45px; transform: translate3d(1020px, 433px, 0px); z-index: 433;"><i class="fa-rotate-0 glyphicon glyphicon-info-sign  icon-white"></i></div><div class="awesome-marker-icon-red awesome-marker leaflet-zoom-animated leaflet-interactive" tabindex="0" role="button" style="margin-left: -17px; margin-top: -42px; width: 35px; height: 45px; transform: translate3d(971px, 538px, 0px); z-index: 538;"><i class="fa-rotate-0 glyphicon glyphicon-info-sign  icon-white"></i></div><div class="awesome-marker-icon-red awesome-marker leaflet-zoom-animated leaflet-interactive" tabindex="0" role="button" style="margin-left: -17px; margin-top: -42px; width: 35px; height: 45px; transform: translate3d(971px, 538px, 0px); z-index: 538;"><i class="fa-rotate-0 glyphicon glyphicon-info-sign  icon-white"></i></div><div class="awesome-marker-icon-red awesome-marker leaflet-zoom-animated leaflet-interactive" tabindex="0" role="button" style="margin-left: -17px; margin-top: -42px; width: 35px; height: 45px; transform: translate3d(963px, 468px, 0px); z-index: 468;"><i class="fa-rotate-0 glyphicon glyphicon-info-sign  icon-white"></i></div><div class="awesome-marker-icon-red awesome-marker leaflet-zoom-animated leaflet-interactive" tabindex="0" role="button" style="margin-left: -17px; margin-top: -42px; width: 35px; height: 45px; transform: translate3d(963px, 468px, 0px); z-index: 468;"><i class="fa-rotate-0 glyphicon glyphicon-info-sign  icon-white"></i></div><div class="awesome-marker-icon-red awesome-marker leaflet-zoom-animated leaflet-interactive" tabindex="0" role="button" style="margin-left: -17px; margin-top: -42px; width: 35px; height: 45px; transform: translate3d(1020px, 433px, 0px); z-index: 433;"><i class="fa-rotate-0 glyphicon glyphicon-info-sign  icon-white"></i></div><div class="awesome-marker-icon-red awesome-marker leaflet-zoom-animated leaflet-interactive" tabindex="0" role="button" style="margin-left: -17px; margin-top: -42px; width: 35px; height: 45px; transform: translate3d(1020px, 433px, 0px); z-index: 433;"><i class="fa-rotate-0 glyphicon glyphicon-info-sign  icon-white"></i></div><div class="awesome-marker-icon-red awesome-marker leaflet-zoom-animated leaflet-interactive" tabindex="0" role="button" style="margin-left: -17px; margin-top: -42px; width: 35px; height: 45px; transform: translate3d(1020px, 433px, 0px); z-index: 433;"><i class="fa-rotate-0 glyphicon glyphicon-info-sign  icon-white"></i></div><div class="awesome-marker-icon-red awesome-marker leaflet-zoom-animated leaflet-interactive" tabindex="0" role="button" style="margin-left: -17px; margin-top: -42px; width: 35px; height: 45px; transform: translate3d(1020px, 433px, 0px); z-index: 433;"><i class="fa-rotate-0 glyphicon glyphicon-info-sign  icon-white"></i></div><div class="awesome-marker-icon-red awesome-marker leaflet-zoom-animated leaflet-interactive" tabindex="0" role="button" style="margin-left: -17px; margin-top: -42px; width: 35px; height: 45px; transform: translate3d(1020px, 433px, 0px); z-index: 433;"><i class="fa-rotate-0 glyphicon glyphicon-info-sign  icon-white"></i></div><div class="awesome-marker-icon-red awesome-marker leaflet-zoom-animated leaflet-interactive" tabindex="0" role="button" style="margin-left: -17px; margin-top: -42px; width: 35px; height: 45px; transform: translate3d(1020px, 433px, 0px); z-index: 433;"><i class="fa-rotate-0 glyphicon glyphicon-info-sign  icon-white"></i></div><div class="awesome-marker-icon-red awesome-marker leaflet-zoom-animated leaflet-interactive" tabindex="0" role="button" style="margin-left: -17px; margin-top: -42px; width: 35px; height: 45px; transform: translate3d(1020px, 433px, 0px); z-index: 433;"><i class="fa-rotate-0 glyphicon glyphicon-info-sign  icon-white"></i></div><div class="awesome-marker-icon-red awesome-marker leaflet-zoom-animated leaflet-interactive" tabindex="0" role="button" style="margin-left: -17px; margin-top: -42px; width: 35px; height: 45px; transform: translate3d(1020px, 433px, 0px); z-index: 433;"><i class="fa-rotate-0 glyphicon glyphicon-info-sign  icon-white"></i></div><div class="awesome-marker-icon-red awesome-marker leaflet-zoom-animated leaflet-interactive" tabindex="0" role="button" style="margin-left: -17px; margin-top: -42px; width: 35px; height: 45px; transform: translate3d(971px, 538px, 0px); z-index: 538;"><i class="fa-rotate-0 glyphicon glyphicon-info-sign  icon-white"></i></div><div class="awesome-marker-icon-red awesome-marker leaflet-zoom-animated leaflet-interactive" tabindex="0" role="button" style="margin-left: -17px; margin-top: -42px; width: 35px; height: 45px; transform: translate3d(971px, 538px, 0px); z-index: 538;"><i class="fa-rotate-0 glyphicon glyphicon-info-sign  icon-white"></i></div><div class="awesome-marker-icon-blue awesome-marker leaflet-zoom-animated leaflet-interactive" tabindex="0" role="button" style="margin-left: -17px; margin-top: -42px; width: 35px; height: 45px; transform: translate3d(877px, 431px, 0px); z-index: 431;"><i class="fa-rotate-0 glyphicon glyphicon-info-sign  icon-white"></i></div><div class="awesome-marker-icon-blue awesome-marker leaflet-zoom-animated leaflet-interactive" tabindex="0" role="button" style="margin-left: -17px; margin-top: -42px; width: 35px; height: 45px; transform: translate3d(877px, 431px, 0px); z-index: 431;"><i class="fa-rotate-0 glyphicon glyphicon-info-sign  icon-white"></i></div><div class="awesome-marker-icon-blue awesome-marker leaflet-zoom-animated leaflet-interactive" tabindex="0" role="button" style="margin-left: -17px; margin-top: -42px; width: 35px; height: 45px; transform: translate3d(877px, 431px, 0px); z-index: 431;"><i class="fa-rotate-0 glyphicon glyphicon-info-sign  icon-white"></i></div><div class="awesome-marker-icon-blue awesome-marker leaflet-zoom-animated leaflet-interactive" tabindex="0" role="button" style="margin-left: -17px; margin-top: -42px; width: 35px; height: 45px; transform: translate3d(877px, 431px, 0px); z-index: 431;"><i class="fa-rotate-0 glyphicon glyphicon-info-sign  icon-white"></i></div><div class="awesome-marker-icon-blue awesome-marker leaflet-zoom-animated leaflet-interactive" tabindex="0" role="button" style="margin-left: -17px; margin-top: -42px; width: 35px; height: 45px; transform: translate3d(877px, 431px, 0px); z-index: 431;"><i class="fa-rotate-0 glyphicon glyphicon-info-sign  icon-white"></i></div><div class="awesome-marker-icon-blue awesome-marker leaflet-zoom-animated leaflet-interactive" tabindex="0" role="button" style="margin-left: -17px; margin-top: -42px; width: 35px; height: 45px; transform: translate3d(877px, 431px, 0px); z-index: 431;"><i class="fa-rotate-0 glyphicon glyphicon-info-sign  icon-white"></i></div><div class="awesome-marker-icon-red awesome-marker leaflet-zoom-animated leaflet-interactive" tabindex="0" role="button" style="margin-left: -17px; margin-top: -42px; width: 35px; height: 45px; transform: translate3d(877px, 431px, 0px); z-index: 431;"><i class="fa-rotate-0 glyphicon glyphicon-info-sign  icon-white"></i></div><div class="awesome-marker-icon-red awesome-marker leaflet-zoom-animated leaflet-interactive" tabindex="0" role="button" style="margin-left: -17px; margin-top: -42px; width: 35px; height: 45px; transform: translate3d(877px, 431px, 0px); z-index: 431;"><i class="fa-rotate-0 glyphicon glyphicon-info-sign  icon-white"></i></div><div class="awesome-marker-icon-red awesome-marker leaflet-zoom-animated leaflet-interactive" tabindex="0" role="button" style="margin-left: -17px; margin-top: -42px; width: 35px; height: 45px; transform: translate3d(877px, 431px, 0px); z-index: 431;"><i class="fa-rotate-0 glyphicon glyphicon-info-sign  icon-white"></i></div><div class="awesome-marker-icon-red awesome-marker leaflet-zoom-animated leaflet-interactive" tabindex="0" role="button" style="margin-left: -17px; margin-top: -42px; width: 35px; height: 45px; transform: translate3d(877px, 431px, 0px); z-index: 431;"><i class="fa-rotate-0 glyphicon glyphicon-info-sign  icon-white"></i></div><div class="awesome-marker-icon-red awesome-marker leaflet-zoom-animated leaflet-interactive" tabindex="0" role="button" style="margin-left: -17px; margin-top: -42px; width: 35px; height: 45px; transform: translate3d(877px, 431px, 0px); z-index: 431;"><i class="fa-rotate-0 glyphicon glyphicon-info-sign  icon-white"></i></div><div class="awesome-marker-icon-red awesome-marker leaflet-zoom-animated leaflet-interactive" tabindex="0" role="button" style="margin-left: -17px; margin-top: -42px; width: 35px; height: 45px; transform: translate3d(877px, 431px, 0px); z-index: 431;"><i class="fa-rotate-0 glyphicon glyphicon-info-sign  icon-white"></i></div><div class="awesome-marker-icon-red awesome-marker leaflet-zoom-animated leaflet-interactive" tabindex="0" role="button" style="margin-left: -17px; margin-top: -42px; width: 35px; height: 45px; transform: translate3d(877px, 431px, 0px); z-index: 431;"><i class="fa-rotate-0 glyphicon glyphicon-info-sign  icon-white"></i></div><div class="awesome-marker-icon-red awesome-marker leaflet-zoom-animated leaflet-interactive" tabindex="0" role="button" style="margin-left: -17px; margin-top: -42px; width: 35px; height: 45px; transform: translate3d(877px, 431px, 0px); z-index: 431;"><i class="fa-rotate-0 glyphicon glyphicon-info-sign  icon-white"></i></div><div class="awesome-marker-icon-red awesome-marker leaflet-zoom-animated leaflet-interactive" tabindex="0" role="button" style="margin-left: -17px; margin-top: -42px; width: 35px; height: 45px; transform: translate3d(877px, 431px, 0px); z-index: 431;"><i class="fa-rotate-0 glyphicon glyphicon-info-sign  icon-white"></i></div><div class="awesome-marker-icon-red awesome-marker leaflet-zoom-animated leaflet-interactive" tabindex="0" role="button" style="margin-left: -17px; margin-top: -42px; width: 35px; height: 45px; transform: translate3d(877px, 431px, 0px); z-index: 431;"><i class="fa-rotate-0 glyphicon glyphicon-info-sign  icon-white"></i></div><div class="awesome-marker-icon-red awesome-marker leaflet-zoom-animated leaflet-interactive" tabindex="0" role="button" style="margin-left: -17px; margin-top: -42px; width: 35px; height: 45px; transform: translate3d(877px, 431px, 0px); z-index: 431;"><i class="fa-rotate-0 glyphicon glyphicon-info-sign  icon-white"></i></div><div class="awesome-marker-icon-red awesome-marker leaflet-zoom-animated leaflet-interactive" tabindex="0" role="button" style="margin-left: -17px; margin-top: -42px; width: 35px; height: 45px; transform: translate3d(842px, 440px, 0px); z-index: 440;"><i class="fa-rotate-0 glyphicon glyphicon-info-sign  icon-white"></i></div><div class="awesome-marker-icon-red awesome-marker leaflet-zoom-animated leaflet-interactive" tabindex="0" role="button" style="margin-left: -17px; margin-top: -42px; width: 35px; height: 45px; transform: translate3d(1020px, 433px, 0px); z-index: 433;"><i class="fa-rotate-0 glyphicon glyphicon-info-sign  icon-white"></i></div><div class="awesome-marker-icon-red awesome-marker leaflet-zoom-animated leaflet-interactive" tabindex="0" role="button" style="margin-left: -17px; margin-top: -42px; width: 35px; height: 45px; transform: translate3d(971px, 538px, 0px); z-index: 538;"><i class="fa-rotate-0 glyphicon glyphicon-info-sign  icon-white"></i></div><div class="awesome-marker-icon-blue awesome-marker leaflet-zoom-animated leaflet-interactive" tabindex="0" role="button" style="margin-left: -17px; margin-top: -42px; width: 35px; height: 45px; transform: translate3d(937px, 16px, 0px); z-index: 16;"><i class="fa-rotate-0 glyphicon glyphicon-info-sign  icon-white"></i></div><div class="awesome-marker-icon-blue awesome-marker leaflet-zoom-animated leaflet-interactive" tabindex="0" role="button" style="margin-left: -17px; margin-top: -42px; width: 35px; height: 45px; transform: translate3d(937px, 16px, 0px); z-index: 16;"><i class="fa-rotate-0 glyphicon glyphicon-info-sign  icon-white"></i></div><div class="awesome-marker-icon-blue awesome-marker leaflet-zoom-animated leaflet-interactive" tabindex="0" role="button" style="margin-left: -17px; margin-top: -42px; width: 35px; height: 45px; transform: translate3d(937px, 16px, 0px); z-index: 16;"><i class="fa-rotate-0 glyphicon glyphicon-info-sign  icon-white"></i></div><div class="awesome-marker-icon-blue awesome-marker leaflet-zoom-animated leaflet-interactive" tabindex="0" role="button" style="margin-left: -17px; margin-top: -42px; width: 35px; height: 45px; transform: translate3d(937px, 16px, 0px); z-index: 16;"><i class="fa-rotate-0 glyphicon glyphicon-info-sign  icon-white"></i></div><div class="awesome-marker-icon-blue awesome-marker leaflet-zoom-animated leaflet-interactive" tabindex="0" role="button" style="margin-left: -17px; margin-top: -42px; width: 35px; height: 45px; transform: translate3d(937px, 16px, 0px); z-index: 16;"><i class="fa-rotate-0 glyphicon glyphicon-info-sign  icon-white"></i></div><div class="awesome-marker-icon-blue awesome-marker leaflet-zoom-animated leaflet-interactive" tabindex="0" role="button" style="margin-left: -17px; margin-top: -42px; width: 35px; height: 45px; transform: translate3d(937px, 16px, 0px); z-index: 16;"><i class="fa-rotate-0 glyphicon glyphicon-info-sign  icon-white"></i></div><div class="awesome-marker-icon-blue awesome-marker leaflet-zoom-animated leaflet-interactive" tabindex="0" role="button" style="margin-left: -17px; margin-top: -42px; width: 35px; height: 45px; transform: translate3d(937px, 16px, 0px); z-index: 16;"><i class="fa-rotate-0 glyphicon glyphicon-info-sign  icon-white"></i></div><div class="awesome-marker-icon-blue awesome-marker leaflet-zoom-animated leaflet-interactive" tabindex="0" role="button" style="margin-left: -17px; margin-top: -42px; width: 35px; height: 45px; transform: translate3d(937px, 16px, 0px); z-index: 16;"><i class="fa-rotate-0 glyphicon glyphicon-info-sign  icon-white"></i></div><div class="awesome-marker-icon-blue awesome-marker leaflet-zoom-animated leaflet-interactive" tabindex="0" role="button" style="margin-left: -17px; margin-top: -42px; width: 35px; height: 45px; transform: translate3d(937px, 16px, 0px); z-index: 16;"><i class="fa-rotate-0 glyphicon glyphicon-info-sign  icon-white"></i></div><div class="awesome-marker-icon-red awesome-marker leaflet-zoom-animated leaflet-interactive" tabindex="0" role="button" style="margin-left: -17px; margin-top: -42px; width: 35px; height: 45px; transform: translate3d(842px, 440px, 0px); z-index: 440;"><i class="fa-rotate-0 glyphicon glyphicon-info-sign  icon-white"></i></div><div class="awesome-marker-icon-red awesome-marker leaflet-zoom-animated leaflet-interactive" tabindex="0" role="button" style="margin-left: -17px; margin-top: -42px; width: 35px; height: 45px; transform: translate3d(988px, 471px, 0px); z-index: 471;"><i class="fa-rotate-0 glyphicon glyphicon-info-sign  icon-white"></i></div><div class="awesome-marker-icon-red awesome-marker leaflet-zoom-animated leaflet-interactive" tabindex="0" role="button" style="margin-left: -17px; margin-top: -42px; width: 35px; height: 45px; transform: translate3d(1020px, 433px, 0px); z-index: 433;"><i class="fa-rotate-0 glyphicon glyphicon-info-sign  icon-white"></i></div><div class="awesome-marker-icon-red awesome-marker leaflet-zoom-animated leaflet-interactive" tabindex="0" role="button" style="margin-left: -17px; margin-top: -42px; width: 35px; height: 45px; transform: translate3d(1020px, 433px, 0px); z-index: 433;"><i class="fa-rotate-0 glyphicon glyphicon-info-sign  icon-white"></i></div><div class="awesome-marker-icon-red awesome-marker leaflet-zoom-animated leaflet-interactive" tabindex="0" role="button" style="margin-left: -17px; margin-top: -42px; width: 35px; height: 45px; transform: translate3d(1000px, 434px, 0px); z-index: 434;"><i class="fa-rotate-0 glyphicon glyphicon-info-sign  icon-white"></i></div><div class="awesome-marker-icon-red awesome-marker leaflet-zoom-animated leaflet-interactive" tabindex="0" role="button" style="margin-left: -17px; margin-top: -42px; width: 35px; height: 45px; transform: translate3d(971px, 538px, 0px); z-index: 538;"><i class="fa-rotate-0 glyphicon glyphicon-info-sign  icon-white"></i></div><div class="awesome-marker-icon-red awesome-marker leaflet-zoom-animated leaflet-interactive" tabindex="0" role="button" style="margin-left: -17px; margin-top: -42px; width: 35px; height: 45px; transform: translate3d(971px, 538px, 0px); z-index: 538;"><i class="fa-rotate-0 glyphicon glyphicon-info-sign  icon-white"></i></div><div class="awesome-marker-icon-red awesome-marker leaflet-zoom-animated leaflet-interactive" tabindex="0" role="button" style="margin-left: -17px; margin-top: -42px; width: 35px; height: 45px; transform: translate3d(971px, 538px, 0px); z-index: 538;"><i class="fa-rotate-0 glyphicon glyphicon-info-sign  icon-white"></i></div><div class="awesome-marker-icon-red awesome-marker leaflet-zoom-animated leaflet-interactive" tabindex="0" role="button" style="margin-left: -17px; margin-top: -42px; width: 35px; height: 45px; transform: translate3d(971px, 538px, 0px); z-index: 538;"><i class="fa-rotate-0 glyphicon glyphicon-info-sign  icon-white"></i></div><div class="awesome-marker-icon-red awesome-marker leaflet-zoom-animated leaflet-interactive" tabindex="0" role="button" style="margin-left: -17px; margin-top: -42px; width: 35px; height: 45px; transform: translate3d(971px, 538px, 0px); z-index: 538;"><i class="fa-rotate-0 glyphicon glyphicon-info-sign  icon-white"></i></div><div class="awesome-marker-icon-red awesome-marker leaflet-zoom-animated leaflet-interactive" tabindex="0" role="button" style="margin-left: -17px; margin-top: -42px; width: 35px; height: 45px; transform: translate3d(971px, 538px, 0px); z-index: 538;"><i class="fa-rotate-0 glyphicon glyphicon-info-sign  icon-white"></i></div><div class="awesome-marker-icon-red awesome-marker leaflet-zoom-animated leaflet-interactive" tabindex="0" role="button" style="margin-left: -17px; margin-top: -42px; width: 35px; height: 45px; transform: translate3d(1020px, 433px, 0px); z-index: 433;"><i class="fa-rotate-0 glyphicon glyphicon-info-sign  icon-white"></i></div><div class="awesome-marker-icon-blue awesome-marker leaflet-zoom-animated leaflet-interactive" tabindex="0" role="button" style="margin-left: -17px; margin-top: -42px; width: 35px; height: 45px; transform: translate3d(1020px, 433px, 0px); z-index: 433;"><i class="fa-rotate-0 glyphicon glyphicon-info-sign  icon-white"></i></div><div class="awesome-marker-icon-blue awesome-marker leaflet-zoom-animated leaflet-interactive" tabindex="0" role="button" style="margin-left: -17px; margin-top: -42px; width: 35px; height: 45px; transform: translate3d(1020px, 433px, 0px); z-index: 433;"><i class="fa-rotate-0 glyphicon glyphicon-info-sign  icon-white"></i></div><div class="awesome-marker-icon-blue awesome-marker leaflet-zoom-animated leaflet-interactive" tabindex="0" role="button" style="margin-left: -17px; margin-top: -42px; width: 35px; height: 45px; transform: translate3d(173px, 971px, 0px); z-index: 971;"><i class="fa-rotate-0 glyphicon glyphicon-info-sign  icon-white"></i></div><div class="awesome-marker-icon-blue awesome-marker leaflet-zoom-animated leaflet-interactive" tabindex="0" role="button" style="margin-left: -17px; margin-top: -42px; width: 35px; height: 45px; transform: translate3d(971px, 538px, 0px); z-index: 538;"><i class="fa-rotate-0 glyphicon glyphicon-info-sign  icon-white"></i></div></div><div class="leaflet-pane leaflet-tooltip-pane"></div><div class="leaflet-pane leaflet-popup-pane"></div><div class="leaflet-proxy leaflet-zoom-animated" style="transform: translate3d(8683px, 5876px, 0px) scale(32);"></div></div><div class="leaflet-control-container"><div class="leaflet-top leaflet-left"><div class="leaflet-control-zoom leaflet-bar leaflet-control"><a class="leaflet-control-zoom-in" href="#" title="Zoom in" role="button" aria-label="Zoom in" aria-disabled="false"><span aria-hidden="true">+</span></a><a class="leaflet-control-zoom-out" href="#" title="Zoom out" role="button" aria-label="Zoom out" aria-disabled="false"><span aria-hidden="true">−</span></a></div></div><div class="leaflet-top leaflet-right"></div><div class="leaflet-bottom leaflet-left"></div><div class="leaflet-bottom leaflet-right"><div class="leaflet-control-attribution leaflet-control"><a href="https://leafletjs.com" title="A JavaScript library for interactive maps"><svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="12" height="8" viewBox="0 0 12 8" class="leaflet-attribution-flag"><path fill="#4C7BE1" d="M0 0h12v4H0z"></path><path fill="#FFD500" d="M0 4h12v3H0z"></path><path fill="#E0BC00" d="M0 7h12v1H0z"></path></svg> Leaflet</a> <span aria-hidden="true">|</span> © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors</div></div></div></div>
+        
+
+<script>
+    
+    
+            var map_abce5b104d796443670d63a4163d9919 = L.map(
+                "map_abce5b104d796443670d63a4163d9919",
+                {
+                    center: [45.28862798989899, 10.793030141414139],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 6,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_15f338690ac46dd219697e0664298715 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_15f338690ac46dd219697e0664298715.addTo(map_abce5b104d796443670d63a4163d9919);
+        
+    
+            var marker_2da5a03329844e4de767c5cd5efb89d3 = L.marker(
+                [45.407778, 11.885833],
+                {
+}
+            ).addTo(map_abce5b104d796443670d63a4163d9919);
+        
+    
+            var icon_1500185849f4bd65a1d5bc4c5d9d7ded = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_040c6084b94e15115aab0bd6b4d70ce3 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_9f771dee3fc5901d7dd1ade057a81d09 = $(`<div id="html_9f771dee3fc5901d7dd1ade057a81d09" style="width: 100.0%; height: 100.0%;">Padova / Падуя (Agostino Nifo / Агостино Нифо Сесса)</div>`)[0];
+                popup_040c6084b94e15115aab0bd6b4d70ce3.setContent(html_9f771dee3fc5901d7dd1ade057a81d09);
+            
+        
+
+        marker_2da5a03329844e4de767c5cd5efb89d3.bindPopup(popup_040c6084b94e15115aab0bd6b4d70ce3)
+        ;
+
+        
+    
+    
+                marker_2da5a03329844e4de767c5cd5efb89d3.setIcon(icon_1500185849f4bd65a1d5bc4c5d9d7ded);
+            
+    
+            var marker_49ae38a6a81d8f8dbad85bd3744d74d8 = L.marker(
+                [45.436944, 12.3325],
+                {
+}
+            ).addTo(map_abce5b104d796443670d63a4163d9919);
+        
+    
+            var icon_3eb44e3aa25917a0de382950c5a6697d = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_cdccbff51d69f7f7eaf63744e0809635 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_83c70aaa40709793e758d03fe73c7493 = $(`<div id="html_83c70aaa40709793e758d03fe73c7493" style="width: 100.0%; height: 100.0%;">Venezia / Венеция (Aldo Manuzio / Альд Мануций)</div>`)[0];
+                popup_cdccbff51d69f7f7eaf63744e0809635.setContent(html_83c70aaa40709793e758d03fe73c7493);
+            
+        
+
+        marker_49ae38a6a81d8f8dbad85bd3744d74d8.bindPopup(popup_cdccbff51d69f7f7eaf63744e0809635)
+        ;
+
+        
+    
+    
+                marker_49ae38a6a81d8f8dbad85bd3744d74d8.setIcon(icon_3eb44e3aa25917a0de382950c5a6697d);
+            
+    
+            var marker_f9c3a0d1e7adcb4cd0d431cd35e41645 = L.marker(
+                [45.436944, 12.3325],
+                {
+}
+            ).addTo(map_abce5b104d796443670d63a4163d9919);
+        
+    
+            var icon_043ff9749415f013870a63ab49845e71 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_b0cfc77e92212371978072ebb144c423 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_07e649fb8ce560f92751f6e890a1d184 = $(`<div id="html_07e649fb8ce560f92751f6e890a1d184" style="width: 100.0%; height: 100.0%;">Venezia / Венеция (Aldo Manuzio / Альд Мануций)</div>`)[0];
+                popup_b0cfc77e92212371978072ebb144c423.setContent(html_07e649fb8ce560f92751f6e890a1d184);
+            
+        
+
+        marker_f9c3a0d1e7adcb4cd0d431cd35e41645.bindPopup(popup_b0cfc77e92212371978072ebb144c423)
+        ;
+
+        
+    
+    
+                marker_f9c3a0d1e7adcb4cd0d431cd35e41645.setIcon(icon_043ff9749415f013870a63ab49845e71);
+            
+    
+            var marker_7b27718686001e1d0aeed889c7a484ee = L.marker(
+                [45.436944, 12.3325],
+                {
+}
+            ).addTo(map_abce5b104d796443670d63a4163d9919);
+        
+    
+            var icon_7b1ae194a14a9a4efe5aa6888091d809 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_1e22975c5567b2ad91364a53ae534111 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_31bc1030441838e75721d51f74da528e = $(`<div id="html_31bc1030441838e75721d51f74da528e" style="width: 100.0%; height: 100.0%;">Venezia / Венеция (Aldo Manuzio / Альд Мануций)</div>`)[0];
+                popup_1e22975c5567b2ad91364a53ae534111.setContent(html_31bc1030441838e75721d51f74da528e);
+            
+        
+
+        marker_7b27718686001e1d0aeed889c7a484ee.bindPopup(popup_1e22975c5567b2ad91364a53ae534111)
+        ;
+
+        
+    
+    
+                marker_7b27718686001e1d0aeed889c7a484ee.setIcon(icon_7b1ae194a14a9a4efe5aa6888091d809);
+            
+    
+            var marker_2b25e4f1aff76cdf4379c0ad297acafc = L.marker(
+                [45.436944, 12.3325],
+                {
+}
+            ).addTo(map_abce5b104d796443670d63a4163d9919);
+        
+    
+            var icon_e95fcb3cc6c991d044979d7f19fc30a4 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_f6e4e7024db1329f4856587e57a61c11 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_e3fbb8ca7268a495c69b483637d7f47b = $(`<div id="html_e3fbb8ca7268a495c69b483637d7f47b" style="width: 100.0%; height: 100.0%;">Venezia / Венеция (Aldo Manuzio / Альд Мануций)</div>`)[0];
+                popup_f6e4e7024db1329f4856587e57a61c11.setContent(html_e3fbb8ca7268a495c69b483637d7f47b);
+            
+        
+
+        marker_2b25e4f1aff76cdf4379c0ad297acafc.bindPopup(popup_f6e4e7024db1329f4856587e57a61c11)
+        ;
+
+        
+    
+    
+                marker_2b25e4f1aff76cdf4379c0ad297acafc.setIcon(icon_e95fcb3cc6c991d044979d7f19fc30a4);
+            
+    
+            var marker_09d6a5077c71d4a99b3f3a9b5d02f70b = L.marker(
+                [45.436944, 12.3325],
+                {
+}
+            ).addTo(map_abce5b104d796443670d63a4163d9919);
+        
+    
+            var icon_75405efd3ce617274d284d80e10551c4 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_f34f9507490d6d93e987d52fd4fb970d = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_69180a79123b4e8b29a033b0b742b9c2 = $(`<div id="html_69180a79123b4e8b29a033b0b742b9c2" style="width: 100.0%; height: 100.0%;">Venezia / Венеция (Aldo Manuzio / Альд Мануций)</div>`)[0];
+                popup_f34f9507490d6d93e987d52fd4fb970d.setContent(html_69180a79123b4e8b29a033b0b742b9c2);
+            
+        
+
+        marker_09d6a5077c71d4a99b3f3a9b5d02f70b.bindPopup(popup_f34f9507490d6d93e987d52fd4fb970d)
+        ;
+
+        
+    
+    
+                marker_09d6a5077c71d4a99b3f3a9b5d02f70b.setIcon(icon_75405efd3ce617274d284d80e10551c4);
+            
+    
+            var marker_5bd82a8e8eb57972e1f1445d89b63b9b = L.marker(
+                [45.436944, 12.3325],
+                {
+}
+            ).addTo(map_abce5b104d796443670d63a4163d9919);
+        
+    
+            var icon_d9764053f3d3105c052edca716dccae7 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_73ab08cbb872b8afc5975f30f0d534cd = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_0fc79ec39486122aaf11f6596bff8e51 = $(`<div id="html_0fc79ec39486122aaf11f6596bff8e51" style="width: 100.0%; height: 100.0%;">Venezia / Венеция (Aldo Manuzio / Альд Мануций)</div>`)[0];
+                popup_73ab08cbb872b8afc5975f30f0d534cd.setContent(html_0fc79ec39486122aaf11f6596bff8e51);
+            
+        
+
+        marker_5bd82a8e8eb57972e1f1445d89b63b9b.bindPopup(popup_73ab08cbb872b8afc5975f30f0d534cd)
+        ;
+
+        
+    
+    
+                marker_5bd82a8e8eb57972e1f1445d89b63b9b.setIcon(icon_d9764053f3d3105c052edca716dccae7);
+            
+    
+            var marker_52ffd279dc49fcfe35644daf4ce4370e = L.marker(
+                [45.436944, 12.3325],
+                {
+}
+            ).addTo(map_abce5b104d796443670d63a4163d9919);
+        
+    
+            var icon_e85ac6061bb21105b6574ea7a3e7c7fc = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_1089939b4367634c06259dc5795b6502 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_3dfe6ac24295fc51b3569e80abba0a2a = $(`<div id="html_3dfe6ac24295fc51b3569e80abba0a2a" style="width: 100.0%; height: 100.0%;">Venezia / Венеция (Aldo Manuzio / Альд Мануций)</div>`)[0];
+                popup_1089939b4367634c06259dc5795b6502.setContent(html_3dfe6ac24295fc51b3569e80abba0a2a);
+            
+        
+
+        marker_52ffd279dc49fcfe35644daf4ce4370e.bindPopup(popup_1089939b4367634c06259dc5795b6502)
+        ;
+
+        
+    
+    
+                marker_52ffd279dc49fcfe35644daf4ce4370e.setIcon(icon_e85ac6061bb21105b6574ea7a3e7c7fc);
+            
+    
+            var marker_3715e646ef18e85acd37544b6a06abb9 = L.marker(
+                [45.436944, 12.3325],
+                {
+}
+            ).addTo(map_abce5b104d796443670d63a4163d9919);
+        
+    
+            var icon_cf4301c259884ed3a6663875aaa2fbaa = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_6b4987e49661e1ee73bd1b6a307f9c2f = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_64b479822243693e1ad6d26bba392c20 = $(`<div id="html_64b479822243693e1ad6d26bba392c20" style="width: 100.0%; height: 100.0%;">Venezia / Венеция (Aldo Manuzio / Альд Мануций)</div>`)[0];
+                popup_6b4987e49661e1ee73bd1b6a307f9c2f.setContent(html_64b479822243693e1ad6d26bba392c20);
+            
+        
+
+        marker_3715e646ef18e85acd37544b6a06abb9.bindPopup(popup_6b4987e49661e1ee73bd1b6a307f9c2f)
+        ;
+
+        
+    
+    
+                marker_3715e646ef18e85acd37544b6a06abb9.setIcon(icon_cf4301c259884ed3a6663875aaa2fbaa);
+            
+    
+            var marker_010825d2eb626b87be36ddb8eac04c4a = L.marker(
+                [45.436944, 12.3325],
+                {
+}
+            ).addTo(map_abce5b104d796443670d63a4163d9919);
+        
+    
+            var icon_003aabd9840384a9b7a666be879bb499 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_f4ff852486adc2bc6cd611e9782cf2de = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_cec9d52f11464ec3e45c017abef25f14 = $(`<div id="html_cec9d52f11464ec3e45c017abef25f14" style="width: 100.0%; height: 100.0%;">Venezia / Венеция (Aldo Manuzio / Альд Мануций)</div>`)[0];
+                popup_f4ff852486adc2bc6cd611e9782cf2de.setContent(html_cec9d52f11464ec3e45c017abef25f14);
+            
+        
+
+        marker_010825d2eb626b87be36ddb8eac04c4a.bindPopup(popup_f4ff852486adc2bc6cd611e9782cf2de)
+        ;
+
+        
+    
+    
+                marker_010825d2eb626b87be36ddb8eac04c4a.setIcon(icon_003aabd9840384a9b7a666be879bb499);
+            
+    
+            var marker_5bcdd1354eeb74c7463b6dd7bcf1374a = L.marker(
+                [45.436944, 12.3325],
+                {
+}
+            ).addTo(map_abce5b104d796443670d63a4163d9919);
+        
+    
+            var icon_6a7f1a495d1ddf5908d4001d081dbf8e = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_822b283da790c9b2fa0c532a5cf3c9fd = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_02f886d5c2a0eef25fda9e0ca68ab0ff = $(`<div id="html_02f886d5c2a0eef25fda9e0ca68ab0ff" style="width: 100.0%; height: 100.0%;">Venezia / Венеция (Aldo Manuzio / Альд Мануций)</div>`)[0];
+                popup_822b283da790c9b2fa0c532a5cf3c9fd.setContent(html_02f886d5c2a0eef25fda9e0ca68ab0ff);
+            
+        
+
+        marker_5bcdd1354eeb74c7463b6dd7bcf1374a.bindPopup(popup_822b283da790c9b2fa0c532a5cf3c9fd)
+        ;
+
+        
+    
+    
+                marker_5bcdd1354eeb74c7463b6dd7bcf1374a.setIcon(icon_6a7f1a495d1ddf5908d4001d081dbf8e);
+            
+    
+            var marker_6e6cb5fcce175fa01f988cbd95b92436 = L.marker(
+                [40.0, -4.0],
+                {
+}
+            ).addTo(map_abce5b104d796443670d63a4163d9919);
+        
+    
+            var icon_3da5e600ede5af59a073e85de609b431 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_9eed7d9482b48f9aee86138e2ac51908 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_b6d7eb14e9ac949fdcec55e8a99fb85c = $(`<div id="html_b6d7eb14e9ac949fdcec55e8a99fb85c" style="width: 100.0%; height: 100.0%;">Spagna / Испания (Alessandro VI / Александр VI)</div>`)[0];
+                popup_9eed7d9482b48f9aee86138e2ac51908.setContent(html_b6d7eb14e9ac949fdcec55e8a99fb85c);
+            
+        
+
+        marker_6e6cb5fcce175fa01f988cbd95b92436.bindPopup(popup_9eed7d9482b48f9aee86138e2ac51908)
+        ;
+
+        
+    
+    
+                marker_6e6cb5fcce175fa01f988cbd95b92436.setIcon(icon_3da5e600ede5af59a073e85de609b431);
+            
+    
+            var marker_824dc09b5c5a0f6b0e78735e95942c0f = L.marker(
+                [45.464167, 9.189444],
+                {
+}
+            ).addTo(map_abce5b104d796443670d63a4163d9919);
+        
+    
+            var icon_ab768663ca766129a7dec491ea93e667 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_02220b3460fc06bfb1156f835c8fff11 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_571ef1af3d11976c8207a67f9187a049 = $(`<div id="html_571ef1af3d11976c8207a67f9187a049" style="width: 100.0%; height: 100.0%;">Milano / Милан (Ambrogio da Rosate / Амвросий Розаде)</div>`)[0];
+                popup_02220b3460fc06bfb1156f835c8fff11.setContent(html_571ef1af3d11976c8207a67f9187a049);
+            
+        
+
+        marker_824dc09b5c5a0f6b0e78735e95942c0f.bindPopup(popup_02220b3460fc06bfb1156f835c8fff11)
+        ;
+
+        
+    
+    
+                marker_824dc09b5c5a0f6b0e78735e95942c0f.setIcon(icon_ab768663ca766129a7dec491ea93e667);
+            
+    
+            var marker_191ed8fbd5b0bc8e918768c26d3bfa51 = L.marker(
+                [45.464167, 9.189444],
+                {
+}
+            ).addTo(map_abce5b104d796443670d63a4163d9919);
+        
+    
+            var icon_19811df962c27ab9f2680578da21c2ab = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_06d830647582699cd89d3e20d72c54cb = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_6068cbf113e88aa9115e711f8d5d6c61 = $(`<div id="html_6068cbf113e88aa9115e711f8d5d6c61" style="width: 100.0%; height: 100.0%;">Milano / Милан (Ambrogio da Rosate / Амвросий Розаде)</div>`)[0];
+                popup_06d830647582699cd89d3e20d72c54cb.setContent(html_6068cbf113e88aa9115e711f8d5d6c61);
+            
+        
+
+        marker_191ed8fbd5b0bc8e918768c26d3bfa51.bindPopup(popup_06d830647582699cd89d3e20d72c54cb)
+        ;
+
+        
+    
+    
+                marker_191ed8fbd5b0bc8e918768c26d3bfa51.setIcon(icon_19811df962c27ab9f2680578da21c2ab);
+            
+    
+            var marker_c1169ada9f624b8e19f11174a8f0c574 = L.marker(
+                [45.464167, 9.189444],
+                {
+}
+            ).addTo(map_abce5b104d796443670d63a4163d9919);
+        
+    
+            var icon_0ec74dc3933b9603c5ba7dba27082b3a = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_18f4deed0fa1e2f3c36d048ce142fa6a = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_5210d18d0240285ee4cd7708c5ee4e07 = $(`<div id="html_5210d18d0240285ee4cd7708c5ee4e07" style="width: 100.0%; height: 100.0%;">Milano / Милан (Ambrogio da Rosate / Амвросий Розаде)</div>`)[0];
+                popup_18f4deed0fa1e2f3c36d048ce142fa6a.setContent(html_5210d18d0240285ee4cd7708c5ee4e07);
+            
+        
+
+        marker_c1169ada9f624b8e19f11174a8f0c574.bindPopup(popup_18f4deed0fa1e2f3c36d048ce142fa6a)
+        ;
+
+        
+    
+    
+                marker_c1169ada9f624b8e19f11174a8f0c574.setIcon(icon_0ec74dc3933b9603c5ba7dba27082b3a);
+            
+    
+            var marker_88626d4d8dc0f3b3c938a45250628f36 = L.marker(
+                [45.464167, 9.189444],
+                {
+}
+            ).addTo(map_abce5b104d796443670d63a4163d9919);
+        
+    
+            var icon_3cd1d6c4b2ca634691e78a0bdc25a5c4 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_5bd831c294a6bb8d875f303ddc1aa88d = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_f3d852ec1e1508b2d2abf8fa006884ac = $(`<div id="html_f3d852ec1e1508b2d2abf8fa006884ac" style="width: 100.0%; height: 100.0%;">Milano / Милан (Ambrogio da Rosate / Амвросий Розаде)</div>`)[0];
+                popup_5bd831c294a6bb8d875f303ddc1aa88d.setContent(html_f3d852ec1e1508b2d2abf8fa006884ac);
+            
+        
+
+        marker_88626d4d8dc0f3b3c938a45250628f36.bindPopup(popup_5bd831c294a6bb8d875f303ddc1aa88d)
+        ;
+
+        
+    
+    
+                marker_88626d4d8dc0f3b3c938a45250628f36.setIcon(icon_3cd1d6c4b2ca634691e78a0bdc25a5c4);
+            
+    
+            var marker_715d081b16fb4ffce2d00ee21af8a82e = L.marker(
+                [45.464167, 9.189444],
+                {
+}
+            ).addTo(map_abce5b104d796443670d63a4163d9919);
+        
+    
+            var icon_820241d3c8c622def1443c5b206f1838 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_2f40ce44f91c4785cde7529b2aaa4887 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_2de130fa2008212ed5a758d8c95aaab6 = $(`<div id="html_2de130fa2008212ed5a758d8c95aaab6" style="width: 100.0%; height: 100.0%;">Milano / Милан (Ambrogio da Rosate / Амвросий Розаде)</div>`)[0];
+                popup_2f40ce44f91c4785cde7529b2aaa4887.setContent(html_2de130fa2008212ed5a758d8c95aaab6);
+            
+        
+
+        marker_715d081b16fb4ffce2d00ee21af8a82e.bindPopup(popup_2f40ce44f91c4785cde7529b2aaa4887)
+        ;
+
+        
+    
+    
+                marker_715d081b16fb4ffce2d00ee21af8a82e.setIcon(icon_820241d3c8c622def1443c5b206f1838);
+            
+    
+            var marker_56078afd7535a6e7c6e40bd3eb63ad8b = L.marker(
+                [45.464167, 9.189444],
+                {
+}
+            ).addTo(map_abce5b104d796443670d63a4163d9919);
+        
+    
+            var icon_ec780850e0c356c46341428ce5ee3e0a = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_ee3c0c1f4c443e17e7089b2b98e8ef19 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_bd47679275f725e2c04c19a3b2ea203d = $(`<div id="html_bd47679275f725e2c04c19a3b2ea203d" style="width: 100.0%; height: 100.0%;">Milano / Милан (Ambrogio da Rosate / Амвросий Розаде)</div>`)[0];
+                popup_ee3c0c1f4c443e17e7089b2b98e8ef19.setContent(html_bd47679275f725e2c04c19a3b2ea203d);
+            
+        
+
+        marker_56078afd7535a6e7c6e40bd3eb63ad8b.bindPopup(popup_ee3c0c1f4c443e17e7089b2b98e8ef19)
+        ;
+
+        
+    
+    
+                marker_56078afd7535a6e7c6e40bd3eb63ad8b.setIcon(icon_ec780850e0c356c46341428ce5ee3e0a);
+            
+    
+            var marker_35012ff9444eb4c84b267ea85a8fcccb = L.marker(
+                [45.464167, 9.189444],
+                {
+}
+            ).addTo(map_abce5b104d796443670d63a4163d9919);
+        
+    
+            var icon_e02ea40054192badae99d4122061f0f6 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_d66eaa2431d025e80e2507bb63293f37 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_402b03f30f54e15ae83986434a984b6c = $(`<div id="html_402b03f30f54e15ae83986434a984b6c" style="width: 100.0%; height: 100.0%;">Milano / Милан (Ambrogio da Rosate / Амвросий Розаде)</div>`)[0];
+                popup_d66eaa2431d025e80e2507bb63293f37.setContent(html_402b03f30f54e15ae83986434a984b6c);
+            
+        
+
+        marker_35012ff9444eb4c84b267ea85a8fcccb.bindPopup(popup_d66eaa2431d025e80e2507bb63293f37)
+        ;
+
+        
+    
+    
+                marker_35012ff9444eb4c84b267ea85a8fcccb.setIcon(icon_e02ea40054192badae99d4122061f0f6);
+            
+    
+            var marker_7cd09e1cfbc8fdd29a600eb26c8eb4f8 = L.marker(
+                [45.464167, 9.189444],
+                {
+}
+            ).addTo(map_abce5b104d796443670d63a4163d9919);
+        
+    
+            var icon_4bdc5b088a2a78348274d6ba3edfcdc2 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_3420d34482d16c23704587710b3d83c1 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_863a78b952d37943817fb0b8080d0879 = $(`<div id="html_863a78b952d37943817fb0b8080d0879" style="width: 100.0%; height: 100.0%;">Milano / Милан (Ambrogio da Rosate / Амвросий Розаде)</div>`)[0];
+                popup_3420d34482d16c23704587710b3d83c1.setContent(html_863a78b952d37943817fb0b8080d0879);
+            
+        
+
+        marker_7cd09e1cfbc8fdd29a600eb26c8eb4f8.bindPopup(popup_3420d34482d16c23704587710b3d83c1)
+        ;
+
+        
+    
+    
+                marker_7cd09e1cfbc8fdd29a600eb26c8eb4f8.setIcon(icon_4bdc5b088a2a78348274d6ba3edfcdc2);
+            
+    
+            var marker_de86bfd380f02cd9a7a8e66b39181653 = L.marker(
+                [45.464167, 9.189444],
+                {
+}
+            ).addTo(map_abce5b104d796443670d63a4163d9919);
+        
+    
+            var icon_782e1dad13bf28a8591f657972e17222 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_4b2224f4dccb491912b18ff6bb73a6cb = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_f8b7c62cd62ea6d0771421d79b60849c = $(`<div id="html_f8b7c62cd62ea6d0771421d79b60849c" style="width: 100.0%; height: 100.0%;">Milano / Милан (Ambrogio da Rosate / Амвросий Розаде)</div>`)[0];
+                popup_4b2224f4dccb491912b18ff6bb73a6cb.setContent(html_f8b7c62cd62ea6d0771421d79b60849c);
+            
+        
+
+        marker_de86bfd380f02cd9a7a8e66b39181653.bindPopup(popup_4b2224f4dccb491912b18ff6bb73a6cb)
+        ;
+
+        
+    
+    
+                marker_de86bfd380f02cd9a7a8e66b39181653.setIcon(icon_782e1dad13bf28a8591f657972e17222);
+            
+    
+            var marker_d7e2d8e820975a79ee4b70e8cf70e38a = L.marker(
+                [45.464167, 9.189444],
+                {
+}
+            ).addTo(map_abce5b104d796443670d63a4163d9919);
+        
+    
+            var icon_2509c77f2a16345c5fef24ceba61ebc6 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_4c223cd1470f174da84786184f110fd6 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_0191d79239fe6833ce66d14dd2b317da = $(`<div id="html_0191d79239fe6833ce66d14dd2b317da" style="width: 100.0%; height: 100.0%;">Milano / Милан (Ambrogio da Rosate / Амвросий Розаде)</div>`)[0];
+                popup_4c223cd1470f174da84786184f110fd6.setContent(html_0191d79239fe6833ce66d14dd2b317da);
+            
+        
+
+        marker_d7e2d8e820975a79ee4b70e8cf70e38a.bindPopup(popup_4c223cd1470f174da84786184f110fd6)
+        ;
+
+        
+    
+    
+                marker_d7e2d8e820975a79ee4b70e8cf70e38a.setIcon(icon_2509c77f2a16345c5fef24ceba61ebc6);
+            
+    
+            var marker_a25cfc80166f8ec63632ec5c686f2927 = L.marker(
+                [45.464167, 9.189444],
+                {
+}
+            ).addTo(map_abce5b104d796443670d63a4163d9919);
+        
+    
+            var icon_399e4f6b4c496e78611cf4ea9c848b87 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_b0fa1835009f2d9f7e052074348fa870 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_1258a0669af8629e9349eb10d825132d = $(`<div id="html_1258a0669af8629e9349eb10d825132d" style="width: 100.0%; height: 100.0%;">Milano / Милан (Ambrogio da Rosate / Амвросий Розаде)</div>`)[0];
+                popup_b0fa1835009f2d9f7e052074348fa870.setContent(html_1258a0669af8629e9349eb10d825132d);
+            
+        
+
+        marker_a25cfc80166f8ec63632ec5c686f2927.bindPopup(popup_b0fa1835009f2d9f7e052074348fa870)
+        ;
+
+        
+    
+    
+                marker_a25cfc80166f8ec63632ec5c686f2927.setIcon(icon_399e4f6b4c496e78611cf4ea9c848b87);
+            
+    
+            var marker_1f86e56b6bb7e0f52ec48f0ed8bef7ea = L.marker(
+                [45.464167, 9.189444],
+                {
+}
+            ).addTo(map_abce5b104d796443670d63a4163d9919);
+        
+    
+            var icon_6871c46c5649a334b0f372d60a65da77 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_3069abf544830630e25c1b7d5a3ccec2 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_d2870f8e45c0357c53915043c0f482b8 = $(`<div id="html_d2870f8e45c0357c53915043c0f482b8" style="width: 100.0%; height: 100.0%;">Milano / Милан (Ambrogio da Rosate / Амвросий Розаде)</div>`)[0];
+                popup_3069abf544830630e25c1b7d5a3ccec2.setContent(html_d2870f8e45c0357c53915043c0f482b8);
+            
+        
+
+        marker_1f86e56b6bb7e0f52ec48f0ed8bef7ea.bindPopup(popup_3069abf544830630e25c1b7d5a3ccec2)
+        ;
+
+        
+    
+    
+                marker_1f86e56b6bb7e0f52ec48f0ed8bef7ea.setIcon(icon_6871c46c5649a334b0f372d60a65da77);
+            
+    
+            var marker_ba202c27c0a95f24da23dc2b784c0681 = L.marker(
+                [45.464167, 9.189444],
+                {
+}
+            ).addTo(map_abce5b104d796443670d63a4163d9919);
+        
+    
+            var icon_dce564eb389a284b50e9a6efbc216312 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_bf1a146ab9572671de3cee329f86f291 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_6eea7e3f58458a709453ef593b2f69f1 = $(`<div id="html_6eea7e3f58458a709453ef593b2f69f1" style="width: 100.0%; height: 100.0%;">Milano / Милан (Ambrogio da Rosate / Амвросий Розаде)</div>`)[0];
+                popup_bf1a146ab9572671de3cee329f86f291.setContent(html_6eea7e3f58458a709453ef593b2f69f1);
+            
+        
+
+        marker_ba202c27c0a95f24da23dc2b784c0681.bindPopup(popup_bf1a146ab9572671de3cee329f86f291)
+        ;
+
+        
+    
+    
+                marker_ba202c27c0a95f24da23dc2b784c0681.setIcon(icon_dce564eb389a284b50e9a6efbc216312);
+            
+    
+            var marker_7ca3ef672e59f86464af28dc47d57963 = L.marker(
+                [45.464167, 9.189444],
+                {
+}
+            ).addTo(map_abce5b104d796443670d63a4163d9919);
+        
+    
+            var icon_cf2a605543cdc60fd8859e3750e9725e = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_53c4e8698eb6914f8d8f0358747c89c4 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_1c950bc09d7a31b5fa3f51a264aa653c = $(`<div id="html_1c950bc09d7a31b5fa3f51a264aa653c" style="width: 100.0%; height: 100.0%;">Milano / Милан (Ambrogio da Rosate / Амвросий Розаде)</div>`)[0];
+                popup_53c4e8698eb6914f8d8f0358747c89c4.setContent(html_1c950bc09d7a31b5fa3f51a264aa653c);
+            
+        
+
+        marker_7ca3ef672e59f86464af28dc47d57963.bindPopup(popup_53c4e8698eb6914f8d8f0358747c89c4)
+        ;
+
+        
+    
+    
+                marker_7ca3ef672e59f86464af28dc47d57963.setIcon(icon_cf2a605543cdc60fd8859e3750e9725e);
+            
+    
+            var marker_a7277a786668b79b75e1648c3af9907c = L.marker(
+                [45.464167, 9.189444],
+                {
+}
+            ).addTo(map_abce5b104d796443670d63a4163d9919);
+        
+    
+            var icon_1e5f19036c175ae3f5eebf3cd8d1bfdf = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_1b52f1b92170f0acebd0fb6cd9e9dc1b = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_284ee11c82dbfe55e40629bd667daa7f = $(`<div id="html_284ee11c82dbfe55e40629bd667daa7f" style="width: 100.0%; height: 100.0%;">Milano / Милан (Ambrogio da Rosate / Амвросий Розаде)</div>`)[0];
+                popup_1b52f1b92170f0acebd0fb6cd9e9dc1b.setContent(html_284ee11c82dbfe55e40629bd667daa7f);
+            
+        
+
+        marker_a7277a786668b79b75e1648c3af9907c.bindPopup(popup_1b52f1b92170f0acebd0fb6cd9e9dc1b)
+        ;
+
+        
+    
+    
+                marker_a7277a786668b79b75e1648c3af9907c.setIcon(icon_1e5f19036c175ae3f5eebf3cd8d1bfdf);
+            
+    
+            var marker_fb64413c1b3f0e167372204e3cacf8a0 = L.marker(
+                [45.464167, 9.189444],
+                {
+}
+            ).addTo(map_abce5b104d796443670d63a4163d9919);
+        
+    
+            var icon_ca2235d8e39202466e730179f98f5439 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_9490783c499e60d98de50089c9bd6d33 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_d4d3aacbb935c07252cd01ed79aab9c0 = $(`<div id="html_d4d3aacbb935c07252cd01ed79aab9c0" style="width: 100.0%; height: 100.0%;">Milano / Милан (Ambrogio da Rosate / Амвросий Розаде)</div>`)[0];
+                popup_9490783c499e60d98de50089c9bd6d33.setContent(html_d4d3aacbb935c07252cd01ed79aab9c0);
+            
+        
+
+        marker_fb64413c1b3f0e167372204e3cacf8a0.bindPopup(popup_9490783c499e60d98de50089c9bd6d33)
+        ;
+
+        
+    
+    
+                marker_fb64413c1b3f0e167372204e3cacf8a0.setIcon(icon_ca2235d8e39202466e730179f98f5439);
+            
+    
+            var marker_d6de6a2e0469a5e0737129360ebdee04 = L.marker(
+                [43.779167, 11.246111],
+                {
+}
+            ).addTo(map_abce5b104d796443670d63a4163d9919);
+        
+    
+            var icon_213bd5f23e21e77f791a861727daa4c4 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_c4e2dcc0ca1c7eae3105d7eae0d67181 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_ff1c7114b1a9da95ce511bdb6c67b393 = $(`<div id="html_ff1c7114b1a9da95ce511bdb6c67b393" style="width: 100.0%; height: 100.0%;">Firenze / Флорентия (Angelo Poliziano / Анджело Полициано)</div>`)[0];
+                popup_c4e2dcc0ca1c7eae3105d7eae0d67181.setContent(html_ff1c7114b1a9da95ce511bdb6c67b393);
+            
+        
+
+        marker_d6de6a2e0469a5e0737129360ebdee04.bindPopup(popup_c4e2dcc0ca1c7eae3105d7eae0d67181)
+        ;
+
+        
+    
+    
+                marker_d6de6a2e0469a5e0737129360ebdee04.setIcon(icon_213bd5f23e21e77f791a861727daa4c4);
+            
+    
+            var marker_f1b4ad3398ffc4597f3a0e95f957d409 = L.marker(
+                [44.493611, 11.338611],
+                {
+}
+            ).addTo(map_abce5b104d796443670d63a4163d9919);
+        
+    
+            var icon_99a1e262150c0ae6c04b684bd86ecbd7 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_358309115bd0fd0aee7986c4e72eb625 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_d6b687b31fb7d712583658aae8afd88d = $(`<div id="html_d6b687b31fb7d712583658aae8afd88d" style="width: 100.0%; height: 100.0%;">Bologna / Болонья (Antonio Cortesi Urceo, Codro / Антонио Урчео Кодро)</div>`)[0];
+                popup_358309115bd0fd0aee7986c4e72eb625.setContent(html_d6b687b31fb7d712583658aae8afd88d);
+            
+        
+
+        marker_f1b4ad3398ffc4597f3a0e95f957d409.bindPopup(popup_358309115bd0fd0aee7986c4e72eb625)
+        ;
+
+        
+    
+    
+                marker_f1b4ad3398ffc4597f3a0e95f957d409.setIcon(icon_99a1e262150c0ae6c04b684bd86ecbd7);
+            
+    
+            var marker_bbac4fb032f6c3af16bdda25d2c272be = L.marker(
+                [45.436944, 12.3325],
+                {
+}
+            ).addTo(map_abce5b104d796443670d63a4163d9919);
+        
+    
+            var icon_dac282c58b60da10e60250db8d86226f = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_8f865c40e9dabf9f1b1f4ce975fc2899 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_294b0b9addc42da1e8d38fea5d87f931 = $(`<div id="html_294b0b9addc42da1e8d38fea5d87f931" style="width: 100.0%; height: 100.0%;">Venezia / Венеция (Aristobulo Apostolio / Ἀρσένιος Ἀποστόλιος / Аристовул Апостолис)</div>`)[0];
+                popup_8f865c40e9dabf9f1b1f4ce975fc2899.setContent(html_294b0b9addc42da1e8d38fea5d87f931);
+            
+        
+
+        marker_bbac4fb032f6c3af16bdda25d2c272be.bindPopup(popup_8f865c40e9dabf9f1b1f4ce975fc2899)
+        ;
+
+        
+    
+    
+                marker_bbac4fb032f6c3af16bdda25d2c272be.setIcon(icon_dac282c58b60da10e60250db8d86226f);
+            
+    
+            var marker_2db7c79d0bcb2934113879dcee91ab0d = L.marker(
+                [43.779167, 11.246111],
+                {
+}
+            ).addTo(map_abce5b104d796443670d63a4163d9919);
+        
+    
+            var icon_614808cdfca5a8d943e0da9bc1292d81 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_b1c1f674f5dc6a0425e24c41cd28d72c = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_1246fb3f01b6d8aa0c38bcf1b14b4f59 = $(`<div id="html_1246fb3f01b6d8aa0c38bcf1b14b4f59" style="width: 100.0%; height: 100.0%;">Firenze / Флорентия (cfr. Speranzi 2013: 43-98) (Aristobulo Apostolio / Ἀρσένιος Ἀποστόλιος / Аристовул Апостолис)</div>`)[0];
+                popup_b1c1f674f5dc6a0425e24c41cd28d72c.setContent(html_1246fb3f01b6d8aa0c38bcf1b14b4f59);
+            
+        
+
+        marker_2db7c79d0bcb2934113879dcee91ab0d.bindPopup(popup_b1c1f674f5dc6a0425e24c41cd28d72c)
+        ;
+
+        
+    
+    
+                marker_2db7c79d0bcb2934113879dcee91ab0d.setIcon(icon_614808cdfca5a8d943e0da9bc1292d81);
+            
+    
+            var marker_f02e48e3754332f0c4b0d083b52882ee = L.marker(
+                [43.0, 16.0],
+                {
+}
+            ).addTo(map_abce5b104d796443670d63a4163d9919);
+        
+    
+            var icon_5ec8f2ad70a8ee8cc5f6ecbd4924603e = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_67fcd20976b7d07450ba9defb0b9ffc3 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_0dcdd57853812082f32059ccd6ae7de8 = $(`<div id="html_0dcdd57853812082f32059ccd6ae7de8" style="width: 100.0%; height: 100.0%;">Adriatico, mare / Адриатическое море, Corfù (Corcira) / Корфу (Керкира) (Bayezid II / Баязид II)</div>`)[0];
+                popup_67fcd20976b7d07450ba9defb0b9ffc3.setContent(html_0dcdd57853812082f32059ccd6ae7de8);
+            
+        
+
+        marker_f02e48e3754332f0c4b0d083b52882ee.bindPopup(popup_67fcd20976b7d07450ba9defb0b9ffc3)
+        ;
+
+        
+    
+    
+                marker_f02e48e3754332f0c4b0d083b52882ee.setIcon(icon_5ec8f2ad70a8ee8cc5f6ecbd4924603e);
+            
+    
+            var marker_a020294444704cf41dca9731e8bb994c = L.marker(
+                [36.916111, 21.779167],
+                {
+}
+            ).addTo(map_abce5b104d796443670d63a4163d9919);
+        
+    
+            var icon_52e8fe4d804a080f160bd0acb8880ed0 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_5cc768c9215dc1274da2e8f686e30abe = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_20d3615f465fbd009590d172a34c9395 = $(`<div id="html_20d3615f465fbd009590d172a34c9395" style="width: 100.0%; height: 100.0%;">Corone / Корони, Lepanto / Навпакт, Modone / Метони (Bayezid II / Баязид II)</div>`)[0];
+                popup_5cc768c9215dc1274da2e8f686e30abe.setContent(html_20d3615f465fbd009590d172a34c9395);
+            
+        
+
+        marker_a020294444704cf41dca9731e8bb994c.bindPopup(popup_5cc768c9215dc1274da2e8f686e30abe)
+        ;
+
+        
+    
+    
+                marker_a020294444704cf41dca9731e8bb994c.setIcon(icon_52e8fe4d804a080f160bd0acb8880ed0);
+            
+    
+            var marker_d7943a73eb50e9e24777766490fba9f3 = L.marker(
+                [36.916111, 21.779167],
+                {
+}
+            ).addTo(map_abce5b104d796443670d63a4163d9919);
+        
+    
+            var icon_75ee779023887f4c91211372f708f987 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_b9cb3cc72b631bc5d5b8f893a62e99dd = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_5e7b6dffefab0f891e71ddc8b2bdd526 = $(`<div id="html_5e7b6dffefab0f891e71ddc8b2bdd526" style="width: 100.0%; height: 100.0%;">Corone / Корони, Lepanto / Навпакт, Modone / Метони (Bayezid II / Баязид II)</div>`)[0];
+                popup_b9cb3cc72b631bc5d5b8f893a62e99dd.setContent(html_5e7b6dffefab0f891e71ddc8b2bdd526);
+            
+        
+
+        marker_d7943a73eb50e9e24777766490fba9f3.bindPopup(popup_b9cb3cc72b631bc5d5b8f893a62e99dd)
+        ;
+
+        
+    
+    
+                marker_d7943a73eb50e9e24777766490fba9f3.setIcon(icon_75ee779023887f4c91211372f708f987);
+            
+    
+            var marker_7a348c0486d1d69aa553fbf71622bf36 = L.marker(
+                [36.916111, 21.779167],
+                {
+}
+            ).addTo(map_abce5b104d796443670d63a4163d9919);
+        
+    
+            var icon_c428e86be9ba4913996c7855e0f069d6 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_0f729a1d68378927584112042eac6cff = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_e39c9631677900b331179d82a22e2c7e = $(`<div id="html_e39c9631677900b331179d82a22e2c7e" style="width: 100.0%; height: 100.0%;">Corone / Корони, Lepanto / Навпакт, Modone / Метони (Bayezid II / Баязид II)</div>`)[0];
+                popup_0f729a1d68378927584112042eac6cff.setContent(html_e39c9631677900b331179d82a22e2c7e);
+            
+        
+
+        marker_7a348c0486d1d69aa553fbf71622bf36.bindPopup(popup_0f729a1d68378927584112042eac6cff)
+        ;
+
+        
+    
+    
+                marker_7a348c0486d1d69aa553fbf71622bf36.setIcon(icon_c428e86be9ba4913996c7855e0f069d6);
+            
+    
+            var marker_6e3147336f328e41097bf0b4601ed209 = L.marker(
+                [45.436944, 12.3325],
+                {
+}
+            ).addTo(map_abce5b104d796443670d63a4163d9919);
+        
+    
+            var icon_1d5c71e0167bca1c7e3f1b358f0cb892 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_a47ceec411f9681038680db01c49cb83 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_62849dd99c0924f62a36ceef9b8bf1e9 = $(`<div id="html_62849dd99c0924f62a36ceef9b8bf1e9" style="width: 100.0%; height: 100.0%;">Venezia / Венеция (Francesco Roseto / Франческо Россето)</div>`)[0];
+                popup_a47ceec411f9681038680db01c49cb83.setContent(html_62849dd99c0924f62a36ceef9b8bf1e9);
+            
+        
+
+        marker_6e3147336f328e41097bf0b4601ed209.bindPopup(popup_a47ceec411f9681038680db01c49cb83)
+        ;
+
+        
+    
+    
+                marker_6e3147336f328e41097bf0b4601ed209.setIcon(icon_1d5c71e0167bca1c7e3f1b358f0cb892);
+            
+    
+            var marker_07834fe95bd029c17fa8daaad1862a6a = L.marker(
+                [43.779167, 11.246111],
+                {
+}
+            ).addTo(map_abce5b104d796443670d63a4163d9919);
+        
+    
+            var icon_78b0d55376b2d4e870af9b7445926977 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_3323d9ee2371f21396169dffe280ce15 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_afc69ea5727b3314fc5081131063b5a8 = $(`<div id="html_afc69ea5727b3314fc5081131063b5a8" style="width: 100.0%; height: 100.0%;">Firenze / Флорентия (Giano Lascaris / Ἰανὸς Λάσκαρις / Иоанн Ласкарис)</div>`)[0];
+                popup_3323d9ee2371f21396169dffe280ce15.setContent(html_afc69ea5727b3314fc5081131063b5a8);
+            
+        
+
+        marker_07834fe95bd029c17fa8daaad1862a6a.bindPopup(popup_3323d9ee2371f21396169dffe280ce15)
+        ;
+
+        
+    
+    
+                marker_07834fe95bd029c17fa8daaad1862a6a.setIcon(icon_78b0d55376b2d4e870af9b7445926977);
+            
+    
+            var marker_1d61d0b21306394f7ce021e602b801af = L.marker(
+                [45.436944, 12.3325],
+                {
+}
+            ).addTo(map_abce5b104d796443670d63a4163d9919);
+        
+    
+            var icon_93858308bd562bf3eaee7fdcfbb851c1 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_6eb8b10f92e13d3c5a3c212e28633302 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_5126556185e56813d854d9ae212962ad = $(`<div id="html_5126556185e56813d854d9ae212962ad" style="width: 100.0%; height: 100.0%;">Venezia / Венеция (cfr. Romoli 2021: 162-171) (Giano Lascaris / Ἰανὸς Λάσκαρις / Иоанн Ласкарис)</div>`)[0];
+                popup_6eb8b10f92e13d3c5a3c212e28633302.setContent(html_5126556185e56813d854d9ae212962ad);
+            
+        
+
+        marker_1d61d0b21306394f7ce021e602b801af.bindPopup(popup_6eb8b10f92e13d3c5a3c212e28633302)
+        ;
+
+        
+    
+    
+                marker_1d61d0b21306394f7ce021e602b801af.setIcon(icon_93858308bd562bf3eaee7fdcfbb851c1);
+            
+    
+            var marker_9339aef2f2df734e737d7e5e24b7f6ea = L.marker(
+                [45.436944, 12.3325],
+                {
+}
+            ).addTo(map_abce5b104d796443670d63a4163d9919);
+        
+    
+            var icon_25a0a92c229173312d1d36ae11fd1b6f = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_82a583c6ebae4a2b0e53bb9c866960ce = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_ee6bb0b14b5623905956e0c4b15ab1a8 = $(`<div id="html_ee6bb0b14b5623905956e0c4b15ab1a8" style="width: 100.0%; height: 100.0%;">Venezia / Венеция (Giorgio Mosco / Γεώργιος Μόσχος / Георгий Мосх)</div>`)[0];
+                popup_82a583c6ebae4a2b0e53bb9c866960ce.setContent(html_ee6bb0b14b5623905956e0c4b15ab1a8);
+            
+        
+
+        marker_9339aef2f2df734e737d7e5e24b7f6ea.bindPopup(popup_82a583c6ebae4a2b0e53bb9c866960ce)
+        ;
+
+        
+    
+    
+                marker_9339aef2f2df734e737d7e5e24b7f6ea.setIcon(icon_25a0a92c229173312d1d36ae11fd1b6f);
+            
+    
+            var marker_fce7242738e0ae90ffacd600fa67f546 = L.marker(
+                [43.779167, 11.246111],
+                {
+}
+            ).addTo(map_abce5b104d796443670d63a4163d9919);
+        
+    
+            var icon_72addb10b1eed372145d38135dda0c16 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_ce8c377aac573b19bc146a3c63ceb127 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_a17d3ee76090b5efed19dd2294849946 = $(`<div id="html_a17d3ee76090b5efed19dd2294849946" style="width: 100.0%; height: 100.0%;">Firenze / Флорентия (Giovacchino della Torre / Иоаким делла Торре)</div>`)[0];
+                popup_ce8c377aac573b19bc146a3c63ceb127.setContent(html_a17d3ee76090b5efed19dd2294849946);
+            
+        
+
+        marker_fce7242738e0ae90ffacd600fa67f546.bindPopup(popup_ce8c377aac573b19bc146a3c63ceb127)
+        ;
+
+        
+    
+    
+                marker_fce7242738e0ae90ffacd600fa67f546.setIcon(icon_72addb10b1eed372145d38135dda0c16);
+            
+    
+            var marker_0cdc5b3e7bb40beae6f539b7166f36ad = L.marker(
+                [43.779167, 11.246111],
+                {
+}
+            ).addTo(map_abce5b104d796443670d63a4163d9919);
+        
+    
+            var icon_baddf55c36a54965de383d8030b15aad = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_ea77eea1666bc326f6c8073240798211 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_b75cff9b18aa1bd08745202f55760a7c = $(`<div id="html_b75cff9b18aa1bd08745202f55760a7c" style="width: 100.0%; height: 100.0%;">Firenze / Флорентия (Giovacchino della Torre / Иоаким делла Торре)</div>`)[0];
+                popup_ea77eea1666bc326f6c8073240798211.setContent(html_b75cff9b18aa1bd08745202f55760a7c);
+            
+        
+
+        marker_0cdc5b3e7bb40beae6f539b7166f36ad.bindPopup(popup_ea77eea1666bc326f6c8073240798211)
+        ;
+
+        
+    
+    
+                marker_0cdc5b3e7bb40beae6f539b7166f36ad.setIcon(icon_baddf55c36a54965de383d8030b15aad);
+            
+    
+            var marker_58ab555d58f5e26f2706706321053a1e = L.marker(
+                [44.885, 11.068889],
+                {
+}
+            ).addTo(map_abce5b104d796443670d63a4163d9919);
+        
+    
+            var icon_4a2167fffe1af38c63d334bf9a913003 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_5a4401bd0d910d6f9dcae393d1bccdcc = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_3222efd68c0bddf805fab94286e3fdb8 = $(`<div id="html_3222efd68c0bddf805fab94286e3fdb8" style="width: 100.0%; height: 100.0%;">Mirandola / Мирандола (Giovan Francesco Pico della Mirandola / Джанфранческо Пико делла Мирандола)</div>`)[0];
+                popup_5a4401bd0d910d6f9dcae393d1bccdcc.setContent(html_3222efd68c0bddf805fab94286e3fdb8);
+            
+        
+
+        marker_58ab555d58f5e26f2706706321053a1e.bindPopup(popup_5a4401bd0d910d6f9dcae393d1bccdcc)
+        ;
+
+        
+    
+    
+                marker_58ab555d58f5e26f2706706321053a1e.setIcon(icon_4a2167fffe1af38c63d334bf9a913003);
+            
+    
+            var marker_6d078aca7c0feb58af7a1037e5339e5e = L.marker(
+                [44.885, 11.068889],
+                {
+}
+            ).addTo(map_abce5b104d796443670d63a4163d9919);
+        
+    
+            var icon_64e5972d52e4068e20bc7e1d59c41f3d = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_8b9aba07eff0eab0884418b473bff9d3 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_0cff90dbcfdd03470016df0954622b42 = $(`<div id="html_0cff90dbcfdd03470016df0954622b42" style="width: 100.0%; height: 100.0%;">Mirandola / Мирандола (Giovan Francesco Pico della Mirandola / Джанфранческо Пико делла Мирандола)</div>`)[0];
+                popup_8b9aba07eff0eab0884418b473bff9d3.setContent(html_0cff90dbcfdd03470016df0954622b42);
+            
+        
+
+        marker_6d078aca7c0feb58af7a1037e5339e5e.bindPopup(popup_8b9aba07eff0eab0884418b473bff9d3)
+        ;
+
+        
+    
+    
+                marker_6d078aca7c0feb58af7a1037e5339e5e.setIcon(icon_64e5972d52e4068e20bc7e1d59c41f3d);
+            
+    
+            var marker_0c361230f30f34d914f58e12980b0681 = L.marker(
+                [45.436944, 12.3325],
+                {
+}
+            ).addTo(map_abce5b104d796443670d63a4163d9919);
+        
+    
+            var icon_ef1d2ce6cf9819871596b878d36dfc48 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_2e894f64849baa7d763089959c63a64c = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_7206ee802735d60fe54285fd8d76cb5b = $(`<div id="html_7206ee802735d60fe54285fd8d76cb5b" style="width: 100.0%; height: 100.0%;">Venezia / Венеция (Giovanni Gregoropulo / Ἰωάννης Γρηγορόπουλος / Иоанн Григоропулос)</div>`)[0];
+                popup_2e894f64849baa7d763089959c63a64c.setContent(html_7206ee802735d60fe54285fd8d76cb5b);
+            
+        
+
+        marker_0c361230f30f34d914f58e12980b0681.bindPopup(popup_2e894f64849baa7d763089959c63a64c)
+        ;
+
+        
+    
+    
+                marker_0c361230f30f34d914f58e12980b0681.setIcon(icon_ef1d2ce6cf9819871596b878d36dfc48);
+            
+    
+            var marker_884300a6e17c4fe86d9f3474685999f1 = L.marker(
+                [45.436944, 12.3325],
+                {
+}
+            ).addTo(map_abce5b104d796443670d63a4163d9919);
+        
+    
+            var icon_a124c6ad7600eaaab1efa4e265a9a4ae = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_e0a400eaa4188902cc4c13667aa7ddd9 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_6c2e28b2f11b40aa6b2282ce55e4062a = $(`<div id="html_6c2e28b2f11b40aa6b2282ce55e4062a" style="width: 100.0%; height: 100.0%;">Venezia / Венеция (Giovanni Gregoropulo / Ἰωάννης Γρηγορόπουλος / Иоанн Григоропулос)</div>`)[0];
+                popup_e0a400eaa4188902cc4c13667aa7ddd9.setContent(html_6c2e28b2f11b40aa6b2282ce55e4062a);
+            
+        
+
+        marker_884300a6e17c4fe86d9f3474685999f1.bindPopup(popup_e0a400eaa4188902cc4c13667aa7ddd9)
+        ;
+
+        
+    
+    
+                marker_884300a6e17c4fe86d9f3474685999f1.setIcon(icon_a124c6ad7600eaaab1efa4e265a9a4ae);
+            
+    
+            var marker_e35d6eae77a8e1a527a7c4cf098e089d = L.marker(
+                [45.436944, 12.3325],
+                {
+}
+            ).addTo(map_abce5b104d796443670d63a4163d9919);
+        
+    
+            var icon_c2fdb45118bf02db05f351b08391a217 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_1e60e3141fb47813ad8ea57e09be2dc9 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_1a08d2a2cd77960b30897a2026517f88 = $(`<div id="html_1a08d2a2cd77960b30897a2026517f88" style="width: 100.0%; height: 100.0%;">Venezia / Венеция (Giovanni Gregoropulo / Ἰωάννης Γρηγορόπουλος / Иоанн Григоропулос)</div>`)[0];
+                popup_1e60e3141fb47813ad8ea57e09be2dc9.setContent(html_1a08d2a2cd77960b30897a2026517f88);
+            
+        
+
+        marker_e35d6eae77a8e1a527a7c4cf098e089d.bindPopup(popup_1e60e3141fb47813ad8ea57e09be2dc9)
+        ;
+
+        
+    
+    
+                marker_e35d6eae77a8e1a527a7c4cf098e089d.setIcon(icon_c2fdb45118bf02db05f351b08391a217);
+            
+    
+            var marker_be8d4f7f2905c43601a4f4b801bbacab = L.marker(
+                [45.436944, 12.3325],
+                {
+}
+            ).addTo(map_abce5b104d796443670d63a4163d9919);
+        
+    
+            var icon_fbd68e3f7e371a6d8bb976e79c799c71 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_a5cba8b17ed52997459c533dd05d55c7 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_15e576b2534c4b85f22a4dfcb242eb35 = $(`<div id="html_15e576b2534c4b85f22a4dfcb242eb35" style="width: 100.0%; height: 100.0%;">Venezia / Венеция (Giovanni Gregoropulo / Ἰωάννης Γρηγορόπουλος / Иоанн Григоропулос)</div>`)[0];
+                popup_a5cba8b17ed52997459c533dd05d55c7.setContent(html_15e576b2534c4b85f22a4dfcb242eb35);
+            
+        
+
+        marker_be8d4f7f2905c43601a4f4b801bbacab.bindPopup(popup_a5cba8b17ed52997459c533dd05d55c7)
+        ;
+
+        
+    
+    
+                marker_be8d4f7f2905c43601a4f4b801bbacab.setIcon(icon_fbd68e3f7e371a6d8bb976e79c799c71);
+            
+    
+            var marker_818ea84f79fba7750c4270c29065f5be = L.marker(
+                [45.436944, 12.3325],
+                {
+}
+            ).addTo(map_abce5b104d796443670d63a4163d9919);
+        
+    
+            var icon_75541ccbce688c405c851ff50c17b115 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_7f3ab5b2e14ffc6dc0cd2eff1233f917 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_b153880f9950eaab8f45371ee63a6aca = $(`<div id="html_b153880f9950eaab8f45371ee63a6aca" style="width: 100.0%; height: 100.0%;">Venezia / Венеция (Giovanni Gregoropulo / Ἰωάννης Γρηγορόπουλος / Иоанн Григоропулос)</div>`)[0];
+                popup_7f3ab5b2e14ffc6dc0cd2eff1233f917.setContent(html_b153880f9950eaab8f45371ee63a6aca);
+            
+        
+
+        marker_818ea84f79fba7750c4270c29065f5be.bindPopup(popup_7f3ab5b2e14ffc6dc0cd2eff1233f917)
+        ;
+
+        
+    
+    
+                marker_818ea84f79fba7750c4270c29065f5be.setIcon(icon_75541ccbce688c405c851ff50c17b115);
+            
+    
+            var marker_c34231b2a8e774f17f2ace6a2e406685 = L.marker(
+                [45.436944, 12.3325],
+                {
+}
+            ).addTo(map_abce5b104d796443670d63a4163d9919);
+        
+    
+            var icon_cd9d27807be06f211cb5aa1f1b325fdc = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_3504e1a177d16c4f9d9d181c58e70222 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_d3bbe98dda6aacf5e2e3a339daec8d59 = $(`<div id="html_d3bbe98dda6aacf5e2e3a339daec8d59" style="width: 100.0%; height: 100.0%;">Venezia / Венеция (Giovanni Gregoropulo / Ἰωάννης Γρηγορόπουλος / Иоанн Григоропулос)</div>`)[0];
+                popup_3504e1a177d16c4f9d9d181c58e70222.setContent(html_d3bbe98dda6aacf5e2e3a339daec8d59);
+            
+        
+
+        marker_c34231b2a8e774f17f2ace6a2e406685.bindPopup(popup_3504e1a177d16c4f9d9d181c58e70222)
+        ;
+
+        
+    
+    
+                marker_c34231b2a8e774f17f2ace6a2e406685.setIcon(icon_cd9d27807be06f211cb5aa1f1b325fdc);
+            
+    
+            var marker_fb9e4fd7f784353c3fa740a4ba660c25 = L.marker(
+                [45.436944, 12.3325],
+                {
+}
+            ).addTo(map_abce5b104d796443670d63a4163d9919);
+        
+    
+            var icon_c3caa424e6928728c736b8a7adc51f15 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_b502bc676d0d18f63bdf01c9c6f7c69f = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_b0c10e4e4b91044267fb2e2a504687c0 = $(`<div id="html_b0c10e4e4b91044267fb2e2a504687c0" style="width: 100.0%; height: 100.0%;">Venezia / Венеция (Giovanni Gregoropulo / Ἰωάννης Γρηγορόπουλος / Иоанн Григоропулос)</div>`)[0];
+                popup_b502bc676d0d18f63bdf01c9c6f7c69f.setContent(html_b0c10e4e4b91044267fb2e2a504687c0);
+            
+        
+
+        marker_fb9e4fd7f784353c3fa740a4ba660c25.bindPopup(popup_b502bc676d0d18f63bdf01c9c6f7c69f)
+        ;
+
+        
+    
+    
+                marker_fb9e4fd7f784353c3fa740a4ba660c25.setIcon(icon_c3caa424e6928728c736b8a7adc51f15);
+            
+    
+            var marker_7e0e3946c4f676fc84e78e8e3a7fb182 = L.marker(
+                [45.436944, 12.3325],
+                {
+}
+            ).addTo(map_abce5b104d796443670d63a4163d9919);
+        
+    
+            var icon_0ffa3f02b2f8b147cad64fca1ed12297 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_73edc1ec60f8df2d0dc823d2ffe872fd = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_7fb85196c45421bcfabf8b893d443641 = $(`<div id="html_7fb85196c45421bcfabf8b893d443641" style="width: 100.0%; height: 100.0%;">Venezia / Венеция (Girolamo Pichi / Иероним Пики)</div>`)[0];
+                popup_73edc1ec60f8df2d0dc823d2ffe872fd.setContent(html_7fb85196c45421bcfabf8b893d443641);
+            
+        
+
+        marker_7e0e3946c4f676fc84e78e8e3a7fb182.bindPopup(popup_73edc1ec60f8df2d0dc823d2ffe872fd)
+        ;
+
+        
+    
+    
+                marker_7e0e3946c4f676fc84e78e8e3a7fb182.setIcon(icon_0ffa3f02b2f8b147cad64fca1ed12297);
+            
+    
+            var marker_b85f182a26dfa2f004623b2d884e1a20 = L.marker(
+                [43.779167, 11.246111],
+                {
+}
+            ).addTo(map_abce5b104d796443670d63a4163d9919);
+        
+    
+            var icon_7bd821938550aa1bade76bbc23a36897 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_60b35862be5b04c3baabce85c6c238e5 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_c3c48c4703d825aec5416a162b514508 = $(`<div id="html_c3c48c4703d825aec5416a162b514508" style="width: 100.0%; height: 100.0%;">Firenze / Флорентия (Girolamo Savonarola / Иероним Савонарола)</div>`)[0];
+                popup_60b35862be5b04c3baabce85c6c238e5.setContent(html_c3c48c4703d825aec5416a162b514508);
+            
+        
+
+        marker_b85f182a26dfa2f004623b2d884e1a20.bindPopup(popup_60b35862be5b04c3baabce85c6c238e5)
+        ;
+
+        
+    
+    
+                marker_b85f182a26dfa2f004623b2d884e1a20.setIcon(icon_7bd821938550aa1bade76bbc23a36897);
+            
+    
+            var marker_8f053a31cc218009981e13eb3f1f35a9 = L.marker(
+                [43.779167, 11.246111],
+                {
+}
+            ).addTo(map_abce5b104d796443670d63a4163d9919);
+        
+    
+            var icon_d57a68e3c64cff995d400fa50baa6685 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_5498704bffa2ca4e96dbc57a54bb3799 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_51929e7e928a7a6e038efbd6f6875c3c = $(`<div id="html_51929e7e928a7a6e038efbd6f6875c3c" style="width: 100.0%; height: 100.0%;">Firenze / Флорентия (Girolamo Savonarola / Иероним Савонарола)</div>`)[0];
+                popup_5498704bffa2ca4e96dbc57a54bb3799.setContent(html_51929e7e928a7a6e038efbd6f6875c3c);
+            
+        
+
+        marker_8f053a31cc218009981e13eb3f1f35a9.bindPopup(popup_5498704bffa2ca4e96dbc57a54bb3799)
+        ;
+
+        
+    
+    
+                marker_8f053a31cc218009981e13eb3f1f35a9.setIcon(icon_d57a68e3c64cff995d400fa50baa6685);
+            
+    
+            var marker_e71f7b06a549faa16c8a0cb9926b1790 = L.marker(
+                [45.464167, 9.189444],
+                {
+}
+            ).addTo(map_abce5b104d796443670d63a4163d9919);
+        
+    
+            var icon_fa45a580049a9ae8b09effd3c4b2c0eb = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_bae55dfb5ece169716173fabd9d51821 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_73b6b16c6aab65059e28df74c05f6b18 = $(`<div id="html_73b6b16c6aab65059e28df74c05f6b18" style="width: 100.0%; height: 100.0%;">Milano / Милан (Luigi XII di Valois-Orléans (Ludovico XII) / Людовик XII)</div>`)[0];
+                popup_bae55dfb5ece169716173fabd9d51821.setContent(html_73b6b16c6aab65059e28df74c05f6b18);
+            
+        
+
+        marker_e71f7b06a549faa16c8a0cb9926b1790.bindPopup(popup_bae55dfb5ece169716173fabd9d51821)
+        ;
+
+        
+    
+    
+                marker_e71f7b06a549faa16c8a0cb9926b1790.setIcon(icon_fa45a580049a9ae8b09effd3c4b2c0eb);
+            
+    
+            var marker_a648386b107875e27210585a7d3d4d49 = L.marker(
+                [45.464167, 9.189444],
+                {
+}
+            ).addTo(map_abce5b104d796443670d63a4163d9919);
+        
+    
+            var icon_c976af62876735235fc7c22874641f00 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_d56becaa38cf3043d87e90f1633e1a8e = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_8f6c9538578d2ba0bbab169b5febc668 = $(`<div id="html_8f6c9538578d2ba0bbab169b5febc668" style="width: 100.0%; height: 100.0%;">Milano / Милан (Luigi XII di Valois-Orléans (Ludovico XII) / Людовик XII)</div>`)[0];
+                popup_d56becaa38cf3043d87e90f1633e1a8e.setContent(html_8f6c9538578d2ba0bbab169b5febc668);
+            
+        
+
+        marker_a648386b107875e27210585a7d3d4d49.bindPopup(popup_d56becaa38cf3043d87e90f1633e1a8e)
+        ;
+
+        
+    
+    
+                marker_a648386b107875e27210585a7d3d4d49.setIcon(icon_c976af62876735235fc7c22874641f00);
+            
+    
+            var marker_e92f4eecb93c679550e865c2c15638fd = L.marker(
+                [45.464167, 9.189444],
+                {
+}
+            ).addTo(map_abce5b104d796443670d63a4163d9919);
+        
+    
+            var icon_528faa6c4e5c29d342cdaad6ea0d30d5 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_b064ef74a25806f2efa72213b87fc5a1 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_0875d21c7793084ef8c01d084dffbcf5 = $(`<div id="html_0875d21c7793084ef8c01d084dffbcf5" style="width: 100.0%; height: 100.0%;">Milano / Милан (Luigi XII di Valois-Orléans (Ludovico XII) / Людовик XII)</div>`)[0];
+                popup_b064ef74a25806f2efa72213b87fc5a1.setContent(html_0875d21c7793084ef8c01d084dffbcf5);
+            
+        
+
+        marker_e92f4eecb93c679550e865c2c15638fd.bindPopup(popup_b064ef74a25806f2efa72213b87fc5a1)
+        ;
+
+        
+    
+    
+                marker_e92f4eecb93c679550e865c2c15638fd.setIcon(icon_528faa6c4e5c29d342cdaad6ea0d30d5);
+            
+    
+            var marker_6989d2de58c52f78096f1040bf2e358b = L.marker(
+                [45.464167, 9.189444],
+                {
+}
+            ).addTo(map_abce5b104d796443670d63a4163d9919);
+        
+    
+            var icon_8ea03345ab656726a7bf5d640f9d0373 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_8e49f23863a26329051b39d3ecadaaeb = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_4a445cb51f5d8ab8f814f7d286db0791 = $(`<div id="html_4a445cb51f5d8ab8f814f7d286db0791" style="width: 100.0%; height: 100.0%;">Milano / Милан (Luigi XII di Valois-Orléans (Ludovico XII) / Людовик XII)</div>`)[0];
+                popup_8e49f23863a26329051b39d3ecadaaeb.setContent(html_4a445cb51f5d8ab8f814f7d286db0791);
+            
+        
+
+        marker_6989d2de58c52f78096f1040bf2e358b.bindPopup(popup_8e49f23863a26329051b39d3ecadaaeb)
+        ;
+
+        
+    
+    
+                marker_6989d2de58c52f78096f1040bf2e358b.setIcon(icon_8ea03345ab656726a7bf5d640f9d0373);
+            
+    
+            var marker_42c50e82f941ce983e76ae603454bcab = L.marker(
+                [45.464167, 9.189444],
+                {
+}
+            ).addTo(map_abce5b104d796443670d63a4163d9919);
+        
+    
+            var icon_707daa0693783e42ed45fc4cca914c77 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_5446997bc1b97687df26f3d7a7ffc912 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_f30b7895adc0fac57cf98a99e0b8fbad = $(`<div id="html_f30b7895adc0fac57cf98a99e0b8fbad" style="width: 100.0%; height: 100.0%;">Milano / Милан (Luigi XII di Valois-Orléans (Ludovico XII) / Людовик XII)</div>`)[0];
+                popup_5446997bc1b97687df26f3d7a7ffc912.setContent(html_f30b7895adc0fac57cf98a99e0b8fbad);
+            
+        
+
+        marker_42c50e82f941ce983e76ae603454bcab.bindPopup(popup_5446997bc1b97687df26f3d7a7ffc912)
+        ;
+
+        
+    
+    
+                marker_42c50e82f941ce983e76ae603454bcab.setIcon(icon_707daa0693783e42ed45fc4cca914c77);
+            
+    
+            var marker_7203724361f21fe835d0f2635f58c7ff = L.marker(
+                [45.464167, 9.189444],
+                {
+}
+            ).addTo(map_abce5b104d796443670d63a4163d9919);
+        
+    
+            var icon_a5dac8a6a2dadac30e7c7940f99fd689 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_8891fc92db31fe88a3a2bc2ae17d8d05 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_a9310a2eb486d374ca20af7b470f3845 = $(`<div id="html_a9310a2eb486d374ca20af7b470f3845" style="width: 100.0%; height: 100.0%;">Milano / Милан (Luigi XII di Valois-Orléans (Ludovico XII) / Людовик XII)</div>`)[0];
+                popup_8891fc92db31fe88a3a2bc2ae17d8d05.setContent(html_a9310a2eb486d374ca20af7b470f3845);
+            
+        
+
+        marker_7203724361f21fe835d0f2635f58c7ff.bindPopup(popup_8891fc92db31fe88a3a2bc2ae17d8d05)
+        ;
+
+        
+    
+    
+                marker_7203724361f21fe835d0f2635f58c7ff.setIcon(icon_a5dac8a6a2dadac30e7c7940f99fd689);
+            
+    
+            var marker_945c299f3a089032df407a51062ae5f1 = L.marker(
+                [45.464167, 9.189444],
+                {
+}
+            ).addTo(map_abce5b104d796443670d63a4163d9919);
+        
+    
+            var icon_ddb27e3b243b3b3dbc0d719f57c50c30 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_47a82a9e060442116b63ba8620f892fb = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_49d3785b1f904611f89874850e95fab5 = $(`<div id="html_49d3785b1f904611f89874850e95fab5" style="width: 100.0%; height: 100.0%;">Milano / Милан (Ludovico Maria Sforza, il Moro / Лодовико Мария Сфорца)</div>`)[0];
+                popup_47a82a9e060442116b63ba8620f892fb.setContent(html_49d3785b1f904611f89874850e95fab5);
+            
+        
+
+        marker_945c299f3a089032df407a51062ae5f1.bindPopup(popup_47a82a9e060442116b63ba8620f892fb)
+        ;
+
+        
+    
+    
+                marker_945c299f3a089032df407a51062ae5f1.setIcon(icon_ddb27e3b243b3b3dbc0d719f57c50c30);
+            
+    
+            var marker_7d228274c340cb4d00d2da037e282a97 = L.marker(
+                [45.464167, 9.189444],
+                {
+}
+            ).addTo(map_abce5b104d796443670d63a4163d9919);
+        
+    
+            var icon_f0066f19cdc3099e3d7b95d43ac1388b = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_122c3f8bd2bf55ba92cc029338521caf = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_7f54b91619ec0419f0fe9abd3aa5ac57 = $(`<div id="html_7f54b91619ec0419f0fe9abd3aa5ac57" style="width: 100.0%; height: 100.0%;">Milano / Милан (Ludovico Maria Sforza, il Moro / Лодовико Мария Сфорца)</div>`)[0];
+                popup_122c3f8bd2bf55ba92cc029338521caf.setContent(html_7f54b91619ec0419f0fe9abd3aa5ac57);
+            
+        
+
+        marker_7d228274c340cb4d00d2da037e282a97.bindPopup(popup_122c3f8bd2bf55ba92cc029338521caf)
+        ;
+
+        
+    
+    
+                marker_7d228274c340cb4d00d2da037e282a97.setIcon(icon_f0066f19cdc3099e3d7b95d43ac1388b);
+            
+    
+            var marker_cb012f1ec18694f7bb9546b5134ea7f1 = L.marker(
+                [45.464167, 9.189444],
+                {
+}
+            ).addTo(map_abce5b104d796443670d63a4163d9919);
+        
+    
+            var icon_c7fc4ca9df934fba50c7807a961a1cca = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_4964d1c6cc6634ecdb8f40b04b6fe59e = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_832d43213f41b143149a5fb20119475e = $(`<div id="html_832d43213f41b143149a5fb20119475e" style="width: 100.0%; height: 100.0%;">Milano / Милан (Ludovico Maria Sforza, il Moro / Лодовико Мария Сфорца)</div>`)[0];
+                popup_4964d1c6cc6634ecdb8f40b04b6fe59e.setContent(html_832d43213f41b143149a5fb20119475e);
+            
+        
+
+        marker_cb012f1ec18694f7bb9546b5134ea7f1.bindPopup(popup_4964d1c6cc6634ecdb8f40b04b6fe59e)
+        ;
+
+        
+    
+    
+                marker_cb012f1ec18694f7bb9546b5134ea7f1.setIcon(icon_c7fc4ca9df934fba50c7807a961a1cca);
+            
+    
+            var marker_e2cc148d4d5730cafbc3c4121b751ea3 = L.marker(
+                [45.464167, 9.189444],
+                {
+}
+            ).addTo(map_abce5b104d796443670d63a4163d9919);
+        
+    
+            var icon_cdb1e21a286a7c8c90da5f161a3ae182 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_8d7b0385f229ae04622f57a2adf70ab8 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_cdf49a8798ebc9ae3d5802d17fb23ca4 = $(`<div id="html_cdf49a8798ebc9ae3d5802d17fb23ca4" style="width: 100.0%; height: 100.0%;">Milano / Милан (Ludovico Maria Sforza, il Moro / Лодовико Мария Сфорца)</div>`)[0];
+                popup_8d7b0385f229ae04622f57a2adf70ab8.setContent(html_cdf49a8798ebc9ae3d5802d17fb23ca4);
+            
+        
+
+        marker_e2cc148d4d5730cafbc3c4121b751ea3.bindPopup(popup_8d7b0385f229ae04622f57a2adf70ab8)
+        ;
+
+        
+    
+    
+                marker_e2cc148d4d5730cafbc3c4121b751ea3.setIcon(icon_cdb1e21a286a7c8c90da5f161a3ae182);
+            
+    
+            var marker_5d24cb23d6a39129eb303555485f3551 = L.marker(
+                [45.464167, 9.189444],
+                {
+}
+            ).addTo(map_abce5b104d796443670d63a4163d9919);
+        
+    
+            var icon_6bb99a4b5ac0fe22d620546f685ba344 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_ec69877ed3be1a6acc89d4bf0a2ac792 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_53f7d893f034c2132c47886e570ce1b2 = $(`<div id="html_53f7d893f034c2132c47886e570ce1b2" style="width: 100.0%; height: 100.0%;">Milano / Милан (Ludovico Maria Sforza, il Moro / Лодовико Мария Сфорца)</div>`)[0];
+                popup_ec69877ed3be1a6acc89d4bf0a2ac792.setContent(html_53f7d893f034c2132c47886e570ce1b2);
+            
+        
+
+        marker_5d24cb23d6a39129eb303555485f3551.bindPopup(popup_ec69877ed3be1a6acc89d4bf0a2ac792)
+        ;
+
+        
+    
+    
+                marker_5d24cb23d6a39129eb303555485f3551.setIcon(icon_6bb99a4b5ac0fe22d620546f685ba344);
+            
+    
+            var marker_2207d38c255821d3935ab3083f070212 = L.marker(
+                [45.464167, 9.189444],
+                {
+}
+            ).addTo(map_abce5b104d796443670d63a4163d9919);
+        
+    
+            var icon_f70ef43f3282712cdf89a012d8f1220b = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_77f7d090beb6d8c4ac09852f07475ad7 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_f1d9c9c9ed92316a5b7149fa71e6c9b5 = $(`<div id="html_f1d9c9c9ed92316a5b7149fa71e6c9b5" style="width: 100.0%; height: 100.0%;">Milano / Милан (Ludovico Maria Sforza, il Moro / Лодовико Мария Сфорца)</div>`)[0];
+                popup_77f7d090beb6d8c4ac09852f07475ad7.setContent(html_f1d9c9c9ed92316a5b7149fa71e6c9b5);
+            
+        
+
+        marker_2207d38c255821d3935ab3083f070212.bindPopup(popup_77f7d090beb6d8c4ac09852f07475ad7)
+        ;
+
+        
+    
+    
+                marker_2207d38c255821d3935ab3083f070212.setIcon(icon_f70ef43f3282712cdf89a012d8f1220b);
+            
+    
+            var marker_e2cec9a4c2bdf938f36284bc1f1babdc = L.marker(
+                [45.464167, 9.189444],
+                {
+}
+            ).addTo(map_abce5b104d796443670d63a4163d9919);
+        
+    
+            var icon_4c604f8029e0cd7893a7afd6364970f3 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_42d1ef1c3198fa82a5db9ee2c0d930f7 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_0944378a86dd2eaa3f0b5775e05870e2 = $(`<div id="html_0944378a86dd2eaa3f0b5775e05870e2" style="width: 100.0%; height: 100.0%;">Milano / Милан (Ludovico Maria Sforza, il Moro / Лодовико Мария Сфорца)</div>`)[0];
+                popup_42d1ef1c3198fa82a5db9ee2c0d930f7.setContent(html_0944378a86dd2eaa3f0b5775e05870e2);
+            
+        
+
+        marker_e2cec9a4c2bdf938f36284bc1f1babdc.bindPopup(popup_42d1ef1c3198fa82a5db9ee2c0d930f7)
+        ;
+
+        
+    
+    
+                marker_e2cec9a4c2bdf938f36284bc1f1babdc.setIcon(icon_4c604f8029e0cd7893a7afd6364970f3);
+            
+    
+            var marker_a72fdcf489ff4b16a8e0edceca8d0e23 = L.marker(
+                [45.464167, 9.189444],
+                {
+}
+            ).addTo(map_abce5b104d796443670d63a4163d9919);
+        
+    
+            var icon_0a5cb032b6aa7b74e13033358ba64c23 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_b7375cbcafd61e6dad0c0ab55e3bb0f6 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_019a6e934f58023806b1ae644e721b5d = $(`<div id="html_019a6e934f58023806b1ae644e721b5d" style="width: 100.0%; height: 100.0%;">Milano / Милан (Ludovico Maria Sforza, il Moro / Лодовико Мария Сфорца)</div>`)[0];
+                popup_b7375cbcafd61e6dad0c0ab55e3bb0f6.setContent(html_019a6e934f58023806b1ae644e721b5d);
+            
+        
+
+        marker_a72fdcf489ff4b16a8e0edceca8d0e23.bindPopup(popup_b7375cbcafd61e6dad0c0ab55e3bb0f6)
+        ;
+
+        
+    
+    
+                marker_a72fdcf489ff4b16a8e0edceca8d0e23.setIcon(icon_0a5cb032b6aa7b74e13033358ba64c23);
+            
+    
+            var marker_5c3226b6d8b78c1504a816f155aaa882 = L.marker(
+                [45.464167, 9.189444],
+                {
+}
+            ).addTo(map_abce5b104d796443670d63a4163d9919);
+        
+    
+            var icon_eea790dbb9390612ca7dfddb53964b7f = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_8f49b15432663fcaaf510ce0c85b1376 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_4b900037de207b5bc3c0651f64a66c89 = $(`<div id="html_4b900037de207b5bc3c0651f64a66c89" style="width: 100.0%; height: 100.0%;">Milano / Милан (Ludovico Maria Sforza, il Moro / Лодовико Мария Сфорца)</div>`)[0];
+                popup_8f49b15432663fcaaf510ce0c85b1376.setContent(html_4b900037de207b5bc3c0651f64a66c89);
+            
+        
+
+        marker_5c3226b6d8b78c1504a816f155aaa882.bindPopup(popup_8f49b15432663fcaaf510ce0c85b1376)
+        ;
+
+        
+    
+    
+                marker_5c3226b6d8b78c1504a816f155aaa882.setIcon(icon_eea790dbb9390612ca7dfddb53964b7f);
+            
+    
+            var marker_9e5a057ade9802114eae76a4b7410d18 = L.marker(
+                [45.464167, 9.189444],
+                {
+}
+            ).addTo(map_abce5b104d796443670d63a4163d9919);
+        
+    
+            var icon_265fa0fc568fbd71f090354087cf2689 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_7261ba70ae095d406e3edb4e561fc610 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_a2bab3b68ff04559e7494a1d23e441da = $(`<div id="html_a2bab3b68ff04559e7494a1d23e441da" style="width: 100.0%; height: 100.0%;">Milano / Милан (Ludovico Maria Sforza, il Moro / Лодовико Мария Сфорца)</div>`)[0];
+                popup_7261ba70ae095d406e3edb4e561fc610.setContent(html_a2bab3b68ff04559e7494a1d23e441da);
+            
+        
+
+        marker_9e5a057ade9802114eae76a4b7410d18.bindPopup(popup_7261ba70ae095d406e3edb4e561fc610)
+        ;
+
+        
+    
+    
+                marker_9e5a057ade9802114eae76a4b7410d18.setIcon(icon_265fa0fc568fbd71f090354087cf2689);
+            
+    
+            var marker_42804aa3a546876fd55c94e15a372dcd = L.marker(
+                [45.464167, 9.189444],
+                {
+}
+            ).addTo(map_abce5b104d796443670d63a4163d9919);
+        
+    
+            var icon_bc1844300d3d6dfb1f3623a962ebebaa = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_27ec67b5d96a0d47a8184db6ce23c83c = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_b34192571300743ef362346c90062ec3 = $(`<div id="html_b34192571300743ef362346c90062ec3" style="width: 100.0%; height: 100.0%;">Milano / Милан (Ludovico Maria Sforza, il Moro / Лодовико Мария Сфорца)</div>`)[0];
+                popup_27ec67b5d96a0d47a8184db6ce23c83c.setContent(html_b34192571300743ef362346c90062ec3);
+            
+        
+
+        marker_42804aa3a546876fd55c94e15a372dcd.bindPopup(popup_27ec67b5d96a0d47a8184db6ce23c83c)
+        ;
+
+        
+    
+    
+                marker_42804aa3a546876fd55c94e15a372dcd.setIcon(icon_bc1844300d3d6dfb1f3623a962ebebaa);
+            
+    
+            var marker_ee015a08536c2a1728a69f6ea103097a = L.marker(
+                [45.321389, 8.419722],
+                {
+}
+            ).addTo(map_abce5b104d796443670d63a4163d9919);
+        
+    
+            var icon_ebdbfa325f081e7fdb1fd508534d1b54 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_1a4dec39a73241ec47553d427e9b314c = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_e48a8ab5162dc3a19118e03097f99926 = $(`<div id="html_e48a8ab5162dc3a19118e03097f99926" style="width: 100.0%; height: 100.0%;">Vercelli / Верчелли (Ludovico Tizzoni / Лудовико Тиццони)</div>`)[0];
+                popup_1a4dec39a73241ec47553d427e9b314c.setContent(html_e48a8ab5162dc3a19118e03097f99926);
+            
+        
+
+        marker_ee015a08536c2a1728a69f6ea103097a.bindPopup(popup_1a4dec39a73241ec47553d427e9b314c)
+        ;
+
+        
+    
+    
+                marker_ee015a08536c2a1728a69f6ea103097a.setIcon(icon_ebdbfa325f081e7fdb1fd508534d1b54);
+            
+    
+            var marker_337cff5b75117db94c27ec67f7f0e12b = L.marker(
+                [45.436944, 12.3325],
+                {
+}
+            ).addTo(map_abce5b104d796443670d63a4163d9919);
+        
+    
+            var icon_482e402203f9563e3bfe6448499c9c18 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_ee92445c75ff1c60e1c0d74e79fad66d = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_a507737dd5bd4c54b2275d84511b356b = $(`<div id="html_a507737dd5bd4c54b2275d84511b356b" style="width: 100.0%; height: 100.0%;">Venezia / Венеция (Marco Musuro / Μάρκος Μουσοῦρος / Марк Мусурос)</div>`)[0];
+                popup_ee92445c75ff1c60e1c0d74e79fad66d.setContent(html_a507737dd5bd4c54b2275d84511b356b);
+            
+        
+
+        marker_337cff5b75117db94c27ec67f7f0e12b.bindPopup(popup_ee92445c75ff1c60e1c0d74e79fad66d)
+        ;
+
+        
+    
+    
+                marker_337cff5b75117db94c27ec67f7f0e12b.setIcon(icon_482e402203f9563e3bfe6448499c9c18);
+            
+    
+            var marker_1c51ad04fabf4b4946398de13bdf54ac = L.marker(
+                [43.779167, 11.246111],
+                {
+}
+            ).addTo(map_abce5b104d796443670d63a4163d9919);
+        
+    
+            var icon_59fb5b8d28a7d29ade23e722aa7bd7ab = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_dd073a5fa0dbbbf46972da5b9408867d = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_ef569c2f47d57856a43aba401697727c = $(`<div id="html_ef569c2f47d57856a43aba401697727c" style="width: 100.0%; height: 100.0%;">Firenze / Флорентия (cfr. Speranzi 2013: 43-98) (Marco Musuro / Μάρκος Μουσοῦρος / Марк Мусурос)</div>`)[0];
+                popup_dd073a5fa0dbbbf46972da5b9408867d.setContent(html_ef569c2f47d57856a43aba401697727c);
+            
+        
+
+        marker_1c51ad04fabf4b4946398de13bdf54ac.bindPopup(popup_dd073a5fa0dbbbf46972da5b9408867d)
+        ;
+
+        
+    
+    
+                marker_1c51ad04fabf4b4946398de13bdf54ac.setIcon(icon_59fb5b8d28a7d29ade23e722aa7bd7ab);
+            
+    
+            var marker_978e832a57896432726989f86e998cfe = L.marker(
+                [51.5, 10.5],
+                {
+}
+            ).addTo(map_abce5b104d796443670d63a4163d9919);
+        
+    
+            var icon_43b8feb4fcd8f156a6d1e4c81696fe4b = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_8c8525c7e4df7a5a412863a6a2572afa = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_9f5dad9b69913d3db605eaf23ff547b0 = $(`<div id="html_9f5dad9b69913d3db605eaf23ff547b0" style="width: 100.0%; height: 100.0%;">Germania / Германия (Massimiliano I d'Asburgo / Максимилиан I)</div>`)[0];
+                popup_8c8525c7e4df7a5a412863a6a2572afa.setContent(html_9f5dad9b69913d3db605eaf23ff547b0);
+            
+        
+
+        marker_978e832a57896432726989f86e998cfe.bindPopup(popup_8c8525c7e4df7a5a412863a6a2572afa)
+        ;
+
+        
+    
+    
+                marker_978e832a57896432726989f86e998cfe.setIcon(icon_43b8feb4fcd8f156a6d1e4c81696fe4b);
+            
+    
+            var marker_10bfba5d544d7ffb749832a2a7921ca8 = L.marker(
+                [51.5, 10.5],
+                {
+}
+            ).addTo(map_abce5b104d796443670d63a4163d9919);
+        
+    
+            var icon_f5c4ac39ef8cb9e514692c521bcac155 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_2781d4b3ab99627624f5af16b2b67e0f = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_454a003ca4677d98c34b26bb3ae9c4d0 = $(`<div id="html_454a003ca4677d98c34b26bb3ae9c4d0" style="width: 100.0%; height: 100.0%;">Germania / Германия (Massimiliano I d'Asburgo / Максимилиан I)</div>`)[0];
+                popup_2781d4b3ab99627624f5af16b2b67e0f.setContent(html_454a003ca4677d98c34b26bb3ae9c4d0);
+            
+        
+
+        marker_10bfba5d544d7ffb749832a2a7921ca8.bindPopup(popup_2781d4b3ab99627624f5af16b2b67e0f)
+        ;
+
+        
+    
+    
+                marker_10bfba5d544d7ffb749832a2a7921ca8.setIcon(icon_f5c4ac39ef8cb9e514692c521bcac155);
+            
+    
+            var marker_8821fe1d4e740a5193668e73bf72369e = L.marker(
+                [51.5, 10.5],
+                {
+}
+            ).addTo(map_abce5b104d796443670d63a4163d9919);
+        
+    
+            var icon_510c58e0a9bd95170866fc2105d38d6f = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_57c6e4d7037bf42c9b6d566941f666ec = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_2b197b3280546b84d7bb34fbb869f3af = $(`<div id="html_2b197b3280546b84d7bb34fbb869f3af" style="width: 100.0%; height: 100.0%;">Germania / Германия (Massimiliano I d'Asburgo / Максимилиан I)</div>`)[0];
+                popup_57c6e4d7037bf42c9b6d566941f666ec.setContent(html_2b197b3280546b84d7bb34fbb869f3af);
+            
+        
+
+        marker_8821fe1d4e740a5193668e73bf72369e.bindPopup(popup_57c6e4d7037bf42c9b6d566941f666ec)
+        ;
+
+        
+    
+    
+                marker_8821fe1d4e740a5193668e73bf72369e.setIcon(icon_510c58e0a9bd95170866fc2105d38d6f);
+            
+    
+            var marker_9a646bf51c5603c4da5803a038ac67cc = L.marker(
+                [51.5, 10.5],
+                {
+}
+            ).addTo(map_abce5b104d796443670d63a4163d9919);
+        
+    
+            var icon_1f061889aca22525974b0d8edfd838a1 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_0df47b513467b688115dbf6161ce60ea = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_5bcb23f8e7e0729b6729b4a0737fc0e7 = $(`<div id="html_5bcb23f8e7e0729b6729b4a0737fc0e7" style="width: 100.0%; height: 100.0%;">Germania / Германия (Massimiliano I d'Asburgo / Максимилиан I)</div>`)[0];
+                popup_0df47b513467b688115dbf6161ce60ea.setContent(html_5bcb23f8e7e0729b6729b4a0737fc0e7);
+            
+        
+
+        marker_9a646bf51c5603c4da5803a038ac67cc.bindPopup(popup_0df47b513467b688115dbf6161ce60ea)
+        ;
+
+        
+    
+    
+                marker_9a646bf51c5603c4da5803a038ac67cc.setIcon(icon_1f061889aca22525974b0d8edfd838a1);
+            
+    
+            var marker_a7ce0abbb03d9a9367af745296d30d17 = L.marker(
+                [51.5, 10.5],
+                {
+}
+            ).addTo(map_abce5b104d796443670d63a4163d9919);
+        
+    
+            var icon_dd4a3c10f1dbc993b39f2e19b4cfded7 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_6564941ccc468e408b674c0a450d7e82 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_a9696f6fa8e6645f10e5c8267f860021 = $(`<div id="html_a9696f6fa8e6645f10e5c8267f860021" style="width: 100.0%; height: 100.0%;">Germania / Германия (Massimiliano I d'Asburgo / Максимилиан I)</div>`)[0];
+                popup_6564941ccc468e408b674c0a450d7e82.setContent(html_a9696f6fa8e6645f10e5c8267f860021);
+            
+        
+
+        marker_a7ce0abbb03d9a9367af745296d30d17.bindPopup(popup_6564941ccc468e408b674c0a450d7e82)
+        ;
+
+        
+    
+    
+                marker_a7ce0abbb03d9a9367af745296d30d17.setIcon(icon_dd4a3c10f1dbc993b39f2e19b4cfded7);
+            
+    
+            var marker_0ff3ab4a4488ed8909dd8fbac252dff3 = L.marker(
+                [51.5, 10.5],
+                {
+}
+            ).addTo(map_abce5b104d796443670d63a4163d9919);
+        
+    
+            var icon_4de69c350196c7c4446168a8a503476a = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_3ef19efc378f5fdba6b96807f99ff0bc = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_cbd2efc337e0f6f23d99ed59ba7d686d = $(`<div id="html_cbd2efc337e0f6f23d99ed59ba7d686d" style="width: 100.0%; height: 100.0%;">Germania / Германия (Massimiliano I d'Asburgo / Максимилиан I)</div>`)[0];
+                popup_3ef19efc378f5fdba6b96807f99ff0bc.setContent(html_cbd2efc337e0f6f23d99ed59ba7d686d);
+            
+        
+
+        marker_0ff3ab4a4488ed8909dd8fbac252dff3.bindPopup(popup_3ef19efc378f5fdba6b96807f99ff0bc)
+        ;
+
+        
+    
+    
+                marker_0ff3ab4a4488ed8909dd8fbac252dff3.setIcon(icon_4de69c350196c7c4446168a8a503476a);
+            
+    
+            var marker_6a395c86132d51c4c080ab4d92beafcb = L.marker(
+                [51.5, 10.5],
+                {
+}
+            ).addTo(map_abce5b104d796443670d63a4163d9919);
+        
+    
+            var icon_d38a604e01ac8f631311f2811c78d0d3 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_da9f4005c62d92687e814acefa927428 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_fed7cd1d77c4bbb9568e874f56b7045a = $(`<div id="html_fed7cd1d77c4bbb9568e874f56b7045a" style="width: 100.0%; height: 100.0%;">Germania / Германия (Massimiliano I d'Asburgo / Максимилиан I)</div>`)[0];
+                popup_da9f4005c62d92687e814acefa927428.setContent(html_fed7cd1d77c4bbb9568e874f56b7045a);
+            
+        
+
+        marker_6a395c86132d51c4c080ab4d92beafcb.bindPopup(popup_da9f4005c62d92687e814acefa927428)
+        ;
+
+        
+    
+    
+                marker_6a395c86132d51c4c080ab4d92beafcb.setIcon(icon_d38a604e01ac8f631311f2811c78d0d3);
+            
+    
+            var marker_e5916c12f726ea7f0843b9c3d3447206 = L.marker(
+                [51.5, 10.5],
+                {
+}
+            ).addTo(map_abce5b104d796443670d63a4163d9919);
+        
+    
+            var icon_e528c9a3a296bd610904b29a7d7e5a5e = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_dc19272056ddd70b3243142d14a934f2 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_7b84ce78605e2df602e230baf874e76f = $(`<div id="html_7b84ce78605e2df602e230baf874e76f" style="width: 100.0%; height: 100.0%;">Germania / Германия (Massimiliano I d'Asburgo / Максимилиан I)</div>`)[0];
+                popup_dc19272056ddd70b3243142d14a934f2.setContent(html_7b84ce78605e2df602e230baf874e76f);
+            
+        
+
+        marker_e5916c12f726ea7f0843b9c3d3447206.bindPopup(popup_dc19272056ddd70b3243142d14a934f2)
+        ;
+
+        
+    
+    
+                marker_e5916c12f726ea7f0843b9c3d3447206.setIcon(icon_e528c9a3a296bd610904b29a7d7e5a5e);
+            
+    
+            var marker_efe43ddcad8aee1a3b0d20b31176f57f = L.marker(
+                [51.5, 10.5],
+                {
+}
+            ).addTo(map_abce5b104d796443670d63a4163d9919);
+        
+    
+            var icon_99f87f6edcf01ddbc0351bb45051134e = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_0ab35820473bcc5b47119fced35ae346 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_6ea24b6693d41ec19f0100de9b1f22da = $(`<div id="html_6ea24b6693d41ec19f0100de9b1f22da" style="width: 100.0%; height: 100.0%;">Germania / Германия (Massimiliano I d'Asburgo / Максимилиан I)</div>`)[0];
+                popup_0ab35820473bcc5b47119fced35ae346.setContent(html_6ea24b6693d41ec19f0100de9b1f22da);
+            
+        
+
+        marker_efe43ddcad8aee1a3b0d20b31176f57f.bindPopup(popup_0ab35820473bcc5b47119fced35ae346)
+        ;
+
+        
+    
+    
+                marker_efe43ddcad8aee1a3b0d20b31176f57f.setIcon(icon_99f87f6edcf01ddbc0351bb45051134e);
+            
+    
+            var marker_0e4395d84f6692285aec09fbe6bd7495 = L.marker(
+                [45.321389, 8.419722],
+                {
+}
+            ).addTo(map_abce5b104d796443670d63a4163d9919);
+        
+    
+            var icon_cc21c13356d7435e132fabcd60c10432 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_e2b447252b080baae5ab1ab80267b9c4 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_c34b40cdc68c7abcdc25450777b1d7ec = $(`<div id="html_c34b40cdc68c7abcdc25450777b1d7ec" style="width: 100.0%; height: 100.0%;">Vercelli / Верчелли (Niccolò di Tarso / Николай Тарсский)</div>`)[0];
+                popup_e2b447252b080baae5ab1ab80267b9c4.setContent(html_c34b40cdc68c7abcdc25450777b1d7ec);
+            
+        
+
+        marker_0e4395d84f6692285aec09fbe6bd7495.bindPopup(popup_e2b447252b080baae5ab1ab80267b9c4)
+        ;
+
+        
+    
+    
+                marker_0e4395d84f6692285aec09fbe6bd7495.setIcon(icon_cc21c13356d7435e132fabcd60c10432);
+            
+    
+            var marker_e5e3e2e43778551a2dfb1134fa2aeab9 = L.marker(
+                [44.837778, 11.620556],
+                {
+}
+            ).addTo(map_abce5b104d796443670d63a4163d9919);
+        
+    
+            var icon_ed4009ee19d771746d3d70ad24b9cce8 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_aba87633b92fdc89ea629d4ff80f182a = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_57c65d7b3fc29500c739624c5012603a = $(`<div id="html_57c65d7b3fc29500c739624c5012603a" style="width: 100.0%; height: 100.0%;">Ferrara / Феррара (Niccolò Lelio Cosmico / Никколо Лелио Козмико)</div>`)[0];
+                popup_aba87633b92fdc89ea629d4ff80f182a.setContent(html_57c65d7b3fc29500c739624c5012603a);
+            
+        
+
+        marker_e5e3e2e43778551a2dfb1134fa2aeab9.bindPopup(popup_aba87633b92fdc89ea629d4ff80f182a)
+        ;
+
+        
+    
+    
+                marker_e5e3e2e43778551a2dfb1134fa2aeab9.setIcon(icon_ed4009ee19d771746d3d70ad24b9cce8);
+            
+    
+            var marker_d861fef8bc678617a6a2bf3a3c0b30da = L.marker(
+                [45.436944, 12.3325],
+                {
+}
+            ).addTo(map_abce5b104d796443670d63a4163d9919);
+        
+    
+            var icon_235576bcd4842e1122b092116582987e = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_003f44b79362472c4158341a08f0c834 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_cba76c8b71d81412b683e9f97aa4d830 = $(`<div id="html_cba76c8b71d81412b683e9f97aa4d830" style="width: 100.0%; height: 100.0%;">Venezia / Венеция (Nicola Vlasto / Νικόλαος Βλαστός / Николай Властос)</div>`)[0];
+                popup_003f44b79362472c4158341a08f0c834.setContent(html_cba76c8b71d81412b683e9f97aa4d830);
+            
+        
+
+        marker_d861fef8bc678617a6a2bf3a3c0b30da.bindPopup(popup_003f44b79362472c4158341a08f0c834)
+        ;
+
+        
+    
+    
+                marker_d861fef8bc678617a6a2bf3a3c0b30da.setIcon(icon_235576bcd4842e1122b092116582987e);
+            
+    
+            var marker_8bc613643c0c4e04e7bd36a1338e598d = L.marker(
+                [45.436944, 12.3325],
+                {
+}
+            ).addTo(map_abce5b104d796443670d63a4163d9919);
+        
+    
+            var icon_660d75fbb17cd815e28ef0604ceb7852 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_16182a4345f2c6d644f7c20db7aeda28 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_d02c94f3149ceae0c115a7ef3ce2200b = $(`<div id="html_d02c94f3149ceae0c115a7ef3ce2200b" style="width: 100.0%; height: 100.0%;">Venezia / Венеция (Nicola Vlasto / Νικόλαος Βλαστός / Николай Властос)</div>`)[0];
+                popup_16182a4345f2c6d644f7c20db7aeda28.setContent(html_d02c94f3149ceae0c115a7ef3ce2200b);
+            
+        
+
+        marker_8bc613643c0c4e04e7bd36a1338e598d.bindPopup(popup_16182a4345f2c6d644f7c20db7aeda28)
+        ;
+
+        
+    
+    
+                marker_8bc613643c0c4e04e7bd36a1338e598d.setIcon(icon_660d75fbb17cd815e28ef0604ceb7852);
+            
+    
+            var marker_4e1ba6985aaacc81624f535e7975f312 = L.marker(
+                [45.407778, 11.885833],
+                {
+}
+            ).addTo(map_abce5b104d796443670d63a4163d9919);
+        
+    
+            var icon_df695d7c24e1debbe5a172439b026a8c = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_f0c8ceed4bf0f5afe492ae516704aea3 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_fa7d1cb36fa513fef70d03511a2d5eb4 = $(`<div id="html_fa7d1cb36fa513fef70d03511a2d5eb4" style="width: 100.0%; height: 100.0%;">Padova / Падуя (Paolo / Παῦλος / Павел)</div>`)[0];
+                popup_f0c8ceed4bf0f5afe492ae516704aea3.setContent(html_fa7d1cb36fa513fef70d03511a2d5eb4);
+            
+        
+
+        marker_4e1ba6985aaacc81624f535e7975f312.bindPopup(popup_f0c8ceed4bf0f5afe492ae516704aea3)
+        ;
+
+        
+    
+    
+                marker_4e1ba6985aaacc81624f535e7975f312.setIcon(icon_df695d7c24e1debbe5a172439b026a8c);
+            
+    
+            var marker_0fc033ec3ec526e460590a66c0360fe8 = L.marker(
+                [43.779167, 11.246111],
+                {
+}
+            ).addTo(map_abce5b104d796443670d63a4163d9919);
+        
+    
+            var icon_e7e2ec4714248f639762f28c6d2fa17d = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_e714622ed7f86783b89cb80743f8e602 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_2ebd772f815f9b8c9dc6f62b49136326 = $(`<div id="html_2ebd772f815f9b8c9dc6f62b49136326" style="width: 100.0%; height: 100.0%;">Firenze / Флорентия (Pietro Candido (da Portico) / Пьетро Кандидо)</div>`)[0];
+                popup_e714622ed7f86783b89cb80743f8e602.setContent(html_2ebd772f815f9b8c9dc6f62b49136326);
+            
+        
+
+        marker_0fc033ec3ec526e460590a66c0360fe8.bindPopup(popup_e714622ed7f86783b89cb80743f8e602)
+        ;
+
+        
+    
+    
+                marker_0fc033ec3ec526e460590a66c0360fe8.setIcon(icon_e7e2ec4714248f639762f28c6d2fa17d);
+            
+    
+            var marker_effdb34c35707f68b06cfe95e510c4c0 = L.marker(
+                [43.779167, 11.246111],
+                {
+}
+            ).addTo(map_abce5b104d796443670d63a4163d9919);
+        
+    
+            var icon_7fea6cf2a30d50678f3df78f20750a92 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_dbc162166564a14e3ab509e7ec12235a = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_eacb070295635fa5d116f3e979b42a77 = $(`<div id="html_eacb070295635fa5d116f3e979b42a77" style="width: 100.0%; height: 100.0%;">Firenze / Флорентия (Pietro Candido (da Portico) / Пьетро Кандидо)</div>`)[0];
+                popup_dbc162166564a14e3ab509e7ec12235a.setContent(html_eacb070295635fa5d116f3e979b42a77);
+            
+        
+
+        marker_effdb34c35707f68b06cfe95e510c4c0.bindPopup(popup_dbc162166564a14e3ab509e7ec12235a)
+        ;
+
+        
+    
+    
+                marker_effdb34c35707f68b06cfe95e510c4c0.setIcon(icon_7fea6cf2a30d50678f3df78f20750a92);
+            
+    
+            var marker_dbbb76e73f48e6fc50e76923375ef058 = L.marker(
+                [43.779167, 11.246111],
+                {
+}
+            ).addTo(map_abce5b104d796443670d63a4163d9919);
+        
+    
+            var icon_db3ae93095243f4afa9628cc4e47a34d = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_e6d477350f3bd9d8b540ab61ea30a164 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_e5eb2690cb95392cbe6d9ce8614cdc5a = $(`<div id="html_e5eb2690cb95392cbe6d9ce8614cdc5a" style="width: 100.0%; height: 100.0%;">Firenze / Флорентия (Pietro Candido (da Portico) / Пьетро Кандидо)</div>`)[0];
+                popup_e6d477350f3bd9d8b540ab61ea30a164.setContent(html_e5eb2690cb95392cbe6d9ce8614cdc5a);
+            
+        
+
+        marker_dbbb76e73f48e6fc50e76923375ef058.bindPopup(popup_e6d477350f3bd9d8b540ab61ea30a164)
+        ;
+
+        
+    
+    
+                marker_dbbb76e73f48e6fc50e76923375ef058.setIcon(icon_db3ae93095243f4afa9628cc4e47a34d);
+            
+    
+            var marker_ebeab545e9612d83baea0cb12c14c9e8 = L.marker(
+                [43.779167, 11.246111],
+                {
+}
+            ).addTo(map_abce5b104d796443670d63a4163d9919);
+        
+    
+            var icon_440334637c9a370a7c0e872255636438 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_1ce6a23da50112f8713e7d8c1c8c92c2 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_bb07db8ed819926ef6ebc45afb5bbdb1 = $(`<div id="html_bb07db8ed819926ef6ebc45afb5bbdb1" style="width: 100.0%; height: 100.0%;">Firenze / Флорентия, Venezia / Венеция (Scipione Forteguerri, Carteromaco / Сципион Картеромах)</div>`)[0];
+                popup_1ce6a23da50112f8713e7d8c1c8c92c2.setContent(html_bb07db8ed819926ef6ebc45afb5bbdb1);
+            
+        
+
+        marker_ebeab545e9612d83baea0cb12c14c9e8.bindPopup(popup_1ce6a23da50112f8713e7d8c1c8c92c2)
+        ;
+
+        
+    
+    
+                marker_ebeab545e9612d83baea0cb12c14c9e8.setIcon(icon_440334637c9a370a7c0e872255636438);
+            
+    
+            var marker_c1d72b422d0fcc8521a43cded3f9d960 = L.marker(
+                [43.779167, 11.246111],
+                {
+}
+            ).addTo(map_abce5b104d796443670d63a4163d9919);
+        
+    
+            var icon_9208859fb8166bd76ceaac70e94c1276 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_82788bbe151b178125220eeb78242546 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_0bda8f9a5a2913b74220676a21c1fccf = $(`<div id="html_0bda8f9a5a2913b74220676a21c1fccf" style="width: 100.0%; height: 100.0%;">Firenze / Флорентия, Venezia / Венеция (Scipione Forteguerri, Carteromaco / Сципион Картеромах)</div>`)[0];
+                popup_82788bbe151b178125220eeb78242546.setContent(html_0bda8f9a5a2913b74220676a21c1fccf);
+            
+        
+
+        marker_c1d72b422d0fcc8521a43cded3f9d960.bindPopup(popup_82788bbe151b178125220eeb78242546)
+        ;
+
+        
+    
+    
+                marker_c1d72b422d0fcc8521a43cded3f9d960.setIcon(icon_9208859fb8166bd76ceaac70e94c1276);
+            
+    
+            var marker_284a5d1221cd660df6f2e50140b63375 = L.marker(
+                [43.779167, 11.246111],
+                {
+}
+            ).addTo(map_abce5b104d796443670d63a4163d9919);
+        
+    
+            var icon_024cc57300d27765d5fcbb8cad94598c = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_2197d213cce8c7d5458ff6f1bb5487b2 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_94d2187e15dcaa613bcd1ec5e88eea5a = $(`<div id="html_94d2187e15dcaa613bcd1ec5e88eea5a" style="width: 100.0%; height: 100.0%;">Firenze / Флорентия, Venezia / Венеция (Scipione Forteguerri, Carteromaco / Сципион Картеромах)</div>`)[0];
+                popup_2197d213cce8c7d5458ff6f1bb5487b2.setContent(html_94d2187e15dcaa613bcd1ec5e88eea5a);
+            
+        
+
+        marker_284a5d1221cd660df6f2e50140b63375.bindPopup(popup_2197d213cce8c7d5458ff6f1bb5487b2)
+        ;
+
+        
+    
+    
+                marker_284a5d1221cd660df6f2e50140b63375.setIcon(icon_024cc57300d27765d5fcbb8cad94598c);
+            
+    
+            var marker_4f1dbe9095ef6f1eb7e042c7fc8f8711 = L.marker(
+                [45.436944, 12.3325],
+                {
+}
+            ).addTo(map_abce5b104d796443670d63a4163d9919);
+        
+    
+            var icon_6f99db9fc28235f05275cb64c5089a1c = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_9a847aea7c1fdaba233a8edd30d068cc = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_62d5f74142898e05368ceb05d42197e3 = $(`<div id="html_62d5f74142898e05368ceb05d42197e3" style="width: 100.0%; height: 100.0%;">Venezia / Венеция (Zaccaria Calliergi / Ζαχαρίας Καλλιέργης / Захария Каллиергис)</div>`)[0];
+                popup_9a847aea7c1fdaba233a8edd30d068cc.setContent(html_62d5f74142898e05368ceb05d42197e3);
+            
+        
+
+        marker_4f1dbe9095ef6f1eb7e042c7fc8f8711.bindPopup(popup_9a847aea7c1fdaba233a8edd30d068cc)
+        ;
+
+        
+    
+    
+                marker_4f1dbe9095ef6f1eb7e042c7fc8f8711.setIcon(icon_6f99db9fc28235f05275cb64c5089a1c);
+            
+    
+            var marker_9a95e4cf84af6391601fdafa1bbe99e2 = L.marker(
+                [45.436944, 12.3325],
+                {
+}
+            ).addTo(map_abce5b104d796443670d63a4163d9919);
+        
+    
+            var icon_a45aa01facef1dfb2cc45a4c4ecfdf6f = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_0a6c46ad20bce98fb512fa1fadc85648 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_2f43fd2bba3f7cee2fde1b83672fa39f = $(`<div id="html_2f43fd2bba3f7cee2fde1b83672fa39f" style="width: 100.0%; height: 100.0%;">Venezia / Венеция ([un doge di Venezia / дoж Венеции])</div>`)[0];
+                popup_0a6c46ad20bce98fb512fa1fadc85648.setContent(html_2f43fd2bba3f7cee2fde1b83672fa39f);
+            
+        
+
+        marker_9a95e4cf84af6391601fdafa1bbe99e2.bindPopup(popup_0a6c46ad20bce98fb512fa1fadc85648)
+        ;
+
+        
+    
+    
+                marker_9a95e4cf84af6391601fdafa1bbe99e2.setIcon(icon_a45aa01facef1dfb2cc45a4c4ecfdf6f);
+            
+    
+            var marker_838598195a0dfe4ee6253546b867de81 = L.marker(
+                [45.436944, 12.3325],
+                {
+}
+            ).addTo(map_abce5b104d796443670d63a4163d9919);
+        
+    
+            var icon_2588f96c1b8e036bf28d4223f62955cd = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_53398dd3a4c2113726b297027cffede2 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_5f9e8983b44d619510d4c470773255f1 = $(`<div id="html_5f9e8983b44d619510d4c470773255f1" style="width: 100.0%; height: 100.0%;">Venezia / Венеция ([un mercante di pelli / кожевник])</div>`)[0];
+                popup_53398dd3a4c2113726b297027cffede2.setContent(html_5f9e8983b44d619510d4c470773255f1);
+            
+        
+
+        marker_838598195a0dfe4ee6253546b867de81.bindPopup(popup_53398dd3a4c2113726b297027cffede2)
+        ;
+
+        
+    
+    
+                marker_838598195a0dfe4ee6253546b867de81.setIcon(icon_2588f96c1b8e036bf28d4223f62955cd);
+            
+    
+            var marker_2e06f536874f6bb75e9b02c38f518a38 = L.marker(
+                [36.526667, -6.288889],
+                {
+}
+            ).addTo(map_abce5b104d796443670d63a4163d9919);
+        
+    
+            var icon_8734dd7581a3f29bf8855196f66073ba = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_9cb61addf85dfa5122a485aa61a4f5fc = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_2fb53e91db0160fac187a77f3f582045 = $(`<div id="html_2fb53e91db0160fac187a77f3f582045" style="width: 100.0%; height: 100.0%;">Cadice / Кадис, Cuba / Куба, Indie occidentali / Вест-Индия, Isole Molucche / Молуккские острова (navigatori portoghesi e spagnoli / португальские и испанские мореплаватели)</div>`)[0];
+                popup_9cb61addf85dfa5122a485aa61a4f5fc.setContent(html_2fb53e91db0160fac187a77f3f582045);
+            
+        
+
+        marker_2e06f536874f6bb75e9b02c38f518a38.bindPopup(popup_9cb61addf85dfa5122a485aa61a4f5fc)
+        ;
+
+        
+    
+    
+                marker_2e06f536874f6bb75e9b02c38f518a38.setIcon(icon_8734dd7581a3f29bf8855196f66073ba);
+            
+    
+            var marker_fb16805c9ae615056820615742f5f4b2 = L.marker(
+                [43.779167, 11.246111],
+                {
+}
+            ).addTo(map_abce5b104d796443670d63a4163d9919);
+        
+    
+            var icon_5daeb6c1f6fa087fce23a0d8283b9907 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_06f6383b95887d756412a2f69e784c31 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_4650056fa2db51b3f94668377b45fc68 = $(`<div id="html_4650056fa2db51b3f94668377b45fc68" style="width: 100.0%; height: 100.0%;">Firenze / Флорентия (frati domenicani / монахи-доминиканцы)</div>`)[0];
+                popup_06f6383b95887d756412a2f69e784c31.setContent(html_4650056fa2db51b3f94668377b45fc68);
+            
+        
+
+        marker_fb16805c9ae615056820615742f5f4b2.bindPopup(popup_06f6383b95887d756412a2f69e784c31)
+        ;
+
+        
+    
+    
+                marker_fb16805c9ae615056820615742f5f4b2.setIcon(icon_5daeb6c1f6fa087fce23a0d8283b9907);
+            
+</script>
+</body>
