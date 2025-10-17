@@ -1,112 +1,64 @@
+
 <!DOCTYPE html>
 <html lang="it">
 <head>
 <meta charset="utf-8">
-<title>Mappa Waldseemüller 1507 - Marker Pixel</title>
+<title>Mappa Storica Waldseemüller</title>
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <style>
   html, body { height: 100%; margin: 0; }
-  #map { width: 1200px; height: 700px; background: #000; }
+  #map-storica { width: 1200px; height: 700px; margin: 0 auto; }
 </style>
 </head>
 <body>
-<div id="map"></div>
+<div id="map-storica"></div>
 
 <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
 <script src="leaflet-iiif.js"></script>
-
 <script>
-const iiifUrl = 'https://tile.loc.gov/image-services/iiif/service:gmd:gmd3:g3200:g3200:ct000725C/info.json';
+var mapStorica = L.map('map-storica', {
+    crs: L.CRS.Simple,
+    minZoom: 0,
+    maxZoom: 8
+});
 
-// Marker definiti con coordinate pixel reali
-const markers = [
-   
-    { name: "Click Test", x: 2077, y: -1405 },
-      {name: "Venezia", x: 2095, y: -1385}
- 
- // Marker aggiunto
-];
-const markers1 = [
-   
-    { name: "Click Test", x: 2077, y: -1600 },
-      
- 
- // Marker aggiunto
-];
+var iiifLayer = L.tileLayer.iiif("https://tile.loc.gov/image-services/iiif/service:gmd:gmd3:g3200:g3200:ct000725C/info.json", {
+    attribution: '&copy; Library of Congress',
+    noWrap: true
+}).addTo(mapStorica);
 
-const scale = 20;  // scala per adattare layer e marker al div
+var imageWidth = 0;
+var imageHeight = 0;
 
-fetch(iiifUrl)
-    .then(res => res.json())
-    .then(manifest => {
-        const w = manifest.width;
-        const h = manifest.height;
+fetch("https://tile.loc.gov/image-services/iiif/service:gmd:gmd3:g3200:g3200:ct000725C/info.json")
+  .then(res => res.json())
+  .then(manifest => {
+    imageWidth = manifest.width;
+    imageHeight = manifest.height;
+    mapStorica.fitBounds([[0,0],[imageHeight/20, imageWidth/20]]);
+  });
 
-        if (!w || !h) { console.error("Dimensioni manifesto IIIF non disponibili"); return; }
-        console.log("Dimensioni manifesto:", w, h);
+// Aggiungi marker di esempio
+const punti = [{'x': 2095, 'y': 1385, 'nome': 'Venezia'}, {'x': 2763, 'y': 1325, 'nome': 'Mosca'}, {'x': 2300, 'y': 1500, 'nome': 'Roma'}];
+punti.forEach(function(p){
+    L.marker([-p.y/20, p.x/20]).addTo(mapStorica).bindPopup(p.nome);
+});
 
-        const map = L.map('map', { crs: L.CRS.Simple, minZoom: 0, maxZoom: 5 });
+// === RACCOLTA COORDINATE IN PIXEL ===
+mapStorica.on('click', function(e) {
+    if (!imageWidth || !imageHeight) return;
 
-        const iiifLayer = L.tileLayer.iiif(iiifUrl, { attribution: '&copy; Library of Congress', noWrap: true });
-        iiifLayer.addTo(map);
+    // Conversione inversa: da coordinate Leaflet a pixel reali
+    var x_pixel = e.latlng.lng * 20;
+    var y_pixel = -e.latlng.lat * 20;
 
-        const bounds = [[0,0],[h/scale, w/scale]];
-        map.fitBounds(bounds);
-        console.log("Bounds scalati:", bounds);
+    console.log("Coordinate pixel:", x_pixel.toFixed(0), y_pixel.toFixed(0));
 
-        iiifLayer.on('load', function() {
-            const redMarker = L.divIcon({
-                html: '<i class="fa-solid fa-location-dot" style="color:#e00b0b; font-size:24px;"></i>',
-                className: 'custom-fa-marker',
-                iconSize: [24,24],
-                iconAnchor: [12,24]
-            });
-
-            // Aggiungi tutti i marker scalati
-            markers.forEach(m => {
-                let scaledY = m.y / scale;
-                let scaledX = m.x / scale;
-           
-                // Se y negativa, impostiamo 0 per renderlo visibile
-               
-
-                const scaled = [scaledY, scaledX];
-                L.marker(scaled, {icon: redMarker})
-                 .addTo(map)
-                 .bindPopup(`<b>${m.name}</b>`);
-                console.log(`Marker ${m.name} aggiunto a`, scaled);
-            });
-            // Aggiungi tutti i marker scalati
-         
-        });
- iiifLayer.on('load', function() {
-            const redMarker = L.divIcon({
-                html: '<i class="fa-solid fa-location-dot" style="color:#e00b0b; font-size:36px;"></i>',
-                className: 'custom-fa-marker',
-                iconSize: [24,24],
-                iconAnchor: [12,24]
-            });
-
-            // Aggiungi tutti i marker scalati
-            markers1.forEach(m => {
-                let scaledY = m.y / scale;
-                let scaledX = m.x / scale;
-           
-                // Se y negativa, impostiamo 0 per renderlo visibile
-               
-
-                const scaled = [scaledY, scaledX];
-                L.marker(scaled, {icon: redMarker})
-                 .addTo(map)
-                 .bindPopup(`<b>${m.name}</b>`);
-                console.log(`Marker ${m.name} aggiunto a`, scaled);
-            });
-            // Aggiungi tutti i marker scalati
-         
-        });
-    })
-    .catch(err => console.error("Errore caricamento manifesto IIIF:", err));
+    L.popup()
+      .setLatLng(e.latlng)
+      .setContent("Pixel X: " + x_pixel.toFixed(0) + "<br>Pixel Y: " + y_pixel.toFixed(0))
+      .openOn(mapStorica);
+});
 </script>
 </body>
 </html>
