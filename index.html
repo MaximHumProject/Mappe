@@ -20,7 +20,7 @@
 
   #controls {
     position: absolute;
-    top: 710px;  /* subito sotto la mappa (700px altezza) + 10px margine) */
+    top: 710px;
     left: 50%;
     transform: translateX(-50%);
     z-index: 1000;
@@ -29,7 +29,6 @@
     gap: 10px;
   }
 
-  /* Toggle switch */
   .switch {
     position: relative;
     display: inline-block;
@@ -82,42 +81,28 @@
   </label>
 </div>
 
-<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
-<script src="leaflet-iiif.js"></script>
-
 <script>
-const iiifUrl = 'https://tile.loc.gov/image-services/iiif/service:gmd:gmd3:g3200:g3200:ct000725C/info.json';
-let mapStorica, mapModerna;
-const scale = 20;
-
-// FUNZIONE MAPPA STORICA
 function showHistorical() {
   document.getElementById('map-storica').style.display = 'block';
   document.getElementById('map-moderna').style.display = 'none';
-    const storica = document.getElementById('map-storica');
-  storica.style.display = 'block';
-  
-  storica.innerHTML = `
+  document.getElementById('map-storica').innerHTML = `
     <iframe src="provaInline.html"
             style="width:100%;height:100%;border:none;">
     </iframe>`;
 }
 
-// FUNZIONE MAPPA MODERNA
-
 function showModern() {
   document.getElementById('map-storica').style.display = 'none';
-  const moderna = document.getElementById('map-moderna');
-  moderna.style.display = 'block';
-  moderna.innerHTML = `
+  document.getElementById('map-moderna').style.display = 'block';
+  document.getElementById('map-moderna').innerHTML = `
     <iframe src="mappa_animata_cluster.html"
             style="width:100%;height:100%;border:none;">
     </iframe>`;
 }
 
-// TOGGLE
 document.getElementById('mapToggle').addEventListener('change', function() {
-  if (this.checked) showHistorical(); else showModern();
+  if (this.checked) showHistorical();
+  else showModern();
 });
 
 // Avvio iniziale
