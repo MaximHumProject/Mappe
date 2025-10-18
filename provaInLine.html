@@ -1,0 +1,1185 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<title>Mappa Waldseemüller 1507</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"/>
+<link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css"/>
+<link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css"/>
+<style>
+  html, body { height: 100%; margin: 0; }
+  #map-storica { width: 1200px; height: 700px; margin: 0 auto; }
+
+</style>
+</head>
+<body>
+<div id="map-storica"></div>
+
+<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+<script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
+<script src="leaflet-iiif.js"></script>
+
+<script>
+var scale = 20;
+var blackIcon = L.icon({
+  iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-grey.png',
+  shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-shadow.png',
+  iconSize: [25, 41],
+  iconAnchor: [12, 41],
+  popupAnchor: [1, -34],
+  shadowSize: [41, 41]
+});
+
+var redIcon = L.icon({
+    iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-red.png',
+    shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-shadow.png',
+    iconSize: [25, 41],
+    iconAnchor: [12, 41],
+    popupAnchor: [1, -34],
+    shadowSize: [41, 41]
+});
+
+
+var blueIcon = L.icon({
+    iconUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-icon.png',
+    shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-shadow.png',
+    iconSize: [25, 41],
+    iconAnchor: [12, 41],
+    popupAnchor: [1, -34],
+    shadowSize: [41, 41]
+});
+var blueIconMan = L.icon({
+    iconUrl: 'ManBlue.png',
+    shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-shadow.png',
+    iconSize: [40, 45],
+    iconAnchor: [12, 41],
+    popupAnchor: [1, -34],
+    shadowSize: [41, 41]
+});
+var redIconMan = L.icon({
+    iconUrl: 'redMan.png',
+    shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-shadow.png',
+    iconSize: [40, 45],
+    iconAnchor: [12, 41],
+    popupAnchor: [1, -34],
+    shadowSize: [41, 41]
+});
+var blueIconBook = L.icon({
+    iconUrl: 'LibroBlu.png',
+    shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-shadow.png',
+    iconSize: [40, 45],
+    iconAnchor: [12, 41],
+    popupAnchor: [1, -34],
+    shadowSize: [41, 41]
+});
+var redIconBook = L.icon({
+    iconUrl: 'LibroRosso.png',
+    shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-shadow.png',
+    iconSize: [40, 45],
+    iconAnchor: [12, 41],
+    popupAnchor: [1, -34],
+    shadowSize: [41, 41]
+});
+var mapStorica = L.map('map-storica', {
+    crs: L.CRS.Simple,
+    minZoom: 0,
+    maxZoom: 8
+});
+
+// IIIF Layer
+var iiif_url = "https://tile.loc.gov/image-services/iiif/service:gmd:gmd3:g3200:g3200:ct000725C/info.json";
+var iiifLayer = L.tileLayer.iiif(iiif_url, {
+    attribution: '&copy; Library of Congress',
+    noWrap: true
+}).addTo(mapStorica);
+
+fetch(iiif_url)
+  .then(res => res.json())
+  .then(manifest => {
+    const w = manifest.width;
+    const h = manifest.height;
+    mapStorica.fitBounds([[0,0],[h/scale, w/scale]]);
+});
+
+// Dati punti JSON inline
+var punti = [
+  {
+    "x": 2074.0,
+    "y": 1338.0,
+    "luogo": "Alpi / Альпы",
+    "pers": "-",
+    "testi": "Ivanov 133; Ivanov 137; Ivanov 141",
+    "reale": false
+  },
+  {
+    "x": 2078.0,
+    "y": 1391.0,
+    "luogo": "Bologna / Болонья",
+    "pers": "Antonio Cortesi Urceo, Codro / Антонио Урчео Кодро",
+    "testi": "Ivanov 236",
+    "reale": true
+  },
+  {
+    "x": 1660.0,
+    "y": 1368.0,
+    "luogo": "Cadice / Кадис",
+    "pers": "-",
+    "testi": "Ivanov 133; Ivanov 137; Ivanov 141",
+    "reale": false
+  },
+  {
+    "x": 1660.0,
+    "y": 1368.0,
+    "luogo": "Cadice / Кадис",
+    "pers": "navigatori portoghesi e spagnoli / португальские и испанские мореплаватели",
+    "testi": "Ivanov 260+102",
+    "reale": false
+  },
+  {
+    "x": 1656.0,
+    "y": 1373.0,
+    "luogo": "Colonne d'Ercole / Геркулесовы столбы",
+    "pers": "navigatori portoghesi e spagnoli / португальские и испанские мореплаватели",
+    "testi": "Ivanov 260+102",
+    "reale": false
+  },
+  {
+    "x": 2186.0,
+    "y": 1535.0,
+    "luogo": "Corfù (Corcira) / Корфу (Керкира)",
+    "pers": "Bayezid II / Баязид II",
+    "testi": "Ivanov 237",
+    "reale": false
+  },
+  {
+    "x": 2225.0,
+    "y": 1539.0,
+    "luogo": "Corone / Корони",
+    "pers": "Bayezid II / Баязид II",
+    "testi": "Ivanov 152; [Ivanov 152-a]; [Ivanov 152-b]",
+    "reale": false
+  },
+  {
+    "x": 864.0,
+    "y": 1629.0,
+    "luogo": "Cuba / Куба",
+    "pers": "navigatori portoghesi e spagnoli / португальские и испанские мореплаватели",
+    "testi": "Ivanov 260(+102)",
+    "reale": false
+  },
+  {
+    "x": 2089.0,
+    "y": 1390.0,
+    "luogo": "Ferrara / Феррара",
+    "pers": "Niccolò Lelio Cosmico / Никколо Лелио Козмико",
+    "testi": "Ivanov 164",
+    "reale": true
+  },
+  {
+    "x": 2076.0,
+    "y": 1402.0,
+    "luogo": "Firenze / Флорентия",
+    "pers": "-",
+    "testi": "-",
+    "reale": true
+  },
+  {
+    "x": 2076.0,
+    "y": 1402.0,
+    "luogo": "Firenze / Флорентия",
+    "pers": "Angelo Poliziano / Анджело Полициано",
+    "testi": "Ivanov 164",
+    "reale": true
+  },
+  {
+    "x": 2076.0,
+    "y": 1402.0,
+    "luogo": "Firenze / Флорентия",
+    "pers": "Aristobulo Apostolio / Ἀρσένιος Ἀποστόλιος / Аристовул Апостолис (cfr. Speranzi 2013: 43-98)",
+    "testi": "-",
+    "reale": true
+  },
+  {
+    "x": 2076.0,
+    "y": 1402.0,
+    "luogo": "Firenze / Флорентия",
+    "pers": "Giano Lascaris / Ἰανὸς Λάσκαρις / Иоанн Ласкарис",
+    "testi": "Maksim Grek 2008: 84 (nr. I.1)",
+    "reale": true
+  },
+  {
+    "x": 2076.0,
+    "y": 1402.0,
+    "luogo": "Firenze / Флорентия",
+    "pers": "Giorgio Mosco / Γεώργιος Μόσχος / Георгий Мосх (Speranzi 2010: 280, nota 94)",
+    "testi": "-",
+    "reale": true
+  },
+  {
+    "x": 2076.0,
+    "y": 1402.0,
+    "luogo": "Firenze / Флорентия",
+    "pers": "Giovacchino della Torre / Иоаким делла Торре",
+    "testi": "Ivanov 229",
+    "reale": true
+  },
+  {
+    "x": 2076.0,
+    "y": 1402.0,
+    "luogo": "Firenze / Флорентия",
+    "pers": "Girolamo Savonarola / Иероним Савонарола",
+    "testi": "Ivanov 229",
+    "reale": true
+  },
+  {
+    "x": 2076.0,
+    "y": 1402.0,
+    "luogo": "Firenze / Флорентия",
+    "pers": "Marco Musuro / Μάρκος Μουσοῦρος / Марк Мусурос (cfr. Speranzi 2013: 43-98)",
+    "testi": "-",
+    "reale": true
+  },
+  {
+    "x": 2076.0,
+    "y": 1402.0,
+    "luogo": "Firenze / Флорентия",
+    "pers": "Pietro Candido (da Portico)  / Пьетро Кандидо",
+    "testi": "Ivanov 239; Ivanov 240",
+    "reale": true
+  },
+  {
+    "x": 2076.0,
+    "y": 1402.0,
+    "luogo": "Firenze / Флорентия",
+    "pers": "frati domenicani / монахи-доминиканцы",
+    "testi": "Ivanov 229",
+    "reale": true
+  },
+  {
+    "x": 2076.0,
+    "y": 1402.0,
+    "luogo": "Firenze, basilica di San Marco / церковь Сан-Марко",
+    "pers": "Girolamo Savonarola / Иероним Савонарола",
+    "testi": "Ivanov 229",
+    "reale": true
+  },
+  {
+    "x": 2076.0,
+    "y": 1402.0,
+    "luogo": "Firenze, cattedrale di Santa Maria del Fiore / собор Санта-Мария-дель-Фьоре",
+    "pers": "Girolamo Savonarola / Иероним Савонарола",
+    "testi": "Ivanov 229",
+    "reale": true
+  },
+  {
+    "x": 2076.0,
+    "y": 1402.0,
+    "luogo": "Firenze, convento di San Marco / Флоренция, монастырь Святого Марка",
+    "pers": "Girolamo Savonarola / Иероним Савонарола",
+    "testi": "Ivanov 229",
+    "reale": true
+  },
+  {
+    "x": 2024.0,
+    "y": 1272.0,
+    "luogo": "Francia / Франция",
+    "pers": "-",
+    "testi": "Ivanov 229",
+    "reale": false
+  },
+  {
+    "x": 1993.0,
+    "y": 1313.0,
+    "luogo": "Gallia / Галлия",
+    "pers": "-",
+    "testi": "Ivanov 153; Ivanov 229",
+    "reale": false
+  },
+  {
+    "x": 1993.0,
+    "y": 1313.0,
+    "luogo": "Gallia / Галлия",
+    "pers": "Luigi XII di Valois-Orléans (Ludovico XII) / Людовик XII",
+    "testi": "Ivanov 152; [Ivanov 152-a]; [Ivanov 152-b]",
+    "reale": false
+  },
+  {
+    "x": 2163.0,
+    "y": 1272.0,
+    "luogo": "Germania / Германия",
+    "pers": "Massimiliano I d'Asburgo / Максимилиан I",
+    "testi": "Ivanov 152; [Ivanov 152-a]; [Ivanov 152-b]",
+    "reale": false
+  },
+  {
+    "x": 1181.0,
+    "y": 2160.0,
+    "luogo": "Indie occidentali / Вест-Индия",
+    "pers": "navigatori portoghesi e spagnoli / португальские и испанские мореплаватели",
+    "testi": "Ivanov 260(+102)",
+    "reale": false
+  },
+  {
+    "x": 4391.0,
+    "y": 2396.0,
+    "luogo": "Isole Molucche / Молуккские острова",
+    "pers": "navigatori portoghesi e spagnoli / португальские и испанские мореплаватели",
+    "testi": "Ivanov 260(+102)",
+    "reale": false
+  },
+  {
+    "x": 2102.0,
+    "y": 1419.0,
+    "luogo": "Italia / Италия",
+    "pers": "-",
+    "testi": "Ivanov 133; Ivanov 137; Ivanov 141; Ivanov 152; [Ivanov 152-a]; [Ivanov 152-b]; Ivanov 164; Ivanov 229; Ivanov 230",
+    "reale": true
+  },
+  {
+    "x": 2239.0,
+    "y": 1551.0,
+    "luogo": "Lepanto / Навпакт",
+    "pers": "Bayezid II / Баязид II",
+    "testi": "Ivanov 152; [Ivanov 152-a]; [Ivanov 152-b]",
+    "reale": false
+  },
+  {
+    "x": 2062.0,
+    "y": 1371.0,
+    "luogo": "Lombardia / Ломбардия",
+    "pers": "-",
+    "testi": "Ivanov 152; [Ivanov 152-a]; [Ivanov 152-b]; Ivanov 164",
+    "reale": true
+  },
+  {
+    "x": 2051.0,
+    "y": 1366.0,
+    "luogo": "Milano / Милан",
+    "pers": "Ludovico Maria Sforza, il Moro / Лодовико Мария Сфорца, Ambrogio da Rosate / Амвросий Розаде, Luigi XII di Valois-Orléans (Ludovico XII) / Людовик XII",
+    "testi": "Ivanov 152; [Ivanov 152-a]; [Ivanov 152-b]",
+    "reale": true
+  },
+  {
+    "x": 2077.0,
+    "y": 1384.0,
+    "luogo": "Mirandola / Мирандола",
+    "pers": "-",
+    "testi": "Ivanov 236; Ivanov 237",
+    "reale": true
+  },
+  {
+    "x": 2077.0,
+    "y": 1384.0,
+    "luogo": "Mirandola / Мирандола",
+    "pers": "Giovan Francesco Pico della Mirandola / Джанфранческо Пико делла Мирандола",
+    "testi": "Ivanov 235; Ivanov 238",
+    "reale": true
+  },
+  {
+    "x": 2219.0,
+    "y": 1604.0,
+    "luogo": "Modone / Метони",
+    "pers": "Bayezid II / Баязид II",
+    "testi": "Ivanov 152; [Ivanov 152-a]; [Ivanov 152-b]",
+    "reale": false
+  },
+  {
+    "x": 2042.0,
+    "y": 1368.0,
+    "luogo": "Novara / Новара",
+    "pers": "Luigi XII di Valois-Orléans (Ludovico XII) / Людовик XII",
+    "testi": "Ivanov 152; [Ivanov 152-a]; [Ivanov 152-b]",
+    "reale": false
+  },
+  {
+    "x": 2076.0,
+    "y": 1379.0,
+    "luogo": "Padova / Падуя",
+    "pers": "Agostino Nifo / Агостино Нифо Сесса",
+    "testi": "Ivanov 164",
+    "reale": true
+  },
+  {
+    "x": 2076.0,
+    "y": 1379.0,
+    "luogo": "Padova / Падуя",
+    "pers": "Paolo / Παῦλος / Павел",
+    "testi": "Ivanov 238",
+    "reale": true
+  },
+  {
+    "x": 2008.0,
+    "y": 1277.0,
+    "luogo": "Parigi / Париж",
+    "pers": "-",
+    "testi": "Ivanov 229",
+    "reale": false
+  },
+  {
+    "x": 1898.0,
+    "y": 1333.0,
+    "luogo": "Pirenei / Пиренеи",
+    "pers": "-",
+    "testi": "Ivanov 133; Ivanov 137; Ivanov 141",
+    "reale": false
+  },
+  {
+    "x": 2102.0,
+    "y": 1419.0,
+    "luogo": "Regni latini / латинские королевства",
+    "pers": "frati domenicani / монахи-доминиканцы, frati francescani / францисканцы",
+    "testi": "Ivanov 230",
+    "reale": true
+  },
+  {
+    "x": 2095.0,
+    "y": 1428.0,
+    "luogo": "Roma / Рим",
+    "pers": "-",
+    "testi": "Ivanov 133; Ivanov 137; Ivanov 141",
+    "reale": false
+  },
+  {
+    "x": 2095.0,
+    "y": 1428.0,
+    "luogo": "Roma / Рим",
+    "pers": "Alessandro VI / Александр VI",
+    "testi": "Ivanov 229",
+    "reale": false
+  },
+  {
+    "x": 1751.0,
+    "y": 1320.0,
+    "luogo": "Spagna / Испания",
+    "pers": "Alessandro VI / Александр VI",
+    "testi": "Ivanov 229",
+    "reale": false
+  },
+  {
+    "x": 2092.0,
+    "y": 1384.0,
+    "luogo": "Venezia / Венеция",
+    "pers": "-",
+    "testi": "Ivanov 152; -",
+    "reale": true
+  },
+  {
+    "x": 2092.0,
+    "y": 1384.0,
+    "luogo": "Venezia / Венеция",
+    "pers": "Aldo Manuzio / Альд Мануций",
+    "testi": "Ivanov 362; [Ivanov 362-a]",
+    "reale": true
+  },
+  {
+    "x": 2092.0,
+    "y": 1384.0,
+    "luogo": "Venezia / Венеция",
+    "pers": "Giano Lascaris / Ἰανὸς Λάσκαρις / Иоанн Ласкарис (cfr. Romoli 2021: 162-171)",
+    "testi": "-",
+    "reale": true
+  },
+  {
+    "x": 2092.0,
+    "y": 1384.0,
+    "luogo": "Venezia / Венеция",
+    "pers": "Giorgio Mosco / Γεώργιος Μόσχος / Георгий Мосх",
+    "testi": "Ivanov 237",
+    "reale": true
+  },
+  {
+    "x": 2092.0,
+    "y": 1384.0,
+    "luogo": "Venezia / Венеция",
+    "pers": "Giovanni Gregoropulo / Ἰωάννης Γρηγορόπουλος / Иоанн Григоропулос, Aldo Manuzio / Альд Мануций, Aristobulo Apostolio / Ἀρσένιος Ἀποστόλιος / Аристовул Апостолис, Zaccaria Calliergi / Ζαχαρίας Καλλιέργης / Захария Каллиергис, Francesco Roseto / Франческо Россето, [un mercante di pelli / кожевник]",
+    "testi": "Ivanov 238",
+    "reale": true
+  },
+  {
+    "x": 2092.0,
+    "y": 1384.0,
+    "luogo": "Venezia / Венеция",
+    "pers": "Marco Musuro / Μάρκος Μουσοῦρος / Марк Мусурос, Giovanni Gregoropulo / Ἰωάννης Γρηγορόπουλος / Иоанн Григоропулос, Nicola Vlasto / Νικόλαος Βλαστός / Николай Властос",
+    "testi": "Ivanov 240",
+    "reale": true
+  },
+  {
+    "x": 2092.0,
+    "y": 1384.0,
+    "luogo": "Venezia / Венеция",
+    "pers": "[un doge di Venezia / дoж Венеции]",
+    "testi": "Ivanov 182",
+    "reale": true
+  },
+  {
+    "x": 2092.0,
+    "y": 1384.0,
+    "luogo": "Venezia, bottega di panni al segno del bue (contrada Rialto in Panaria) / Венеция, мастерская ткани под знаком быка (район Риальто-ин-Панариа)",
+    "pers": "Girolamo Pichi / Иероним Пики",
+    "testi": "Ivanov 236",
+    "reale": true
+  },
+  {
+    "x": 2092.0,
+    "y": 1384.0,
+    "luogo": "Venezia, botteghe di panni (contrada Rialto in Panaria) / Венеция, мастерские ткани (район Риальто-ин-Панариа)",
+    "pers": "-",
+    "testi": "Ivanov 236",
+    "reale": true
+  },
+  {
+    "x": 2092.0,
+    "y": 1384.0,
+    "luogo": "Venezia, casa di Aldo Manuzio (dal 1489 al 1505: contrada Sant'Agostin, rio Terà San Secondo, angolo con la calle del Pistor di Sant'Agostin) / Венеция, дом Альда Мануция (от 1489 по 1505: район Сант-Агостин, рио Тера Сан Секондо, угол с улицей Пистор ди Сант-Агостин)",
+    "pers": "Aldo Manuzio / Альд Мануций, Giovanni Gregoropulo / Ἰωάννης Γρηγορόπουλος / Иоанн Григоропулос",
+    "testi": "Ivanov 237",
+    "reale": true
+  },
+  {
+    "x": 2092.0,
+    "y": 1384.0,
+    "luogo": "Venezia, contrada Rialto in Panaria / Венеция, район Риальто-ин-Панариа",
+    "pers": "-",
+    "testi": "Ivanov 236",
+    "reale": true
+  },
+  {
+    "x": 2092.0,
+    "y": 1384.0,
+    "luogo": "Venezia, stamperia di Aldo Manuzio (dal 1489 al 1505: contrada Sant'Agostin, rio Terà San Secondo, angolo con la calle del Pistor di Sant'Agostin, casa di Aldo Manunzio) / Венеция, типография Альда Мануция (от 1489 по 1505: район Сант-Агостин, рио Тера Сан Секондо, угол с улицей Пистор ди Сант-Агостин)",
+    "pers": "Aldo Manuzio / Альд Мануций, Scipione Forteguerri, Carteromaco / Сципион Картеромах",
+    "testi": "Ivanov 240",
+    "reale": true
+  },
+  {
+    "x": 2045.0,
+    "y": 1372.0,
+    "luogo": "Vercelli / Верчелли",
+    "pers": "-",
+    "testi": "Ivanov 236",
+    "reale": true
+  },
+  {
+    "x": 2045.0,
+    "y": 1372.0,
+    "luogo": "Vercelli / Верчелли",
+    "pers": "Niccolò di Tarso / Николай Тарсский, Ludovico Tizzoni / Лудовико Тиццони",
+    "testi": "Ivanov 235",
+    "reale": true
+  },
+  {
+    "x": 2076.0,
+    "y": 1402.0,
+    "luogo": "accademie italiane / итальянские академии",
+    "pers": "-",
+    "testi": "Ivanov 133; Ivanov 134; Ivanov 135; Ivanov 136; Ivanov 153; Ivanov 154; Ivanov 155; Ivanov 156",
+    "reale": true
+  }
+]
+var punti1 = [
+  {
+    "x": 2078.0,
+    "y": 1391.0,
+    "luogo": "Bologna / Болонья",
+    "pers": "Antonio Cortesi Urceo, Codro / Антонио Урчео Кодро",
+    "testi": "Ivanov 236",
+    "reale": true
+  },
+  {
+    "x": 1660.0,
+    "y": 1368.0,
+    "luogo": "Cadice / Кадис, Cuba / Куба, Indie occidentali / Вест-Индия, Isole Molucche / Молуккские острова",
+    "pers": "navigatori portoghesi e spagnoli / португальские и испанские мореплаватели",
+    "testi": "Ivanov 260(+102)",
+    "reale": false
+  },
+  {
+    "x": 2225.0,
+    "y": 1539.0,
+    "luogo": "Corone / Корони, Lepanto / Навпакт, Modone / Метони",
+    "pers": "Bayezid II / Баязид II",
+    "testi": "Ivanov 152; [Ivanov 152-a]; [Ivanov 152-b]",
+    "reale": false
+  },
+  {
+    "x": 2089.0,
+    "y": 1390.0,
+    "luogo": "Ferrara / Феррара",
+    "pers": "Niccolò Lelio Cosmico / Никколо Лелио Козмико",
+    "testi": "Ivanov 164",
+    "reale": true
+  },
+  {
+    "x": 2076.0,
+    "y": 1402.0,
+    "luogo": "Firenze / Флорентия",
+    "pers": "Angelo Poliziano / Анджело Полициано",
+    "testi": "Ivanov 164",
+    "reale": true
+  },
+  {
+    "x": 2076.0,
+    "y": 1402.0,
+    "luogo": "Firenze / Флорентия",
+    "pers": "Giano Lascaris / Ἰανὸς Λάσκαρις / Иоанн Ласкарис",
+    "testi": "Maksim Grek 2008: 84 (nr. I.1)",
+    "reale": true
+  },
+  {
+    "x": 2076.0,
+    "y": 1402.0,
+    "luogo": "Firenze / Флорентия",
+    "pers": "Giovacchino della Torre / Иоаким делла Торре",
+    "testi": "Ivanov 229",
+    "reale": true
+  },
+  {
+    "x": 2076.0,
+    "y": 1402.0,
+    "luogo": "Firenze / Флорентия",
+    "pers": "Girolamo Savonarola / Иероним Савонарола",
+    "testi": "Ivanov 229",
+    "reale": true
+  },
+  {
+    "x": 2076.0,
+    "y": 1402.0,
+    "luogo": "Firenze / Флорентия",
+    "pers": "Pietro Candido (da Portico) / Пьетро Кандидо",
+    "testi": "Ivanov 239; Ivanov 240",
+    "reale": true
+  },
+  {
+    "x": 2076.0,
+    "y": 1402.0,
+    "luogo": "Firenze / Флорентия",
+    "pers": "frati domenicani / монахи-доминиканцы",
+    "testi": "Ivanov 229",
+    "reale": false
+  },
+  {
+    "x": 2076.0,
+    "y": 1402.0,
+    "luogo": "Firenze / Флорентия (cfr. Speranzi 2013: 43-98)",
+    "pers": "Aristobulo Apostolio / Ἀρσένιος Ἀποστόλιος / Аристовул Апостолис",
+    "testi": "-",
+    "reale": true
+  },
+  {
+    "x": 2076.0,
+    "y": 1402.0,
+    "luogo": "Firenze / Флорентия (cfr. Speranzi 2013: 43-98)",
+    "pers": "Marco Musuro / Μάρκος Μουσοῦρος / Марк Мусурос",
+    "testi": "-",
+    "reale": true
+  },
+  {
+    "x": 2076.0,
+    "y": 1402.0,
+    "luogo": "Firenze / Флорентия, Venezia / Венеция",
+    "pers": "Scipione Forteguerri, Carteromaco / Сципион Картеромах",
+    "testi": "Ivanov 239; Ivanov 240",
+    "reale": true
+  },
+  {
+    "x": 1993.0,
+    "y": 1313.0,
+    "luogo": "Gallia / Галлия",
+    "pers": "Luigi XII di Valois-Orléans (Ludovico XII) / Людовик XII",
+    "testi": "Ivanov 152; [Ivanov 152-a]; [Ivanov 152-b]",
+    "reale": false
+  },
+  {
+    "x": 2163.0,
+    "y": 1272.0,
+    "luogo": "Germania / Германия",
+    "pers": "Massimiliano I d'Asburgo / Максимилиан I",
+    "testi": "Ivanov 152; [Ivanov 152-a]; [Ivanov 152-b]",
+    "reale": false
+  },
+  {
+    "x": 2051.0,
+    "y": 1366.0,
+    "luogo": "Milano / Милан",
+    "pers": "Ambrogio da Rosate / Амвросий Розаде",
+    "testi": "Ivanov 152; [Ivanov 152-a]; [Ivanov 152-b]; Ivanov 153",
+    "reale": true
+  },
+  {
+    "x": 2051.0,
+    "y": 1366.0,
+    "luogo": "Milano / Милан",
+    "pers": "Ludovico Maria Sforza, il Moro / Лодовико Мария Сфорца",
+    "testi": "Ivanov 152; [Ivanov 152-a]; [Ivanov 152-b]; Ivanov 153",
+    "reale": true
+  },
+  {
+    "x": 2051.0,
+    "y": 1366.0,
+    "luogo": "Milano / Милан",
+    "pers": "Luigi XII di Valois-Orléans (Ludovico XII) / Людовик XII",
+    "testi": "Ivanov 152; [Ivanov 152-a]; [Ivanov 152-b]",
+    "reale": false
+  },
+  {
+    "x": 2077.0,
+    "y": 1384.0,
+    "luogo": "Mirandola / Мирандола",
+    "pers": "Giovan Francesco Pico della Mirandola / Джанфранческо Пико делла Мирандола",
+    "testi": "Ivanov 235; Ivanov 238",
+    "reale": true
+  },
+  {
+    "x": 2076.0,
+    "y": 1379.0,
+    "luogo": "Padova / Падуя",
+    "pers": "Paolo / Παῦλος / Павел",
+    "testi": "Ivanov 238",
+    "reale": true
+  },
+  {
+    "x": 2102.0,
+    "y": 1419.0,
+    "luogo": "Regni latini / Латинские королевства",
+    "pers": "frati domenicani / монахи-доминиканцы",
+    "testi": "Ivanov 230",
+    "reale": false
+  },
+  {
+    "x": 2102.0,
+    "y": 1419.0,
+    "luogo": "Regni latini / Латинские королевства",
+    "pers": "frati francescani / францисканцы",
+    "testi": "Ivanov 230",
+    "reale": false
+  },
+  {
+    "x": 1751.0,
+    "y": 1320.0,
+    "luogo": "Spagna / Испания",
+    "pers": "Alessandro VI / Александр VI",
+    "testi": "Ivanov 229",
+    "reale": false
+  },
+  {
+    "x": 2092.0,
+    "y": 1384.0,
+    "luogo": "Venezia / Венеция",
+    "pers": "Aldo Manuzio / Альд Мануций",
+    "testi": "Ivanov 237; Ivanov 238; Ivanov 239; Ivanov 240; Ivanov 362; [Ivanov 362-a]",
+    "reale": true
+  },
+  {
+    "x": 2092.0,
+    "y": 1384.0,
+    "luogo": "Venezia / Венеция",
+    "pers": "Aristobulo Apostolio / Ἀρσένιος Ἀποστόλιος / Аристовул Апостолис",
+    "testi": "Ivanov 238",
+    "reale": true
+  },
+  {
+    "x": 2092.0,
+    "y": 1384.0,
+    "luogo": "Venezia / Венеция",
+    "pers": "Francesco Roseto / Франческо Россето",
+    "testi": "Ivanov 238",
+    "reale": true
+  },
+  {
+    "x": 2092.0,
+    "y": 1384.0,
+    "luogo": "Venezia / Венеция",
+    "pers": "Giorgio Mosco / Γεώργιος Μόσχος / Георгий Мосх",
+    "testi": "Ivanov 237",
+    "reale": true
+  },
+  {
+    "x": 2092.0,
+    "y": 1384.0,
+    "luogo": "Venezia / Венеция",
+    "pers": "Giovanni Gregoropulo / Ἰωάννης Γρηγορόπουλος / Иоанн Григоропулос",
+    "testi": "Ivanov 235; Ivanov 236; Ivanov 237; Ivanov 238; Ivanov 239",
+    "reale": true
+  },
+  {
+    "x": 2092.0,
+    "y": 1384.0,
+    "luogo": "Venezia / Венеция",
+    "pers": "Girolamo Pichi / Иероним Пики",
+    "testi": "Ivanov 236",
+    "reale": true
+  },
+  {
+    "x": 2092.0,
+    "y": 1384.0,
+    "luogo": "Venezia / Венеция",
+    "pers": "Marco Musuro / Μάρκος Μουσοῦρος / Марк Мусурос",
+    "testi": "Ivanov 240",
+    "reale": true
+  },
+  {
+    "x": 2092.0,
+    "y": 1384.0,
+    "luogo": "Venezia / Венеция",
+    "pers": "Nicola Vlasto / Νικόλαος Βλαστός / Николай Властос",
+    "testi": "Ivanov 239; Ivanov 240",
+    "reale": true
+  },
+  {
+    "x": 2092.0,
+    "y": 1384.0,
+    "luogo": "Venezia / Венеция",
+    "pers": "Zaccaria Calliergi / Ζαχαρίας Καλλιέργης / Захария Каллиергис",
+    "testi": "Ivanov 238",
+    "reale": true
+  },
+  {
+    "x": 2092.0,
+    "y": 1384.0,
+    "luogo": "Venezia / Венеция",
+    "pers": "[un doge di Venezia / дoж Венеции]",
+    "testi": "Ivanov 182",
+    "reale": false
+  },
+  {
+    "x": 2092.0,
+    "y": 1384.0,
+    "luogo": "Venezia / Венеция",
+    "pers": "[un mercante di pelli / кожевник]",
+    "testi": "Ivanov 238",
+    "reale": false
+  },
+  {
+    "x": 2092.0,
+    "y": 1384.0,
+    "luogo": "Venezia / Венеция (cfr. Romoli 2021: 162-171)",
+    "pers": "Giano Lascaris / Ἰανὸς Λάσκαρις / Иоанн Ласкарис",
+    "testi": "-",
+    "reale": true
+  },
+  {
+    "x": 2045.0,
+    "y": 1372.0,
+    "luogo": "Vercelli / Верчелли",
+    "pers": "Ludovico Tizzoni / Лудовико Тиццони",
+    "testi": "Ivanov 235",
+    "reale": true
+  },
+  {
+    "x": 2045.0,
+    "y": 1372.0,
+    "luogo": "Vercelli / Верчелли",
+    "pers": "Niccolò di Tarso / Николай Тарсский",
+    "testi": "Ivanov 235",
+    "reale": true
+  }
+] 
+
+var punti2 = [
+{
+    "x": 2662,
+ 
+    "y": 1244,
+    "luogo": "Mosca",
+    
+  },
+{
+    "x": 2309
+, 
+    "y": 1578,
+    "luogo": "Monte Athos, monastero di Vatopedi",
+    
+  },
+{
+    "x": 2641,
+    "y": 1226.0,
+    "luogo": "Volokolamsk"
+    
+  },{
+    "x": 2670
+, 
+    "y": 1233,
+    "luogo": "Sergiev Posad",
+    
+  },{
+    "x": 2629
+, 
+    "y": 1215,
+    "luogo": "Tver'",
+    
+  }
+]
+var punti3 = [
+  {
+    "x": 2076.0,
+    "y": 1402.0,
+    "Repositorio": "BNF = Bibliothèque Nationale de France, Paris (FR)",
+    "Segnatura": "Gr. 1994",
+    "Contenuto": "Geoponica",
+    "Epoca_di_copiatura": "1492-1494/1495",
+    "Luogo_di_copiatura": "Firenze",
+    "Risorsa_digitalizzata": "https://gallica.bnf.fr/ark:/12148/btv1b10723686h/f8.item"
+  },
+  {
+    "x": 2076.0,
+    "y": 1402.0,
+    "Repositorio": "BAV = Biblioteca Apostolica Vaticana, Roma (SCV)",
+    "Segnatura": "Reg. gr. 83, ff. 147r-\n245r",
+    "Contenuto": "Strabo, Geographia",
+    "Epoca_di_copiatura": "1492-1494/1495",
+    "Luogo_di_copiatura": "Firenze",
+    "Risorsa_digitalizzata": "https://digi.vatlib.it/view/MSS_Reg.gr.83"
+  },
+  {
+    "x": 2092.0,
+    "y": 1384.0,
+    "Repositorio": "BSC = Biblioteca Statale di Cremona, Cremona (IT)",
+    "Segnatura": "Governativo, Manoscritti, 177",
+    "Contenuto": "Iohannes Philoponus, In Aristotelis Analytica Priora",
+    "Epoca_di_copiatura": "5 marzo 1498 (data di fine copiatura)",
+    "Luogo_di_copiatura": "Venezia",
+    "Risorsa_digitalizzata": "-"
+  },
+  {
+    "x": 2092.0,
+    "y": 1384.0,
+    "Repositorio": "OBL = Oxford Bodleian Library (Weston Library), Oxford (GB)",
+    "Segnatura": "Canon. gr. 27",
+    "Contenuto": "Theodoretus Cyrensis, Graecorum affectionum curatio",
+    "Epoca_di_copiatura": "fine del XV sec./inizio del XVI sec.",
+    "Luogo_di_copiatura": "Venezia",
+    "Risorsa_digitalizzata": "cfr. https://marco.ox.ac.uk/ark:29072/x041687j22rx"
+  },
+  {
+    "x": 2095.0,
+    "y": 1428.0,
+    "Repositorio": "BAV = Biblioteca Apostolica Vaticana, Roma (SCV)",
+    "Segnatura": "Barb. gr. 100",
+    "Contenuto": "Iosephus Flavius, Contra Apionem",
+    "Epoca_di_copiatura": "-",
+    "Luogo_di_copiatura": "-",
+    "Risorsa_digitalizzata": "https://digi.vatlib.it/view/MSS_Barb.gr.100"
+  },
+  {
+    "x": 2076.0,
+    "y": 1402.0,
+    "Repositorio": "BAV = Biblioteca Apostolica Vaticana, Roma (SCV)",
+    "Segnatura": "Gr. 1379, ff. 1r-24v",
+    "Contenuto": "Theocritus, Idyllia",
+    "Epoca_di_copiatura": "1492-1494/1495",
+    "Luogo_di_copiatura": "Firenze",
+    "Risorsa_digitalizzata": "https://digi.vatlib.it/view/MSS_Vat.gr.1379"
+  },
+  {
+    "x": 2076.0,
+    "y": 1402.0,
+    "Repositorio": "BML = Biblioteca Medicea Laurenziana, Firenze (IT)",
+    "Segnatura": "Plut. 55.20, ff. 104r-252v",
+    "Contenuto": "Dreimänner-Kommentar (commentario a Ermogene di Siriano, Sopatro e Marcellino)",
+    "Epoca_di_copiatura": "1492-1494/1495",
+    "Luogo_di_copiatura": "Firenze",
+    "Risorsa_digitalizzata": "https://tecabml.contentdm.oclc.org/digital/collection/plutei/id/852527"
+  },
+  {
+    "x": 2095.0,
+    "y": 1428.0,
+    "Repositorio": "BAV = Biblioteca Apostolica Vaticana, Roma (SCV)",
+    "Segnatura": "Barb. gr. 140, ff. 72r-81v, 82v, 90r, 91v-100r, 101v-102r, marginalia",
+    "Contenuto": "Michael Synkellos, De constructione partium orationis libellus",
+    "Epoca_di_copiatura": "-",
+    "Luogo_di_copiatura": "-",
+    "Risorsa_digitalizzata": "https://digi.vatlib.it/view/MSS_Barb.gr.140"
+  },
+  {
+    "x": 2024.0,
+    "y": 1199.0,
+    "Repositorio": "BL = British Library, London (GB)",
+    "Segnatura": "Harley 5663, ff. 17r-22v",
+    "Contenuto": "Eunapius Sardianus, Fragmenta",
+    "Epoca_di_copiatura": "-",
+    "Luogo_di_copiatura": "-",
+    "Risorsa_digitalizzata": "-"
+  },
+  {
+    "x": 2076.0,
+    "y": 1402.0,
+    "Repositorio": "BML = Biblioteca Medicea Laurenziana, Firenze (IT)",
+    "Segnatura": "Conv. soppr. 104",
+    "Contenuto": "(pseudo-)Dionysius Areopagita, De divinis nominibus",
+    "Epoca_di_copiatura": "fine del XV sec./inizio del XVI sec.",
+    "Luogo_di_copiatura": "Firenze",
+    "Risorsa_digitalizzata": "-"
+  },
+  {
+    "x": 2008.0,
+    "y": 1277.0,
+    "Repositorio": "BNF = Bibliothèque Nationale de France, Paris (FR)",
+    "Segnatura": "Gr. 2926, ff. 51v-52r",
+    "Contenuto": "Hermogenes, Ars rhetorica, de partitione statuum",
+    "Epoca_di_copiatura": "-",
+    "Luogo_di_copiatura": "-",
+    "Risorsa_digitalizzata": "-"
+  },
+  {
+    "x": 2095.0,
+    "y": 1428.0,
+    "Repositorio": "BV = Biblioteca Vallicelliana, Roma (IT)",
+    "Segnatura": "D23",
+    "Contenuto": "-",
+    "Epoca_di_copiatura": "-",
+    "Luogo_di_copiatura": "-",
+    "Risorsa_digitalizzata": "cfr. https://pinakes.irht.cnrs.fr/notices/cote/56305/"
+  }
+]
+
+
+
+
+
+
+// Marker cluster
+var markers = L.markerClusterGroup();
+
+punti.forEach(p => {
+    var popup_html = `
+  <div style="
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+    line-height: 1.4;
+    padding: 6px 8px;
+    border-radius: 8px;
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+  ">
+    <div style="margin-bottom: 4px;">
+      <b style="color: #0056b3;">📍 Luogo:</b> ${p.luogo}
+    </div>
+    <div style="margin-bottom: 4px;">
+      <b style="color: #b35c00;">👥 Persone/Eventi:</b> ${p.pers}
+    </div>
+    <div>
+      <b style="color: #2e8b57;">📚 Testi:</b><br>
+      <span style="display: block; margin-top: 3px;">${p.testi}</span>
+    </div>
+  </div>`;
+
+    // Forza il booleano
+    var reale = (p.reale === true || p.reale === "true"); // accetta sia boolean che stringa
+    var icon = reale ? redIcon : blueIcon;
+
+    var marker = L.marker([-p.y/scale, p.x/scale], {icon: icon}).bindPopup(popup_html);
+    markers.addLayer(marker);
+});
+
+punti1.forEach(p => {
+    var popup_html = `
+  <div style="
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+    line-height: 1.4;
+    padding: 6px 8px;
+    border-radius: 8px;
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+  ">
+    <div style="margin-bottom: 4px;">
+      <b style="color: #0056b3;">📍 Luogo:</b> ${p.luogo}
+    </div>
+    <div style="margin-bottom: 4px;">
+      <b style="color: #b35c00;">👥 Persone/Eventi:</b> ${p.pers}
+    </div>
+    <div>
+      <b style="color: #2e8b57;">📚 Testi:</b><br>
+      <span style="display: block; margin-top: 3px;">${p.testi}</span>
+    </div>
+  </div>`;
+
+    // Forza il booleano
+    var reale = (p.reale === true || p.reale === "true"); // accetta sia boolean che stringa
+    var icon = reale ? redIconMan : blueIconMan;
+
+    var marker = L.marker([-p.y/scale, p.x/scale], {icon: icon}).bindPopup(popup_html);
+    markers.addLayer(marker);
+});
+punti2.forEach(p => {
+    var popup_html = `
+  <div style="
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+    line-height: 1.4;
+    padding: 6px 8px;
+    border-radius: 8px;
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+  ">
+    <div style="margin-bottom: 4px;">
+      <b style="color: #0056b3;">📍 Luogo:</b> ${p.luogo}
+    </div>
+   
+  </div>`;
+
+   // accetta sia boolean che stringa
+    var icon = blackIcon;
+
+    var marker = L.marker([-p.y/scale, p.x/scale], {icon: icon}).bindPopup(popup_html);
+    markers.addLayer(marker);
+});
+punti3.forEach(p => {
+  var popup_html = `
+  <div style="
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+    line-height: 1.5;
+    color: #333;
+    padding: 8px 10px;
+    border-radius: 10px;
+    background: #fdfdfd;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    max-width: 280px;
+  ">
+    <div style="margin-bottom: 6px;">
+      <b style="color:#2b5c99;">📚 Repositorio:</b><br>
+      ${p.Repositorio || '—'}
+    </div>
+    <div style="margin-bottom: 6px;">
+      <b style="color:#2b5c99;">🧾 Segnatura:</b><br>
+      ${p.Segnatura || '—'}
+    </div>
+    <div style="margin-bottom: 6px;">
+      <b style="color:#2b5c99;">📖 Contenuto:</b><br>
+      ${p.Contenuto || '—'}
+    </div>
+    <div style="margin-bottom: 6px;">
+      <b style="color:#2b5c99;">📅 Epoca di copiatura:</b><br>
+      ${p.Epoca_di_copiatura || '—'}
+    </div>
+    <div style="margin-bottom: 6px;">
+      <b style="color:#2b5c99;">📍 Luogo di copiatura:</b><br>
+      ${p.Luogo_di_copiatura || '—'}
+    </div>
+    <div>
+      <b style="color:#2b5c99;">🔗 Risorsa digitalizzata:</b><br>
+      <a href="${p.Risorsa_digitalizzata}" target="_blank" style="color:#0078d7; text-decoration:none;">
+        ${p.Risorsa_digitalizzata ? 'Apri risorsa' : '—'}
+      </a>
+    </div>
+  </div>`;
+
+  // 🔹 Scegli l'icona in base al valore del luogo di copiatura
+  var icon = (p.Luogo_di_copiatura && p.Luogo_di_copiatura.trim() !== "-")
+    ? redIconBook
+    : blueIconBook;
+
+  var marker = L.marker([-p.y/scale, p.x/scale], { icon: icon }).bindPopup(popup_html);
+  markers.addLayer(marker);
+});
+
+
+mapStorica.addLayer(markers);
+</script>
+</body>
+</html>
