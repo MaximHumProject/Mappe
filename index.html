@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<title>Mappa Waldseemüller 1507 - Toggle Storica/Moderna</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+  html, body { height: 100%; margin: 0; font-family: sans-serif; }
+  #map-storica, #map-moderna {
+    width: 1200px;
+    height: 700px;
+    margin: 0 auto;
+    background: #000;
+    position: absolute;
+    top: 0; left: 50%;
+    transform: translateX(-50%);
+  }
+  #map-moderna { display: none; }
+
+  #controls {
+    position: absolute;
+    top: 710px;  /* subito sotto la mappa (700px altezza) + 10px margine) */
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  /* Toggle switch */
+  .switch {
+    position: relative;
+    display: inline-block;
+    width: 90px;
+    height: 36px;
+  }
+  .switch input { display: none; }
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-color: #ccc;
+    border-radius: 36px;
+    transition: 0.4s;
+  }
+  .slider:before {
+    position: absolute;
+    content: "Moderna";
+    height: 28px;
+    width: 44px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    border-radius: 28px;
+    text-align: center;
+    line-height: 28px;
+    font-size: 8px;
+    font-weight: bold;
+    color: #000;
+    transition: 0.4s;
+  }
+  input:checked + .slider:before {
+    transform: translateX(44px);
+    content: "Storica";
+  }
+  input:checked + .slider {
+    background-color: #1e90ff;
+  }
+</style>
+</head>
+<body>
+
+<div id="map-storica"></div>
+<div id="map-moderna"></div>
+
+<div id="controls">
+  <label class="switch">
+    <input type="checkbox" id="mapToggle">
+    <span class="slider"></span>
+  </label>
+</div>
+
+<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+<script src="leaflet-iiif.js"></script>
+
+<script>
+const iiifUrl = 'https://tile.loc.gov/image-services/iiif/service:gmd:gmd3:g3200:g3200:ct000725C/info.json';
+let mapStorica, mapModerna;
+const scale = 20;
+
+// FUNZIONE MAPPA STORICA
+function showHistorical() {
+  document.getElementById('map-storica').style.display = 'block';
+  document.getElementById('map-moderna').style.display = 'none';
+    const storica = document.getElementById('map-storica');
+  storica.style.display = 'block';
+  
+  storica.innerHTML = `
+    <iframe src="provaInline.html"
+            style="width:100%;height:100%;border:none;">
+    </iframe>`;
+}
+
+// FUNZIONE MAPPA MODERNA
+
+function showModern() {
+  document.getElementById('map-storica').style.display = 'none';
+  const moderna = document.getElementById('map-moderna');
+  moderna.style.display = 'block';
+  moderna.innerHTML = `
+    <iframe src="mappa_animata_cluster.html"
+            style="width:100%;height:100%;border:none;">
+    </iframe>`;
+}
+
+// TOGGLE
+document.getElementById('mapToggle').addEventListener('change', function() {
+  if (this.checked) showHistorical(); else showModern();
+});
+
+// Avvio iniziale
+showModern();
+</script>
+
+</body>
+</html>
